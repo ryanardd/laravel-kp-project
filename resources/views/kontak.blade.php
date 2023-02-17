@@ -1,4 +1,5 @@
 @extends('FrontEnd.layouts.master')
+@section('title', 'Murahkom Official | Kontak')
 
 @section('content')
     <div class="container">
