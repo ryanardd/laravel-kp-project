@@ -13,7 +13,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/login', function () {
+    return view('dashboard/login');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard/landing');
+});
+
+Route::get('/form', function () {
+    return view('dashboard/form');
+});
+
+Route::get('/post', function () {
+    return view('dashboard/post');
+});
+
+Route::get('/category', function () {
+    return view('dashboard/category');
+});
+
+
+
 
