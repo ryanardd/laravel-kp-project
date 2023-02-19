@@ -37,6 +37,15 @@ Route::get('/category', function () {
     return view('dashboard/category');
 });
 
+Route::get('/slide', function () {
+    return view('dashboard/slide');
+});
+
+// Client
+Route::get('/home', function () {
+    return view('home');
+});
+
 
 
 

@@ -147,11 +147,16 @@
 						</li>
 						<li class="nav-item">
 							<a href="../category">
-								<i class="fas fa-pen-square"></i>
+								<i class="fas fa-th-large"></i>
 								<p>Category</p>
 							</a>
-							
-					</li>
+						</li>
+						<li class="nav-item">
+							<a href="../slide">
+								<i class="fas fa-exchange-alt"></i>
+								<p>Slide</p>
+							</a>
+						</li>
 						<li class="nav-item">
 							<a href="/form">
 								<i class="fas fa-table"></i>
@@ -389,6 +394,59 @@
     //== Demos
     var initDemos = function() {
 
+		$('#alert_demo_5').click(function(e){
+					swal({
+						title: 'Input Category',
+						html: '<br><input class="form-control" placeholder="Input Category" id="input-field">',
+						content: {
+							element: "input",
+							attributes: {
+								placeholder: "Input Category",
+								type: "text",
+								id: "input-field",
+								className: "form-control"
+							},
+						},
+						buttons: {
+							cancel: {
+								visible: true,
+								text : 'No, cancel!',
+								className: 'btn btn-danger'
+                    		},        			
+							confirm: {
+								text : 'Yes, create it!',
+								className : 'btn btn-success'
+							}
+							// cancel: {
+							// 	visible: true,
+							// 	className: 'btn btn-danger'
+							// },        			
+							// confirm: {
+							// 	className : 'btn btn-success'
+							// }
+						},
+					}).then((willCategory) => {
+						if (willCategory) {
+                    swal("", "You entered : " + $('#input-field').val(), "success", {
+                        icon: "success",
+                        buttons : {
+                            cancel : {
+                                className: 'btn btn-success'
+                            }
+                        }
+                    });
+                } else {
+                    swal("", "Cancel " + $('#input-field').val(), {
+                        buttons : {
+                            confirm : {
+                                className: 'btn btn-danger'
+                            }
+                        }
+                    });
+                }
+			});
+		});
+
         $('#alert_demo_8').click(function(e) {
             swal({
                 title: 'Are you sure?',
@@ -419,7 +477,7 @@
                     swal("Your imaginary file is safe!", {
                         buttons : {
                             confirm : {
-                                className: 'btn btn-success'
+                                className: 'btn btn-danger'
                             }
                         }
                     });
