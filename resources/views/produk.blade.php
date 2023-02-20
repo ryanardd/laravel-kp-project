@@ -5,7 +5,7 @@
     <div class="container">
         <h1>Halaman Produk</h1>
 
-        @foreach ($produks as $produk)
+        @foreach ($products as $produk)
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="..." alt="Card image cap">
                 <div class="card-body">

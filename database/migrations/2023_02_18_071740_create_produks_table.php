@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('produks', function (Blueprint $table) {
             $table->id('id_produk');
-            // $table->foreignId('id_kategori');
+            $table->foreignId('id_category');
             // $table->foreignId('id_review');
             $table->string('nama_produk');
             $table->integer('harga');

@@ -39,5 +39,5 @@ Route::get('/category', function () {
 });
 
 Route::get('/', [FrontEndController::class, 'index'])->name('home');
-Route::get('/produk', [FrontEndController::class, 'produk'])->name('produk');
-Route::get('/kontak', [FrontEndController::class, 'kontak'])->name('kontak');
+Route::get('/product', [FrontEndController::class, 'product'])->name('product');
+Route::get('/contact-us', [FrontEndController::class, 'kontak'])->name('contact-us');

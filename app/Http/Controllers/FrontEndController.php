@@ -11,9 +11,9 @@ class FrontEndController extends Controller
         return view('home');
     }
 
-    public function produk() {
+    public function product() {
         return view('produk', [
-            "produks" => Produk::all()
+            "products" => Produk::all()
         ]);
     }
 

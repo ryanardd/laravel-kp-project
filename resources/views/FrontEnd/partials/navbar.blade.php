@@ -11,10 +11,10 @@
             <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('produk') }}">Produk</a>
+            <a class="nav-link" href="{{ route('product') }}">Produk</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('kontak') }}">Kontak</a>
+            <a class="nav-link" href="{{ route('contact-us') }}">Kontak</a>
           </li>
         </ul>
         <form class="d-flex" role="search">

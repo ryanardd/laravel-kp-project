@@ -13,4 +13,10 @@ class Category extends Model
         'nama_category',
         'slug'
     ];
+
+    public function product()
+    {
+        // 1 category memiliki banyak produk (one to many)
+        return $this->hasMany(Produk::class);
+    }
 }
