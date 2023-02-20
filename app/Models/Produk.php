@@ -9,17 +9,17 @@ class Produk extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['id'];
+    // protected $guarded = ['id'];
 
-    // protected $fillabel = [
-    //     'nama_produk',
-    //     'harga',
-    //     'gambar_produk',
-    //     'deskripsi',
-    //     'is_active',
-    //     // 'id_kategori',
-    //     // 'id_review',
-    // ];
+    protected $fillabel = [
+        'nama_produk',
+        'harga',
+        'gambar_produk',
+        'deskripsi',
+        'is_active',
+        'category_id',
+        // 'id_review',
+    ];
 
     public function category()
     {

@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('slides', function (Blueprint $table) {
-            $table->id('id_slide');
+            $table->id();
             $table->string('judul_slide');
             $table->string('gambar_slide');
             $table->timestamps();

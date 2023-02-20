@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontEndController;
+use App\Http\Controllers\ProdukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,4 +41,6 @@ Route::get('/category', function () {
 
 Route::get('/', [FrontEndController::class, 'index'])->name('home');
 Route::get('/product', [FrontEndController::class, 'product'])->name('product');
+Route::get('/product/{product:slug}', [FrontEndController::class, 'show_product']);
+
 Route::get('/contact-us', [FrontEndController::class, 'kontak'])->name('contact-us');
