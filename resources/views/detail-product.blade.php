@@ -3,12 +3,10 @@
 
 @section('content')
     <div class="container">
-        <h1>Halaman Detail Produk</h1>
 
-        {{-- @dd($product) --}}
-        @foreach ($product as $produk)
-            <h3>{{ $produk->nama_produk }}</h3>
-        @endforeach
+        <h1>{{ $detail->nama_produk }}</h1>
+        <p>{{ $detail->deskripsi }}</p>
+        
         <a href="{{ route('product') }}">Back all Produk</a>
     </div>
 @endsection

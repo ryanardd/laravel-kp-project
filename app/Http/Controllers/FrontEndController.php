@@ -18,10 +18,11 @@ class FrontEndController extends Controller
         ]);
     }
 
-    public function show_product(Produk $produk)
+    public function showProduct(Produk $produk)
     {
+        // @dd($produk);
         return view('detail-product', [
-            "product" => $produk::all()
+            "detail" => $produk
         ]);
     }
 
