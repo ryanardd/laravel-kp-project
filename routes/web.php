@@ -48,4 +48,7 @@ Route::get('/product', [FrontEndController::class, 'product'])->name('product');
 Route::get('/product/{produk:slug}', [FrontEndController::class, 'showProduct']);
 
 // halaman category
+Route::get('category/', [FrontEndController::class, 'category']);
+
+// halaman category produk
 Route::get('category/{category:slug}', [FrontEndController::class, 'showCategory']);

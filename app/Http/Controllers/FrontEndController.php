@@ -26,6 +26,13 @@ class FrontEndController extends Controller
         ]);
     }
 
+    public function category()
+    {
+        return view('FrontEnd.categories', [
+            "category" => Category::all()
+        ]);
+    }
+
     public function showCategory(Category $category){
         // @dd($category);
         return view('FrontEnd.category', [
