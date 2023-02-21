@@ -48,8 +48,8 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('/', [FrontEndController::class, 'index'])->name('home');
-Route::get('/contact-us', [FrontEndController::class, 'contactUs'])->name('contact-us');
+// Route::get('/', [FrontEndController::class, 'index'])->name('home');
+// Route::get('/contact-us', [FrontEndController::class, 'contactUs'])->name('contact-us');
 
 Route::get('/product', [FrontEndController::class, 'product'])->name('product');
 
