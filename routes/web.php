@@ -40,10 +40,12 @@ Route::get('/category', function () {
 });
 
 Route::get('/', [FrontEndController::class, 'index'])->name('home');
-Route::get('/contact-us', [FrontEndController::class, 'kontak'])->name('contact-us');
+Route::get('/contact-us', [FrontEndController::class, 'contactUs'])->name('contact-us');
 
 Route::get('/product', [FrontEndController::class, 'product'])->name('product');
 
 // halaman detail product
 Route::get('/product/{produk:slug}', [FrontEndController::class, 'showProduct']);
 
+// halaman category
+Route::get('category/{category:slug}', [FrontEndController::class, 'showCategory']);

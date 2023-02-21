@@ -11,7 +11,7 @@
             <div class="card-body">
             <h5 class="card-title"><a href="/product/{{ $produk->slug }}">{{ $produk->nama_produk }}</a></h5>
 
-            <p>Category <a href="#">{{ $produk->category->nama_category }}</a></p>
+            <p>Category <a href="/category/{{ $produk->category->slug }}">{{ $produk->category->nama_category }}</a></p>
             <p class="card-text">Rp. {{ number_format($produk->harga,0,",",".") }}</p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>

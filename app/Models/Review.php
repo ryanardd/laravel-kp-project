@@ -11,7 +11,7 @@ class Review extends Model
 
     protected $fillabel = [
         'nama_customer',
-        'slug',
+        'gambar',
         'tipe_customer',
         'deskripsi'
     ];

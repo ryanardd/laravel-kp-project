@@ -9,11 +9,11 @@ use Illuminate\Http\Request;
 class FrontEndController extends Controller
 {
     public function index() {
-        return view('home');
+        return view('FrontEnd.home');
     }
 
     public function product() {
-        return view('produk', [
+        return view('FrontEnd.produk', [
             "products" => Produk::all(),
         ]);
     }
@@ -21,12 +21,20 @@ class FrontEndController extends Controller
     public function showProduct(Produk $produk)
     {
         // @dd($produk);
-        return view('detail-product', [
+        return view('FrontEnd.detail-product', [
             "detail" => $produk
         ]);
     }
 
-    public function kontak() {
-        return view('kontak');
+    public function showCategory(Category $category){
+        // @dd($category);
+        return view('FrontEnd.category', [
+            "category" => $category,
+            "product" => $category->product
+        ]);
+    }
+
+    public function contactUs() {
+        return view('FrontEnd.kontak');
     }
 }
