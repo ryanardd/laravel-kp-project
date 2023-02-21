@@ -1,78 +1,10 @@
-@extends('partials/navbar')
+@extends('layouts/main')
+@extends('partials/slide')
 
-@section('content')
-    <div class="container">
-        <div class="slides-1 swiper" data-aos="fade-up" data-aos-delay="100">
-            <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-                <div class="row justify-content-between gy-5">
-                <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
-                <h2 data-aos="fade-up">New Arrival<br>get Buy</h2>
-                <p data-aos="fade-up" data-aos-delay="100">
-                    Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque eum quaerat.</p>
-                <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-                    <a href="#book-a-table" class="btn-book-a-table">Book a Table</a>
-                    <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-                        class="glightbox btn-watch-video d-flex align-items-center"><i
-                        class="bi bi-play-circle"></i><span>Watch Video</span></a>
-                </div>
-                </div>
-                <div class="col-lg-5 order-1 order-lg-2 text-center text-lg-start">
-                    <img src="assets/img/hero-img.png" class="img-fluid" alt="" data-aos="zoom-out"
-                    data-aos-delay="300">
-                </div>
-                </div>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="row justify-content-between gy-5">
-                <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
-                <h2 data-aos="fade-up">Jek Anget<br>Ndang Tukuo Cok</h2>
-                <p data-aos="fade-up" data-aos-delay="100">Sed autem laudantium dolores. Voluptatem itaque ea consequatur
-                    eveniet. Eum quas beatae cumque eum quaerat.</p>
-                <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-                    <a href="#book-a-table" class="btn-book-a-table">Book a Table</a>
-                    <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-                        class="glightbox btn-watch-video d-flex align-items-center"><i
-                        class="bi bi-play-circle"></i><span>Watch Video</span></a>
-                </div>
-                </div>
-                <div class="col-lg-5 order-1 order-lg-2 text-center text-lg-start">
-                    <img src="assets/img/hero-img.png" class="img-fluid" alt="" data-aos="zoom-out"
-                    data-aos-delay="300">
-                </div>
-                </div>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="row justify-content-between gy-5">
-                <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
-                <h2 data-aos="fade-up">Opo Maneh<br>Ndang Gasss</h2>
-                <p data-aos="fade-up" data-aos-delay="100">Sed autem laudantium dolores. Voluptatem itaque ea consequatur
-                    eveniet. Eum quas beatae cumque eum quaerat.</p>
-                <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-                    <a href="#book-a-table" class="btn-book-a-table">Book a Table</a>
-                    <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-                        class="glightbox btn-watch-video d-flex align-items-center"><i
-                        class="bi bi-play-circle"></i><span>Watch Video</span></a>
-                </div>
-                </div>
-                <div class="col-lg-5 order-1 order-lg-2 text-center text-lg-start">
-                    <img src="assets/img/hero-img.png" class="img-fluid" alt="" data-aos="zoom-out"
-                    data-aos-delay="300">
-                </div>
-                </div>
-            </div>
-        </div>
-        <div class="swiper-pagination"></div>
-    </div>
-    </div>
-@endsection
-{{-- About and Service --}}
+@section('container')
 
 {{-- Service --}}
-@section('service')
+<section id="why-us" class="why-us">
     <div class="container" data-aos="fade-up">
         <div class="section-header">
             <h2>Service Us</h2>
@@ -106,11 +38,11 @@
 
         </div>
     </div>
-@endsection
+</section>
 {{-- End Service --}}
 
 {{-- About --}}
-@section('about')
+<section id="about" class="about section-bg">
     <div class="container" data-aos="fade-up">
         <div class="section-header">
             <h2>About Us</h2>
@@ -153,12 +85,70 @@
         </div>
 
     </div>
-@endsection
+</section>
 {{-- End About --}}
 
+{{-- Recommedation --}}
+<section id="menu" class="menu">
+    <div class="container" data-aos="fade-up">
+      <div class="section-header">
+        <h2>Produk</h2>
+        <p>Rekomendasi <span>Untuk Anda</span></p>
+      </div>
+
+      <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
+        <div class="tab-pane fade active show" id="all">
+
+          {{-- Items --}}
+          <div class="row gy-5">
+
+            <div class="col-lg-4 menu-item">
+              <a href="" class="">
+                <img src="assets/img/hero-img.png" class="menu-img img-fluid" alt="">
+              </a>
+                <h4>Acer</h4>
+                <p class="ingredients text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, sunt.</p>
+                <p class="price">
+                  Rp.10.000.000
+                </p>
+            </div>
+
+            <div class="col-lg-4 menu-item">
+              <a href="" class="">
+                <img src="assets/img/hero-img.png" class="menu-img img-fluid" alt="laptop">
+              </a>
+                <h4>Acer</h4>
+                <p class="ingredients text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, sunt.</p>
+                <p class="price">
+                  Rp.10.000.000
+                </p>
+            </div>
+
+            <div class="col-lg-4 menu-item">
+              <a href="" class="">
+                <img src="assets/img/hero-img.png" class="menu-img img-fluid" alt="laptop">
+              </a>
+                <h4>Acer</h4>
+                <p class="ingredients text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, sunt.</p>
+                <p class="price">
+                  Rp.10.000.000
+                </p>
+            </div>
+
+          </div>
+          {{-- end Items --}}
+          <div class="mt-5 d-flex justify-content-center">
+            <a href="" class="btn btn-info">Lihat Produk Lainnya</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+{{-- End Recommedation --}}
+
 {{-- Testimonial --}}
-@section('testimonial')
-<div class="container" data-aos="fade-up">
+<section id="testimonials" class="testimonials">
+  <div class="container" data-aos="fade-up">
 
     <div class="section-header">
       <h2>Testimonials</h2>
@@ -167,30 +157,6 @@
 
     <div class="slides-1 swiper p-2" data-aos="fade-up" data-aos-delay="100">
       <div class="swiper-wrapper">
-
-        <div class="swiper-slide">
-          <div class="testimonial-item">
-            <div class="row gy-4 justify-content-center">
-              <div class="col-lg-6">
-                <div class="testimonial-content">
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                  <h3>Paijon</h3>
-                  <h4>Bakul Dawet &amp; Kuli</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-2 text-center">
-                <img src="assets/img/testimonials-1.jpg" class="img-fluid testimonial-img" alt="">
-              </div>
-            </div>
-          </div>
-        </div><!-- End testimonial item -->
 
         <div class="swiper-slide">
           <div class="testimonial-item">
@@ -216,59 +182,11 @@
           </div>
         </div><!-- End testimonial item -->
 
-        <div class="swiper-slide">
-          <div class="testimonial-item">
-            <div class="row gy-4 justify-content-center">
-              <div class="col-lg-6">
-                <div class="testimonial-content">
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                  <h3>Yanti</h3>
-                  <h4>Bakul Pecel</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-2 text-center">
-                <img src="assets/img/testimonials-1.jpg" class="img-fluid testimonial-img" alt="">
-              </div>
-            </div>
-          </div>
-        </div><!-- End testimonial item -->
-
-        <div class="swiper-slide">
-          <div class="testimonial-item">
-            <div class="row gy-4 justify-content-center">
-              <div class="col-lg-6">
-                <div class="testimonial-content">
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                  <h3>Bejan</h3>
-                  <h4>Wong Sawah</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-2 text-center">
-                <img src="assets/img/testimonials-1.jpg" class="img-fluid testimonial-img" alt="">
-              </div>
-            </div>
-          </div>
-        </div><!-- End testimonial item -->
-
       </div>
       <div class="swiper-pagination"></div>
     </div>
 
   </div>
-@endsection
+</section>
 {{-- End Testimonial --}}
-{{-- End About and Service --}}
+@endsection
