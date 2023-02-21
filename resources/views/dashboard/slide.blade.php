@@ -5,7 +5,7 @@
 <div class="content">
     <div class="page-inner">
         <div class="page-header">
-            <h4 class="page-title">List Data</h4>
+            <h4 class="page-title">List Slide</h4>
             <ul class="breadcrumbs">
                 <li class="nav-home">
                     <a href="/dashboard">
@@ -16,7 +16,7 @@
                     <i class="flaticon-right-arrow"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="#">Data</a>
+                    <a href="#">Slide</a>
                 </li>
             </ul>
         </div>
@@ -28,7 +28,7 @@
                             {{-- <h4 class="card-title">Add Row</h4> --}}
                             <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addRowModal">
                                 <i class="fa fa-plus"></i>
-                                Create data
+                                Create Slide
                             </button>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                                             <span class="fw-mediumbold">
                                             Create</span> 
                                             <span class="fw-light">
-                                            Data
+                                            Slide
                                             </span>
                                         </h1>
                                         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
@@ -53,33 +53,32 @@
                                         <form>
                                                 <div class="mb-3">
                                                         <label class="col-form-label">Judul</label>
-                                                        <input id="addJudul" type="text" class="form-control" placeholder="Masukkan judul">
+                                                        <input id="addName" type="text" class="form-control" placeholder="Masukkan judul">
                                                 </div>
                                                 <div class="mb-3">
                                                         <label class="col-form-label">keterangan</label>
-                                                        <textarea id="addKet" type="text" class="form-control" placeholder="Masukkan keterangan"></textarea>
+                                                        <textarea id="addPosition" type="text" class="form-control" placeholder="Masukkan keterangan"></textarea>
                                                 </div>
                                                 <div class="mb-3">
                                                         <label>Gambar</label>
-                                                        <input id="addGambar" type="file" class="form-control" placeholder="fill office">
+                                                        <input id="addOffice" type="file" class="form-control" placeholder="fill office">
                                                 </div>
                                         </form>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Save to draft</button>
-                                        <button type="button" id="addRowButton" data-target="#add-row" class="btn btn-primary">Publish</button>
+                                        <button type="button" id="addRowButton" class="btn btn-primary">Publish</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="table-responsive">
-                            <table id="add-row" class="display table table-striped table-hover">
+                            <table id="add-row" class="display table table-striped table-hover" >
                                 <thead>
                                     <tr>
                                         <th>Tanggal</th>
-                                        <th>Judul</th>
-                                        <th>Keterangan</th>
+                                        <th>Nama</th>
                                         <th>Status</th>
                                         <th>Gambar</th>
                                         <th style="width: 10%">Action</th>
@@ -88,8 +87,7 @@
                                 <tfoot>
                                     <tr>
                                         <th>Date</th>
-                                        <th>Title</th>
-                                        <th>Ket</th>
+                                        <th>Name</th>
                                         <th>Status</th>
                                         <th>Image</th>
                                         <th>Action</th>
@@ -97,11 +95,8 @@
                                 </tfoot>
                                 <tbody>
                                     <tr>
-                                        <td>
-                                            <time datetime="2023-12-20"></time>
-                                        </td>
+                                        <td>1/2/23</td>
                                         <td>System Architect</td>
-                                        <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>
@@ -120,7 +115,6 @@
                                         <td>Accountant</td>
                                         <td>Tokyo</td>
                                         <td>Tokyo</td>
-                                        <td>Tokyo</td>
                                         <td>
                                             <div class="form-button-action">
                                                 <button type="button" title="" class="btn btn-link btn-primary btn-lg" data-toggle="modal" data-target="#addRowModal" data-original-title="Edit Task">
@@ -135,7 +129,6 @@
                                     <tr>
                                         <td>1/2/23</td>
                                         <td>Junior Technical Author</td>
-                                        <td>San Francisco</td>
                                         <td>San Francisco</td>
                                         <td>San Francisco</td>
                                         <td>
@@ -154,7 +147,6 @@
                                         <td>Senior Javascript Developer</td>
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
-                                        <td>Edinburgh</td>
                                         <td>
                                             <div class="form-button-action">
                                                 <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
@@ -171,7 +163,6 @@
                                         <td>Accountant</td>
                                         <td>Tokyo</td>
                                         <td>Tokyo</td>
-                                        <td>Tokyo</td>
                                         <td>
                                             <div class="form-button-action">
                                                 <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
@@ -186,7 +177,6 @@
                                     <tr>
                                         <td>4/2/23</td>
                                         <td>Integration Specialist</td>
-                                        <td>New York</td>
                                         <td>New York</td>
                                         <td>New York</td>
                                         <td>
@@ -205,7 +195,6 @@
                                         <td>Sales Assistant</td>
                                         <td>San Francisco</td>
                                         <td>San Francisco</td>
-                                        <td>San Francisco</td>
                                         <td>
                                             <div class="form-button-action">
                                                 <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
@@ -220,7 +209,6 @@
                                     <tr>
                                         <td>7/2/23</td>
                                         <td>Integration Specialist</td>
-                                        <td>Tokyo</td>
                                         <td>Tokyo</td>
                                         <td>Tokyo</td>
                                         <td>
@@ -239,7 +227,6 @@
                                         <td>Javascript Developer</td>
                                         <td>San Francisco</td>
                                         <td>San Francisco</td>
-                                        <td>San Francisco</td>
                                         <td>
                                             <div class="form-button-action">
                                                 <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
@@ -254,7 +241,6 @@
                                     <tr>
                                         <td>5/2/23</td>
                                         <td>Software Engineer</td>
-                                        <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>Edinburgh</td>
                                         <td>

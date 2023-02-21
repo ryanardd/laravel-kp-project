@@ -39,6 +39,15 @@ Route::get('/category', function () {
     return view('dashboard/category');
 });
 
+// Route::get('/slide', function () {
+//     return view('dashboard/slide');
+// });
+
+// Client
+Route::get('/home', function () {
+    return view('home');
+});
+
 Route::get('/', [FrontEndController::class, 'index'])->name('home');
 Route::get('/contact-us', [FrontEndController::class, 'contactUs'])->name('contact-us');
 
