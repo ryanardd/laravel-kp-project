@@ -14,7 +14,7 @@ class FrontEndController extends Controller
 
     public function product() {
         return view('FrontEnd.produk', [
-            "products" => Produk::all(),
+            "products" => Produk::with('category')->latest()->get(),
         ]);
     }
 
@@ -26,18 +26,11 @@ class FrontEndController extends Controller
         ]);
     }
 
-    public function category()
-    {
-        return view('FrontEnd.categories', [
-            "category" => Category::all()
-        ]);
-    }
-
     public function showCategory(Category $category){
         // @dd($category);
         return view('FrontEnd.category', [
-            "category" => $category,
-            "product" => $category->product
+            "category" => $category->nama_category,
+            "product" => $category->product->load('category')
         ]);
     }
 
