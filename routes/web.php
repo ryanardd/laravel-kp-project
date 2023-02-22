@@ -23,6 +23,10 @@ Route::get('/login', function () {
     return view('dashboard/login');
 });
 
+Route::post('/login', function () {
+    return view('dashboard/login');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard/landing');
 });

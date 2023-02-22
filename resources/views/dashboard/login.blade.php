@@ -13,11 +13,11 @@
         <section class="form login">
             <header>Login</header>
             <form action="" method="POST" enctype="multipart/form-data" autocomplete="off">
-                @csrf
+                {{-- @csrf --}}
                 <div class="error-text"></div>
                 <div class="field input">
-                    <label>Username</label>
-                    <input type="text" name="username" placeholder="Enter your Username" required>
+                    <label>email</label>
+                    <input type="email" name="email" placeholder="name@example.com" required>
                 </div>
                 <div class="field input">
                     <label>Password</label>
