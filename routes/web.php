@@ -43,16 +43,7 @@ Route::get('/category', function () {
 //     return view('dashboard/slide');
 // });
 
-// Client
-Route::get('/home', function () {
-    return view('home');
-});
-
-// Route::get('/product', function () {
-//     return view('product');
-// });
-
-// Route::get('/', [FrontEndController::class, 'index'])->name('home');
+Route::get('/', [FrontEndController::class, 'index'])->name('home');
 // Route::get('/contact-us', [FrontEndController::class, 'contactUs'])->name('contact-us');
 
 Route::get('/product', [FrontEndController::class, 'product'])->name('product');

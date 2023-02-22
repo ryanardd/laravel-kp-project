@@ -61,7 +61,7 @@
                         data-aos-delay="300">
                     </div>
                 </div>
-                </div>
+            </div>
             </div>
             <div class="swiper-pagination"></div>
         </div>

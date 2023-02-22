@@ -9,11 +9,13 @@ use Illuminate\Http\Request;
 class FrontEndController extends Controller
 {
     public function index() {
-        return view('FrontEnd.home');
+        return view('home', [
+            "product" => Produk::all()
+        ]);
     }
 
     public function product() {
-        return view('FrontEnd.produk', [
+        return view('product', [
             "products" => Produk::with('category')->latest()->get(),
         ]);
     }

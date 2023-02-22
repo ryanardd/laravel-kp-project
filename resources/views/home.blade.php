@@ -1,5 +1,5 @@
 @extends('layouts/main')
-@extends('partials/slide')
+@include('partials/slide')
 
 @section('container')
 
@@ -102,18 +102,19 @@
           {{-- Items --}}
           <div class="row gy-5">
 
+            @foreach ($product->take(3) as $item)
             <div class="col-lg-4 menu-item">
-              <a href="" class="">
-                <img src="assets/img/hero-img.png" class="menu-img img-fluid" alt="">
-              </a>
-                <h4>Acer</h4>
-                <p class="ingredients text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, sunt.</p>
-                <p class="price">
-                  Rp.10.000.000
-                </p>
-            </div>
+                <a href="" class="">
+                  <img src="assets/img/hero-img.png" class="menu-img img-fluid" alt="">
+                </a>
+                  <h4>{{ $item->nama_produk }}</h4>
+                  <p class="price">
+                      Rp. {{ number_format($item->harga, 0, ",",".") }}
+                  </p>
+              </div>
+            @endforeach
 
-            <div class="col-lg-4 menu-item">
+            {{-- <div class="col-lg-4 menu-item">
               <a href="" class="">
                 <img src="assets/img/hero-img.png" class="menu-img img-fluid" alt="laptop">
               </a>
@@ -133,7 +134,7 @@
                 <p class="price">
                   Rp.10.000.000
                 </p>
-            </div>
+            </div> --}}
 
           </div>
           {{-- end Items --}}
@@ -154,7 +155,6 @@
       <h2>Testimonials</h2>
       <p>Apa Kata Mereka <span>Tentang Kami</span></p>
     </div>
-
     <div class="slides-1 swiper p-2" data-aos="fade-up" data-aos-delay="100">
       <div class="swiper-wrapper">
 
@@ -182,8 +182,8 @@
           </div>
         </div><!-- End testimonial item -->
 
-      </div>
-      <div class="swiper-pagination"></div>
+        </div>
+        <div class="swiper-pagination"></div>
     </div>
 
   </div>
