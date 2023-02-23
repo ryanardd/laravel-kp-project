@@ -1,6 +1,5 @@
 @extends('layouts/main')
 
-
 @section('container')
     {{-- Service --}}
     <section id="why-us" class="why-us">
@@ -9,9 +8,9 @@
                 <h2>Service Us</h2>
                 <p>Learn More <span>Service Us</span></p>
             </div>
-            <div class="row ">
+            <div class="row gap-4">
 
-                <div class="col-xl why-box" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-xl why-box" data-aos="fade-right" data-aos-delay="200">
                     <div class="icon-box p-2 d-flex flex-column justify-content-center align-items-center">
                         <i class="bi bi-patch-check"></i>
                         <h4>Pelayanan Terbaik</h4>
@@ -19,15 +18,15 @@
                     </div>
                 </div><!-- End Icon Box -->
 
-                <div class="col-xl why-box" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-xl why-box" data-aos="fade-up" data-aos-delay="400">
                     <div class="icon-box p-2 d-flex flex-column justify-content-center align-items-center">
                         <i class="bi bi-gem"></i>
                         <h4>Produk Bermutu</h4>
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                        <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
                     </div>
                 </div><!-- End Icon Box -->
 
-                <div class="col-xl why-box" data-aos="fade-up" data-aos-delay="400">
+                <div class="col-xl why-box" data-aos="fade-left" data-aos-delay="400">
                     <div class="icon-box p-2 d-flex flex-column justify-content-center align-items-center">
                         <i class="bi bi-percent"></i>
                         <h4>Harga Kompetitif</h4>
