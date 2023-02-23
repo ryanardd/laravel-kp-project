@@ -42,7 +42,7 @@
     </div>
 
     <script src="assets/js/script.js"></script>
-    <script src="javascript/signup.js"></script>
+    {{-- <script src="javascript/signup.js"></script> --}}
 </body>
 
 </html>

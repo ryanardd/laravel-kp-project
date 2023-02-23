@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\LoginController;
@@ -24,9 +25,9 @@ use App\Http\Controllers\ProdukController;
 //     return view('dashboard/login');
 // });
 
-Route::get('/dashboard', function () {
-    return view('dashboard/landing');
-});
+// Route::get('/dashboard', function () {
+//     return view('dashboard/landing');
+// })->middleware('auth');
 
 Route::get('/form', function () {
     return view('dashboard/form');
@@ -59,5 +60,12 @@ Route::get('/product/{produk:slug}', [FrontEndController::class, 'showProduct'])
 Route::get('category/{category:slug}', [FrontEndController::class, 'showCategory']);
 
 // halaman login
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
+// Halaman dashboard
+Route::get('/dashboard', function()
+{
+    return view('dashboard.landing');
+})->middleware('auth');
