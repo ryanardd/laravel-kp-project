@@ -3,11 +3,9 @@
 			<div class="content">
 				<div class="page-inner">
 					<div class="mt-2 mb-4">
-						<h2 class="text-dark pb-2">Welcome back, Admin!</h2>
-						<h5 class="text-dark op-7 mb-4">Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself.</h5>
+						<h2 class="text-dark pb-2">Welcome back, {{ auth()->user()->name }}</h2>
 					</div>
 					<div class="row">
-						
 						<div class="col-sm-6 col-md-4">
 							<div class="card card-stats bg-primary-gradient card-dark">
 								<div class="card-body">
@@ -19,7 +17,7 @@
 										</div>
 										<div class="col-7 col-stats">
 											<div class="numbers">
-												<p class="card-category">Post</p>
+												<p class="card-category">Product</p>
 												<h4 class="card-title">1,294</h4>
 											</div>
 										</div>
@@ -66,7 +64,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="row row-card-no-pd">	
+					<div class="row row-card-no-pd">
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-header">
@@ -127,7 +125,7 @@
 													<td>22</td>
 													<td>2012/03/29</td>
 												</tr>
-												
+
 												<tr>
 													<td>Prescott Bartlett</td>
 													<td>Technical Author</td>

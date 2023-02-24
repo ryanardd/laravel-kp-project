@@ -1,10 +1,9 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,5 +66,8 @@ Route::post('/logout', [LoginController::class, 'logout']);
 // Halaman dashboard
 Route::get('/dashboard', function()
 {
-    return view('dashboard.landing');
+    return view('dashboard.index');
 })->middleware('auth');
+
+
+Route::resource('product', ProductController::class);

@@ -25,7 +25,6 @@ class LoginController extends Controller
 
             return redirect()->intended('/dashboard');
         }
-
         return back()->with('loginError', 'Login Failed!');
     }
 
