@@ -1,7 +1,7 @@
-<!-- ======= Header Navbar ======= -->
+    <!-- ======= Header Navbar ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
         <div class="container d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+            <a href="/home" class="logo d-flex align-items-center me-auto me-lg-0">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
                 <!-- <img src="assets/img/logo.png" alt=""> -->
                 <h1>Murah<span>Kom</span></h1>
@@ -9,8 +9,8 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a href="home">Home</a></li>
-                    <li><a href="product">Product</a>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/product">Product</a>
                         {{-- <ul>
                             <li class="dropdown"><a href="#"><span>Lapotp</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                                 <ul>
@@ -33,7 +33,7 @@
                             <li><a href="#">Tokopedia</a></li>
                         </ul>
                     </li>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
                 </ul>
             </nav><!-- .navbar -->
     

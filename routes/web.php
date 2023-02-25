@@ -50,6 +50,18 @@ Route::get('/product', function () {
     return view('product');
 });
 
+Route::get('/contoh', function () {
+    return view('contoh');
+});
+
+Route::get('/template', function () {
+    return view('template');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
 
 
 
