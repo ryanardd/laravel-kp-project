@@ -1,9 +1,10 @@
 <?php
 
+use App\Models\Produk;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\FrontEndController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +44,10 @@ Route::post('/logout', [LoginController::class, 'logout']);
 // Halaman dashboard
 Route::get('/dashboard', function()
 {
-    return view('dashboard.index');
+    return view('dashboard.index', [
+
+        'produk' => Produk::all()->where('is_active', 0)
+    ]);
 })->middleware('auth');
 
 

@@ -1,4 +1,3 @@
-
 @extends('frontend.layouts.main')
 
 @section('container')
@@ -174,38 +173,18 @@
               {{-- Items --}}
               <div class="row gy-5">
 
+                @foreach ($product->take(3) as $produk)
                 <div class="col-lg-4 menu-item">
-                  <a href="" class="">
-                    <img src="assets/img/hero-img.png" class="menu-img img-fluid" alt="">
-                  </a>
-                    <h4>Acer</h4>
-                    <p class="ingredients text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, sunt.</p>
-                    <p class="price">
-                      Rp.10.000.000
-                    </p>
-                </div>
+                    <a href="" class="">
+                      <img src="assets/img/hero-img.png" class="menu-img img-fluid" alt="">
+                    </a>
+                      <a href="/product/{{ $produk->slug }}"><h4>{{ $produk->nama_produk }}</h4></a>
+                      <p class="price">
+                      Rp. {{ number_format($produk->harga, 0, ',', '.') }}
+                      </p>
+                  </div>
+                @endforeach
 
-                <div class="col-lg-4 menu-item">
-                  <a href="" class="">
-                    <img src="assets/img/hero-img.png" class="menu-img img-fluid" alt="laptop">
-                  </a>
-                    <h4>Acer</h4>
-                    <p class="ingredients text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, sunt.</p>
-                    <p class="price">
-                      Rp.10.000.000
-                    </p>
-                </div>
-
-                <div class="col-lg-4 menu-item">
-                  <a href="" class="">
-                    <img src="assets/img/hero-img.png" class="menu-img img-fluid" alt="laptop">
-                  </a>
-                    <h4>Acer</h4>
-                    <p class="ingredients text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, sunt.</p>
-                    <p class="price">
-                      Rp.10.000.000
-                    </p>
-                </div>
 
               </div>
               {{-- end Items --}}

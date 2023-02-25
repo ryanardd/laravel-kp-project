@@ -23,7 +23,7 @@ class FrontEndController extends Controller
     public function showProduct(Produk $produk)
     {
         // @dd($produk);
-        return view('FrontEnd.detail-product', [
+        return view('frontend._detailProduk', [
             "detail" => $produk
         ]);
     }
