@@ -70,4 +70,4 @@ Route::get('/dashboard', function()
 })->middleware('auth');
 
 
-Route::resource('products', ProductController::class);
+Route::resource('/dashbord/products', ProductController::class);

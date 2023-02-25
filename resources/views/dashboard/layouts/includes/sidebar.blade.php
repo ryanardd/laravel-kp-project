@@ -14,7 +14,7 @@
                 </div>
             </div>
             <ul class="nav nav-primary">
-                <li class="nav-item {{ request()->is('dasboard') ? 'active' : ''}}">
+                <li class="nav-item {{ request()->is('/dasboard') ? 'active' : ''}}">
                     <a  href="{{ url('/dashboard') }}">
                         <i class="fas fa-home"></i>
                         <p>Dashboard</p>
@@ -26,20 +26,14 @@
                     </span>
                     <h4 class="text-section">Components</h4>
                 </li>
-                <li class="nav-item  {{ request()->is('product') ? 'active' : ''}}">
+                <li class="nav-item  {{ request()->is('products') ? 'active' : ''}}">
                     <a href="{{ route('products.index') }}">
                         <i class="fas fa-desktop"></i>
                         <p>Product</p>
                     </a>
                 </li>
-                {{-- <li class="nav-item  {{ request()->routeIs('artikel.index') ? 'active' : ''}}">
-                    <a href="{{ route('artikel.index') }}">
-                    <i class="fas fa-newspaper"></i>
-                        <p>Artikel</p>
-                    </a>
-                </li>
 
-                <li class="nav-item  {{ request()->routeIs('slide.index') ? 'active' : ''}}">
+                {{-- <li class="nav-item  {{ request()->routeIs('slide.index') ? 'active' : ''}}">
                     <a href="{{ route('slide.index') }}">
                     <i class="fas fa-newspaper"></i>
                         <p>Slide Banner</p>
@@ -48,11 +42,11 @@
 
                 <li class="nav-item">
                     <a href="{{ url('/logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit()">
-                                        <i class="fas fa-undo"></i>
-                                        {{ __('Logout') }}
-                                    </a>
+                        {{-- {{-- onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit()"> --}}
+                        <i class="fas fa-undo"></i>
+                        {{ __('Logout') }}
+                    </a>
                     <form id="logout-form" action="{{ url('/logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>

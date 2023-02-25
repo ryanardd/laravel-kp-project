@@ -16,7 +16,7 @@
                     <i class="flaticon-right-arrow"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="#">Data</a>
+                    <a href="{{ route('products.index') }}">Product</a>
                 </li>
             </ul>
         </div>
@@ -60,12 +60,16 @@
                                         <td>Edinburgh</td>
                                         <td>
                                             <div class="form-button-action">
-                                                <button type="button" title="" class="btn btn-link btn-primary btn-lg" data-toggle="modal" data-target="#addRowModal" data-original-title="Edit Task">
-                                                    <i class="fa fa-edit"></i>
-                                                </button>
-                                                <button type="button" id="alert_demo_8" class="btn btn-link btn-danger" data-original-title="Remove">
-                                                    <i class="fa fa-times"></i>
-                                                </button>
+                                                <a href="{{ route('products.edit', $produk->slug) }}" class="btn btn-success btn-sm mr-2">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                    <form action="{{ route('products.destroy', $produk->id) }}" method="POST" class="d-inline">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button class="btn btn-danger btn-sm">
+                                                        <i class="fa fa-trash"></i>
+                                                    </button>
+                                            </form>
                                             </div>
                                         </td>
                                     </tr>

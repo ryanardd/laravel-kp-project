@@ -29,8 +29,8 @@
                     </li>
                     <li class="dropdown"><a href="#"><span>Marketplace</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
-                            <li><a href="https://shopee.co.id/murahkomofficial">Shopee</a></li>
-                            <li><a href="https://www.tokopedia.com/murahkomofficial">Tokopedia</a></li>
+                            <li><a href="https://shopee.co.id/murahkomofficial" target="blank">Shopee</a></li>
+                            <li><a href="https://www.tokopedia.com/murahkomofficial" target="blank">Tokopedia</a></li>
                         </ul>
                     </li>
                     <li><a href="#about">About</a></li>

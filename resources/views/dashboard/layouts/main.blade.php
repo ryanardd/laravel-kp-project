@@ -29,9 +29,9 @@
 </head>
 <body data-background-color="light">
 	<div class="wrapper">
-@include('dashboard.layouts.includes.header')
+        @include('dashboard.layouts.includes.header')
 		<!-- Sidebar -->
-@include('dashboard.layouts.includes.sidebar')
+        @include('dashboard.layouts.includes.sidebar')
 		<!-- End Sidebar -->
 		<div class="main-panel">
 		  @yield('content')
