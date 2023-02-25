@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('nama_produk');
             $table->string('slug');
             $table->integer('harga');
+            $table->integer('stok');
             $table->string('gambar_produk')->nullable();
             $table->text('deskripsi');
             $table->boolean('is_active');

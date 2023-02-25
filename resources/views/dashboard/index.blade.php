@@ -91,9 +91,9 @@
                                                 @foreach ($produk as $row)
                                                     <tr>
                                                         <td>{{ $loop->iteration }}</td>
-                                                        <td>System Architect</td>
-                                                        <td>Edinburgh</td>
-                                                        <td>61</td>
+                                                        <td>{{ $row->nama_produk }}</td>
+                                                        <td>Rp. {{ number_format($row->harga, 0, ',','.') }}</td>
+                                                        <td>{{ $row->category->nama_category }}</td>
                                                         <td>2011/04/25</td>
                                                     </tr>
                                                 @endforeach
