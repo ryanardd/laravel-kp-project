@@ -54,7 +54,7 @@
                             <label for="category">Kategori</label>
                             <select name="category_id" class="form-control">
                                 @foreach ($kategori as $row)
-                                    <option value="{{ $row -> id }}"> {{ $row->nama_category }}</option>
+                                    <option value="{{ $row->id }}"> {{ $row->nama_category }}</option>
                                 @endforeach
                             </select>
                         </div>

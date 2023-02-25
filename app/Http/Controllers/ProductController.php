@@ -75,9 +75,15 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($slug)
+    public function edit($id)
     {
-        dd($slug);
+        $product = Produk::find($id);
+        $kategori = Category::all();
+
+        return view('dashboard.product.edit', [
+            'produk' => $product,
+            'kategori' => $kategori
+        ]);
     }
 
     /**
@@ -87,9 +93,33 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
-        //
+        if(empty($request->file('gambar_produk'))){
+
+            $produk = Produk::find($slug);
+            $produk -> update([
+                'nama_produk' => $request->nama_produk,
+                'slug' => Str::slug($request->nama_produk),
+                'deskripsi' => $request->deskripsi,
+                'category_id' => $request->category_id,
+                'is_active' => $request->is_active,
+            ]);
+
+            return redirect()->route('products.index')->with(['success' => 'Data Berhasi Diupdate']);
+        } else {
+            $produk = Produk::where('slug', $slug);
+            // Storage::delete($produk->gambar_produk);
+            $produk -> update([
+                'nama_produk' => $request->nama_produk,
+                'slug' => Str::slug($request->nama_produk),
+                'deskripsi' => $request->deskripsi,
+                'category_id' => $request->category_id,
+                'is_active' => $request->is_active,
+                'gambar_artikel' => $request -> file('gambar_artikel')->store('img/artikel')
+            ]);
+            return redirect()->route('products.index')->with(['success' => 'Data Berhasi Diupdate']);
+        }
     }
 
     /**

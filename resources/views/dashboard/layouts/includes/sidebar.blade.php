@@ -9,8 +9,6 @@
                            {{  Auth::user()->name }}
                         </span>
                     </a>
-
-
                 </div>
             </div>
             <ul class="nav nav-primary">
@@ -42,10 +40,10 @@
 
                 <li class="nav-item">
                     <a href="{{ url('/logout') }}"
-                        {{-- {{-- onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit()"> --}}
+                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit()">
                         <i class="fas fa-undo"></i>
-                        {{ __('Logout') }}
+                        <p>Logout</p>
                     </a>
                     <form id="logout-form" action="{{ url('/logout') }}" method="POST" class="d-none">
                         @csrf

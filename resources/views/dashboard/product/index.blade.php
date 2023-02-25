@@ -60,7 +60,7 @@
                                         <td>Edinburgh</td>
                                         <td>
                                             <div class="form-button-action">
-                                                <a href="{{ route('products.edit', $produk->slug) }}" class="btn btn-success btn-sm mr-2">
+                                                <a href="{{ route('products.edit', $produk->id) }}" class="btn btn-success btn-sm mr-2">
                                                     <i class="fas fa-edit"></i>
                                                 </a>
                                                     <form action="{{ route('products.destroy', $produk->id) }}" method="POST" class="d-inline">
