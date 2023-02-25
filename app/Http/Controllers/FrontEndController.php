@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class FrontEndController extends Controller
 {
     public function index() {
-        return view('home', [
+        return view('frontend.home', [
             "product" => Produk::all()
         ]);
     }

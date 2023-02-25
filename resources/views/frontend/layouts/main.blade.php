@@ -28,13 +28,14 @@
 
 <body>
 
-    @include('partials/navbar')
+    @include('frontend.partials/navbar')
 
     @yield('container')
 
 
-    @include('partials/footer')
+    @include('frontend.partials.footer')
 
+<<<<<<< HEAD:resources/views/layouts/main.blade.php
 
     <a href="#" class="scroll-top d-flex align-items-center justify-content-center">
         <i class="bi bi-arrow-up-short"></i>
@@ -54,6 +55,18 @@
 
         <script src="assets/js/main.js"></script>
 
+=======
+    <script>
+    // <!-- Vendor JS Files -->
+    <script src = "assets/vendor/bootstrap/js/bootstrap.bundle.min.js" ></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/js/main.js"></script>
+    </script>
+>>>>>>> login:resources/views/frontend/layouts/main.blade.php
 </body>
 
 </html>

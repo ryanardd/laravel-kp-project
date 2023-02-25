@@ -9,8 +9,13 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
+<<<<<<< HEAD:resources/views/partials/navbar.blade.php
                     <li><a href="/home">Home</a></li>
                     <li><a href="/product">Product</a>
+=======
+                    <li><a href="/">Home</a></li>
+                    <li><a href="product">Product</a>
+>>>>>>> login:resources/views/frontend/partials/navbar.blade.php
                         {{-- <ul>
                             <li class="dropdown"><a href="#"><span>Lapotp</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                                 <ul>
@@ -29,17 +34,38 @@
                     </li>
                     <li class="dropdown"><a href="#"><span>Marketplace</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
-                            <li><a href="#">Shopee</a></li>
-                            <li><a href="#">Tokopedia</a></li>
+                            <li><a href="https://shopee.co.id/murahkomofficial" target="blank">Shopee</a></li>
+                            <li><a href="https://www.tokopedia.com/murahkomofficial" target="blank">Tokopedia</a></li>
                         </ul>
                     </li>
+<<<<<<< HEAD:resources/views/partials/navbar.blade.php
                     <li><a href="/contact">Contact</a></li>
+=======
+                    <li><a href="#about">About</a></li>
+
+
+                    @auth
+                        <li class="dropdown"><a href="#"><span>Dashboard</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                            <ul>
+                                <li><a href="/dashboard">My Dashboard</a></li>
+
+                                <form action="/logout" method="post">
+                                    @csrf
+                                    <button type="submit">
+                                        logout
+                                    </button>
+                                </form>
+                            </ul>
+                        </li>
+                    @endauth
+
+>>>>>>> login:resources/views/frontend/partials/navbar.blade.php
                 </ul>
             </nav><!-- .navbar -->
-    
+
         {{-- <a class="btn-book-a-table" href="#book-a-table">Book a Table</a> --}}
         <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
         <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-    
+
         </div>
     </header><!-- End Header Navbar -->

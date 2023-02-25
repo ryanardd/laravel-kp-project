@@ -1,4 +1,9 @@
+<<<<<<< HEAD:resources/views/home.blade.php
 @extends('layouts/main')
+=======
+@extends('frontend.layouts.main')
+
+>>>>>>> login:resources/views/frontend/home.blade.php
 @section('container')
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="hero d-flex align-items-center section-bg">
@@ -79,9 +84,14 @@
                 <h2>Service Us</h2>
                 <p>Learn More <span>Service Us</span></p>
             </div>
+<<<<<<< HEAD:resources/views/home.blade.php
             <div class="row ">
 
                 <div class="col-xl why-box" data-aos="fade-up" data-aos-delay="200">
+=======
+            <div class="row gap-4">
+                <div class="col-xl why-box" data-aos="fade-right" data-aos-delay="200">
+>>>>>>> login:resources/views/frontend/home.blade.php
                     <div class="icon-box p-2 d-flex flex-column justify-content-center align-items-center">
                         <i class="bi bi-patch-check"></i>
                         <h4>Pelayanan Terbaik</h4>
