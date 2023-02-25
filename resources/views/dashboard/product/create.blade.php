@@ -15,11 +15,11 @@
 				<div class="card-header">
 					<div class="card-head-row">
 						<div class="card-title">Form Artikel</div>
-                        <a href="{{ route('artikel.index') }}" class="btn btn-warning btn-sm ml-auto"> Back</a>
+                        <a href="" class="btn btn-warning btn-sm ml-auto"> Back</a>
 					</div>
 				</div>
 				<div class="card-body">
-                    <form method="post" action="{{ route('artikel.store') }}" enctype="multipart/form-data">
+                    <form method="post" action="" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="Kategori">Judul Artikel</label>

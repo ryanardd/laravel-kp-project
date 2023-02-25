@@ -1,4 +1,4 @@
-@extends('dashboard/layout/main')
+@extends('dashboard/layouts/main')
 @section('content')
 			<div class="content">
 				<div class="page-inner">
