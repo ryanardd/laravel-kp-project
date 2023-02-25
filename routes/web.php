@@ -49,8 +49,23 @@ Route::get('/', [FrontEndController::class, 'index'])->name('home');
 
 Route::get('/product', [FrontEndController::class, 'product'])->name('product');
 
+
 // halaman detail product
 Route::get('/product/{produk:slug}', [FrontEndController::class, 'showProduct']);
+
+
+
+Route::get('/contoh', function () {
+    return view('contoh');
+});
+
+Route::get('/template', function () {
+    return view('template');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
 
 // // halaman category
 // Route::get('category/', [FrontEndController::class, 'category']);
