@@ -16,56 +16,18 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/login', function () {
-//     return view('dashboard/login');
-// });
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard/landing');
-// })->middleware('auth');
-
-Route::get('/form', function () {
-    return view('dashboard/form');
-});
-
-Route::get('/post', function () {
-    return view('dashboard/post');
-});
-
-Route::get('/category', function () {
-    return view('dashboard/category');
-});
-
-Route::get('/slide', function () {
-    return view('dashboard/slide');
-});
 
 Route::get('/', [FrontEndController::class, 'index'])->name('home');
 // Route::get('/contact-us', [FrontEndController::class, 'contactUs'])->name('contact-us');
 
 Route::get('/product', [FrontEndController::class, 'product'])->name('product');
 
+// halaman contact
+Route::get('/contact-us', [FrontEndController::class, 'contactUs']);
 
 // halaman detail product
 Route::get('/product/{produk:slug}', [FrontEndController::class, 'showProduct']);
 
-
-
-Route::get('/contoh', function () {
-    return view('contoh');
-});
-
-Route::get('/template', function () {
-    return view('template');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
 
 // // halaman category
 // Route::get('category/', [FrontEndController::class, 'category']);

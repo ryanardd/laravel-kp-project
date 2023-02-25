@@ -1,20 +1,20 @@
-@extends('layouts/main')
+@extends('frontend.layouts.main')
 
 @section('container')
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
         <div class="container" data-aos="fade-up">
-  
+
           <div class="section-header">
               <p>Contact</p>
             <h2>Need Help? Contact Us</h2>
           </div>
-  
+
           <div class="row gx-lg-0 gy-4">
-  
+
             <div class="col-lg-4">
-  
+
               <div class="info-container d-flex flex-column align-items-center justify-content-center">
                 <div class="info-item d-flex">
                   <i class="bi bi-geo-alt flex-shrink-0"></i>
@@ -23,7 +23,7 @@
                     <p>A108 Adam Street, New York, NY 535022</p>
                   </div>
                 </div><!-- End Info Item -->
-  
+
                 <div class="info-item d-flex">
                   <i class="bi bi-envelope flex-shrink-0"></i>
                   <div>
@@ -31,7 +31,7 @@
                     <p>info@example.com</p>
                   </div>
                 </div><!-- End Info Item -->
-  
+
                 <div class="info-item d-flex">
                   <i class="bi bi-phone flex-shrink-0"></i>
                   <div>
@@ -39,7 +39,7 @@
                     <p>+1 5589 55488 55</p>
                   </div>
                 </div><!-- End Info Item -->
-  
+
                 <div class="info-item d-flex">
                   <i class="bi bi-clock flex-shrink-0"></i>
                   <div>
@@ -48,9 +48,9 @@
                   </div>
                 </div><!-- End Info Item -->
               </div>
-  
+
             </div>
-  
+
             <div class="col-lg-8">
               <form action="forms/contact.php" method="post" role="form" class="php-email-form">
                 <div class="row">
@@ -75,10 +75,10 @@
                 <div class="text-center"><button type="submit">Send Message</button></div>
               </form>
             </div><!-- End Contact Form -->
-  
+
           </div>
-  
+
         </div>
       </section><!-- End Contact Section -->
-    
+
 @endsection

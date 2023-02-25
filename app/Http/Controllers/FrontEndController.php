@@ -15,7 +15,7 @@ class FrontEndController extends Controller
     }
 
     public function product() {
-        return view('product', [
+        return view('frontend.product', [
             "products" => Produk::with('category')->latest()->get(),
         ]);
     }
@@ -37,6 +37,6 @@ class FrontEndController extends Controller
     }
 
     public function contactUs() {
-        return view('FrontEnd.kontak');
+        return view('frontend.contact');
     }
 }

@@ -9,28 +9,9 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-<<<<<<< HEAD:resources/views/partials/navbar.blade.php
-                    <li><a href="/home">Home</a></li>
-                    <li><a href="/product">Product</a>
-=======
+
                     <li><a href="/">Home</a></li>
-                    <li><a href="product">Product</a>
->>>>>>> login:resources/views/frontend/partials/navbar.blade.php
-                        {{-- <ul>
-                            <li class="dropdown"><a href="#"><span>Lapotp</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                                <ul>
-                                    <li><a href="#">Asus</a></li>
-                                    <li><a href="#">HP</a></li>
-                                    <li><a href="#">ROG</a></li>
-                                    <li><a href="#">Lenovo</a></li>
-                                    <li><a href="#">MSI</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Mouse</a></li>
-                            <li><a href="#">Casing</a></li>
-                            <li><a href="#">Monitor</a></li>
-                            <li><a href="#">SSD</a></li>
-                        </ul> --}}
+                    <li><a href="/product">Product</a>
                     </li>
                     <li class="dropdown"><a href="#"><span>Marketplace</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
@@ -38,10 +19,8 @@
                             <li><a href="https://www.tokopedia.com/murahkomofficial" target="blank">Tokopedia</a></li>
                         </ul>
                     </li>
-<<<<<<< HEAD:resources/views/partials/navbar.blade.php
-                    <li><a href="/contact">Contact</a></li>
-=======
-                    <li><a href="#about">About</a></li>
+
+                    <li><a href="/contact-us">Contant</a></li>
 
 
                     @auth
@@ -59,7 +38,7 @@
                         </li>
                     @endauth
 
->>>>>>> login:resources/views/frontend/partials/navbar.blade.php
+
                 </ul>
             </nav><!-- .navbar -->
 
