@@ -933,6 +933,9 @@ section {
 .menu .tab-content .menu-item {
     -moz-text-align-last: center;
     text-align-last: center;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .menu .tab-content .menu-item .menu-img {

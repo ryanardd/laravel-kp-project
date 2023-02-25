@@ -171,17 +171,20 @@
             <div class="tab-pane fade active show" id="all">
 
               {{-- Items --}}
-              <div class="row gy-5">
+              <div class="row gy-5 p-2">
 
                 @foreach ($product->take(3) as $produk)
-                <div class="col-lg-4 menu-item">
+                <div class="col-lg-4">
+                  <div class="menu-item p-2">
                     <a href="" class="">
                       <img src="assets/img/hero-img.png" class="menu-img img-fluid" alt="">
                     </a>
                       <a href="/product/{{ $produk->slug }}"><h4>{{ $produk->nama_produk }}</h4></a>
                       <p class="price">
-                      Rp. {{ number_format($produk->harga, 0, ',', '.') }}
+                        Rp. {{ number_format($produk->harga, 0, ',', '.') }}
                       </p>
+                      <div class="btn btn-dark mt-2 d-flex justify-content-center"><a class="text-white" href="/product/{{ $produk->slug }}">Read More</a></div>
+                    </div>
                   </div>
                 @endforeach
 
