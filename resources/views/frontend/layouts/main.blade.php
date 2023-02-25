@@ -28,7 +28,7 @@
 
 <body>
 
-    @include('partials/navbar')
+    @include('frontend.partials/navbar')
 
     <section id="hero" class="hero d-flex align-items-center section-bg">
         <div class="container">
@@ -111,19 +111,16 @@
     </div>
 
 
-    @include('partials/footer')
+    @include('frontend.partials.footer')
 
     <script>
-        // <!-- Vendor JS Files -->
-        <
-        script src = "assets/vendor/bootstrap/js/bootstrap.bundle.min.js" >
-    </script>
+    // <!-- Vendor JS Files -->
+    <script src = "assets/vendor/bootstrap/js/bootstrap.bundle.min.js" ></script>
     <script src="assets/vendor/aos/aos.js"></script>
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
-
     <script src="assets/js/main.js"></script>
     </script>
 </body>

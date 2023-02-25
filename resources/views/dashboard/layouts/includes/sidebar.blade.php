@@ -27,7 +27,7 @@
                     <h4 class="text-section">Components</h4>
                 </li>
                 <li class="nav-item  {{ request()->is('product') ? 'active' : ''}}">
-                    <a href="{{ url('/product') }}">
+                    <a href="{{ route('products.index') }}">
                         <i class="fas fa-desktop"></i>
                         <p>Product</p>
                     </a>

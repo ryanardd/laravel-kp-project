@@ -1,4 +1,4 @@
-@extends('/dashboard/layout/main')
+@extends('dashboard.layouts.main')
 
 @section('content')
 
@@ -14,39 +14,56 @@
 			<div class="card full-height">
 				<div class="card-header">
 					<div class="card-head-row">
-						<div class="card-title">Form Artikel</div>
-                        <a href="" class="btn btn-warning btn-sm ml-auto"> Back</a>
+						<div class="card-title">From Product</div>
+                        <a href="{{ route('products.index') }}" class="btn btn-primary btn-sm ml-auto">Back to Product</a>
 					</div>
 				</div>
 				<div class="card-body">
-                    <form method="post" action="" enctype="multipart/form-data">
+                    <form method="Post" action="{{ route('products.store') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label for="Kategori">Judul Artikel</label>
-                            <input type="text" name="judul" class="form-control" id="text" placeholder="Masukan Judul Artikel" required value="{{ old('judul') }}">
-							@error('judul')
-							<div class="text-danger">Mohon diisi</div>
+                            <label for="nama_produk">Nama Produk</label>
+                            <input type="text" name="nama_produk" class="form-control" placeholder="Masukan Nama Produk" id="nama_produk" value="{{ old('nama_produk') }}">
+							@error('nama_produk')
+							<div class="text-danger mt-2">
+                                Nama Produk harus di isi!
+                            </div>
 							@enderror
                         </div>
 
                         <div class="form-group">
-                            <label for="Kategori">Body</label>
-                            <textarea name="body" class="form-control" id="paw"> </textarea>
+                            <label for="harga">Harga Produk</label>
+                            <input type="number" name="harga" class="form-control" value="{{ old('harga') }}">
+                            @error('harga')
+							<div class="text-danger mt-2">
+                                harga Produk harus di isi!
+                            </div>
+							@enderror
                         </div>
 
                         <div class="form-group">
-                            <label for="Kategori">Kategori</label>
-                            <select name="kategori_id" class="form-control">
+                            <label for="deskripsi" value="{{ old('harga') }}">Deskripsi Produk</label>
+                            <textarea name="deskripsi" class="form-control" id="deskripsi"></textarea>
+                            @error('deskripsi')
+							<div class="text-danger mt-2">
+                                Deskripsi Produk harus di isi!
+                            </div>
+							@enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="category">Kategori</label>
+                            <select name="category_id" class="form-control">
                                 @foreach ($kategori as $row)
-                                    <option value="{{ $row -> id }}"> {{ $row->nama_kategori }}</option>
+                                    <option value="{{ $row -> id }}"> {{ $row->nama_category }}</option>
                                 @endforeach
                             </select>
                         </div>
 
-                        <div class="form-group">
-                            <label for="gambar">Gambar Artikel</label>
-                            <input type="file" name="gambar_artikel" class="form-control">
-                        </div>
+                        {{-- <div class="form-group">
+                            <label for="gambar">Gambar Produk</label>
+                            <input type="file" name="gambar" class="form-control">
+                        </div> --}}
 
                         <div class="form-group">
                             <label for="status">Status</label>
@@ -65,9 +82,4 @@
 		</div>
 	</div>
 </div>
-
-
-
-
-
 @endsection

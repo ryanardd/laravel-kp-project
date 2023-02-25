@@ -1,4 +1,4 @@
-@extends('layouts/main')
+@extends('frontend.layouts.main')
 
 @section('container')
     {{-- Service --}}
@@ -9,7 +9,6 @@
                 <p>Learn More <span>Service Us</span></p>
             </div>
             <div class="row gap-4">
-
                 <div class="col-xl why-box" data-aos="fade-right" data-aos-delay="200">
                     <div class="icon-box p-2 d-flex flex-column justify-content-center align-items-center">
                         <i class="bi bi-patch-check"></i>

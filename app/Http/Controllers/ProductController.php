@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produk;
+use App\Models\Category;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -27,7 +29,7 @@ class ProductController extends Controller
     public function create()
     {
         return view('dashboard.product.create', [
-            'product' => Produk::all()
+            'kategori' => Category::all()
         ]);
     }
 
@@ -39,7 +41,21 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nama_produk' => 'required',
+            'harga' => 'required:decimal',
+            'deskripsi' => 'required'
+        ]);
+
+        $data = $request->all();
+            $data['slug'] = Str::slug($request->nama_produk, '-');
+            // $data['gambar_produk'] = $request -> file('gambar_produk')->store('img/artikel');
+            $data['views'] = 0;
+
+        // dd($data);
+        Produk::create($data);
+
+        return redirect()->route('products.index')->with(['success' => 'Data Berhasi tersimpan']);
     }
 
     /**

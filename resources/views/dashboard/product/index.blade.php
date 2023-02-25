@@ -25,14 +25,19 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="align-items-center">
-                            {{-- <h4 class="card-title">Add Row</h4> --}}
-                            <a href="{{ url('/product/create') }}">
+
+                            <a href="{{ route('products.create') }}" class="btn btn-primary btn-sm ml-auto">
                                 <i class="fa fa-plus"></i>
                                 Create data
                             </a>
                         </div>
                     </div>
                     <div class="card-body">
+                        @if (Session::has('success'))
+                            <div class="alert alert-primary">
+                                {{ Session('success') }}
+                            </div>
+                        @endif
                         <div class="table-responsive">
                             <table id="add-row" class="display table table-striped table-hover">
                                 <thead>

@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             "harga" => 6500000,
             "deskripsi" => "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea dolore inventore, necessitatibus consectetur autem debitis, dicta, quidem accusantium fuga nisi molestiae provident maiores! Aperiam sequi optio facilis officiis, similique ad expedita quis doloribus? Similique dolore numquam iusto! Maiores sit atque labore hic unde numquam architecto temporibus harum perspiciatis ipsam voluptas dolorum, autem eos quis, placeat blanditiis. Tenetur atque consequuntur molestiae hic, voluptas laborum odit dignissimos quod repellat autem amet ex quas reprehenderit illum quam similique, maiores velit deleniti facilis alias blanditiis, non praesentium veritatis dolor? Cumque omnis facilis enim, quaerat quidem, soluta sit atque minima ab, nesciunt earum beatae repudiandae?",
             "is_active" => 1,
+            "views" => 0,
             "category_id" => 1,
         ]);
 
@@ -39,6 +40,7 @@ class DatabaseSeeder extends Seeder
             "harga" => 6199000,
             "deskripsi" => "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea dolore inventore, necessitatibus consectetur autem debitis, dicta, quidem accusantium fuga nisi molestiae provident maiores! Aperiam sequi optio facilis officiis, similique ad expedita quis doloribus? Similique dolore numquam iusto! Maiores sit atque labore hic unde numquam architecto temporibus harum perspiciatis ipsam voluptas dolorum, autem eos quis, placeat blanditiis. Tenetur atque consequuntur molestiae hic, voluptas laborum odit dignissimos quod repellat autem amet ex quas reprehenderit illum quam similique, maiores velit deleniti facilis alias blanditiis, non praesentium veritatis dolor? Cumque omnis facilis enim, quaerat quidem, soluta sit atque minima ab, nesciunt earum beatae repudiandae?",
             "is_active" => 1,
+            "views" => 0,
             "category_id" => 1,
         ]);
 
@@ -48,6 +50,7 @@ class DatabaseSeeder extends Seeder
             "harga" => 8999000,
             "deskripsi" => "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea dolore inventore, necessitatibus consectetur autem debitis, dicta, quidem accusantium fuga nisi molestiae provident maiores! Aperiam sequi optio facilis officiis, similique ad expedita quis doloribus? Similique dolore numquam iusto! Maiores sit atque labore hic unde numquam architecto temporibus harum perspiciatis ipsam voluptas dolorum, autem eos quis, placeat blanditiis. Tenetur atque consequuntur molestiae hic, voluptas laborum odit dignissimos quod repellat autem amet ex quas reprehenderit illum quam similique, maiores velit deleniti facilis alias blanditiis, non praesentium veritatis dolor? Cumque omnis facilis enim, quaerat quidem, soluta sit atque minima ab, nesciunt earum beatae repudiandae?",
             "is_active" => 1,
+            "views" => 0,
             "category_id" => 2,
         ]);
 
@@ -57,6 +60,7 @@ class DatabaseSeeder extends Seeder
             "harga" => 11999000,
             "deskripsi" => "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea dolore inventore, necessitatibus consectetur autem debitis, dicta, quidem accusantium fuga nisi molestiae provident maiores! Aperiam sequi optio facilis officiis, similique ad expedita quis doloribus? Similique dolore numquam iusto! Maiores sit atque labore hic unde numquam architecto temporibus harum perspiciatis ipsam voluptas dolorum, autem eos quis, placeat blanditiis. Tenetur atque consequuntur molestiae hic, voluptas laborum odit dignissimos quod repellat autem amet ex quas reprehenderit illum quam similique, maiores velit deleniti facilis alias blanditiis, non praesentium veritatis dolor? Cumque omnis facilis enim, quaerat quidem, soluta sit atque minima ab, nesciunt earum beatae repudiandae?",
             "is_active" => 1,
+            "views" => 0,
             "category_id" => 2,
         ]);
 
