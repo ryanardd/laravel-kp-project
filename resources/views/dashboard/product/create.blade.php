@@ -31,6 +31,11 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="slug">Slug</label>
+                            <input type="text" name="slug" class="form-control" id="slug" disabled readonly>
+                        </div>
+
+                        <div class="form-group">
                             <label for="harga">Harga Produk</label>
                             <input type="number" name="harga" class="form-control" value="{{ old('harga') }}">
                             @error('harga')
@@ -41,13 +46,19 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="deskripsi" value="{{ old('harga') }}">Deskripsi Produk</label>
-                            <textarea name="deskripsi" class="form-control" id="deskripsi"></textarea>
-                            @error('deskripsi')
+                            <label for="stok">Stok Produk</label>
+                            <input type="number" name="stok" class="form-control" value="{{ old('stok') }}">
+                            @error('stok')
 							<div class="text-danger mt-2">
-                                Deskripsi Produk harus di isi!
+                                Stok Produk harus di isi!
                             </div>
 							@enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="deskripsi" value="{{ old('harga') }}">Deskripsi Produk</label>
+                            <input id="deskripsi" type="hidden" name="deskripsi">
+                            <trix-editor input="deskripsi"></trix-editor>
                         </div>
 
                         <div class="form-group">
@@ -81,4 +92,19 @@
 		</div>
 	</div>
 </div>
+
+<script>
+    const title = document.querySelector('#nama_produk');
+    const slug = document.querySelector('#slug');
+
+    title.addEventListener('change', function () {
+        fetch('/dashboard/products/checkSlug?title=' + title.value)
+        .then(response => response.json())
+        .then(data => slug.value = data.slug)
+    });
+
+    document.addEventListener('trix-file-accept', function(e) {
+        e.preventDefault();
+    })
+</script>
 @endsection

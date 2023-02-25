@@ -6,6 +6,17 @@
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="{{ asset('assets/img/icon.ico') }}" type="image/x-icon"/>
 
+	{{-- text trix editor --}}
+	<link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
+
+	{{-- text trix editor --}}
+	<script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script> 
+	<style>
+		trix-toolbar [data-trix-button-group="file-tools"] {
+			display: none;
+		}
+	</style>
+
 	<!-- Fonts and icons -->
 	<script src="{{ asset('assets/js/plugin/webfont/webfont.min.js') }}"></script>
     <script src="{{ asset('asset/js/ckeditor.js') }}" defer></script>

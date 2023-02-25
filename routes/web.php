@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Produk;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
@@ -41,12 +42,17 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
+// route menangani slug otomatis
+Route::get('/dashboard/products/checkSlug', [ProductController::class, 'checkSlug'])->middleware('auth');
+
 // Halaman dashboard
 Route::get('/dashboard', function()
 {
     return view('dashboard.index', [
 
-        'produk' => Produk::all()->where('is_active', 0)
+        'is_active' => Produk::all()->where('is_active', 0),
+        'products' => Produk::count(),
+        'categories' => Category::count(),
     ]);
 })->middleware('auth');
 

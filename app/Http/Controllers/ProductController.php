@@ -6,6 +6,7 @@ use App\Models\Produk;
 use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
 
 class ProductController extends Controller
 {
@@ -48,11 +49,10 @@ class ProductController extends Controller
         ]);
 
         $data = $request->all();
-            $data['slug'] = Str::slug($request->nama_produk, '-');
             // $data['gambar_produk'] = $request -> file('gambar_produk')->store('img/artikel');
             $data['views'] = 0;
 
-        // dd($data);
+        // dd($data); 
         Produk::create($data);
 
         return redirect()->route('products.index')->with(['success' => 'Data Berhasi tersimpan']);
@@ -133,5 +133,11 @@ class ProductController extends Controller
         $produk = Produk::find($id);
         $produk->delete();
         return redirect(route('products.index'))->with(['success' => 'Data Berhasi Terhapus']);
+    }
+
+    public function checkSlug(Request $request)
+    {
+        $slug = SlugService::createSlug(Produk::class, 'slug', $request->title);
+        return response()->json(['slug' => $slug]);
     }
 }

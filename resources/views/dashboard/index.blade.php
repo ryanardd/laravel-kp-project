@@ -17,8 +17,8 @@
 										</div>
 										<div class="col-7 col-stats">
 											<div class="numbers">
-												<p class="card-category">Product</p>
-												<h4 class="card-title">1,294</h4>
+												<p class="card-category">All Product</p>
+												<h4 class="card-title">{{ $products }}</h4>
 											</div>
 										</div>
 									</div>
@@ -36,8 +36,8 @@
 										</div>
 										<div class="col-7 col-stats">
 											<div class="numbers">
-												<p class="card-category">Category</p>
-												<h4 class="card-title">1,294</h4>
+												<p class="card-category">All Category</p>
+												<h4 class="card-title">{{ $categories }}</h4>
 											</div>
 										</div>
 									</div>
@@ -88,7 +88,7 @@
 												</tr>
 											</thead>
 											<tbody>
-                                                @foreach ($produk as $row)
+                                                @foreach ($is_active as $row)
                                                     <tr>
                                                         <td>{{ $loop->iteration }}</td>
                                                         <td>{{ $row->nama_produk }}</td>
