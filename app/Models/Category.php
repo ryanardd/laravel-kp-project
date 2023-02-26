@@ -9,10 +9,7 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $fillabel = [
-        'nama_category',
-        'slug'
-    ];
+    protected $guarded = ['id'];
 
     public function product()
     {

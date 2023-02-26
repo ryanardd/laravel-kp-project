@@ -44,7 +44,8 @@ class ProductController extends Controller
     {
         $this->validate($request, [
             'nama_produk' => 'required',
-            'harga' => 'required:decimal',
+            'harga' => 'required|digits_between:1,12',
+            'stok' => 'required|digits_between:1,5',
             'deskripsi' => 'required'
         ]);
 
@@ -52,7 +53,7 @@ class ProductController extends Controller
             // $data['gambar_produk'] = $request -> file('gambar_produk')->store('img/artikel');
             $data['views'] = 0;
 
-        // dd($data); 
+        // dd($data);
         Produk::create($data);
 
         return redirect()->route('products.index')->with(['success' => 'Data Berhasi tersimpan']);
@@ -93,14 +94,23 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $slug)
+    public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'nama_produk' => 'required',
+            'harga' => 'required|digits_between:1,12',
+            'stok' => 'required|digits_between:1,5',
+            'deskripsi' => 'required'
+        ]);
+
         if(empty($request->file('gambar_produk'))){
 
-            $produk = Produk::find($slug);
-            $produk -> update([
+            $produk = Produk::find($id);
+            $produk->update([
                 'nama_produk' => $request->nama_produk,
                 'slug' => Str::slug($request->nama_produk),
+                'harga' => $request->harga,
+                'stok' => $request->stok,
                 'deskripsi' => $request->deskripsi,
                 'category_id' => $request->category_id,
                 'is_active' => $request->is_active,
@@ -108,11 +118,13 @@ class ProductController extends Controller
 
             return redirect()->route('products.index')->with(['success' => 'Data Berhasi Diupdate']);
         } else {
-            $produk = Produk::where('slug', $slug);
+            $produk = Produk::find($id);
             // Storage::delete($produk->gambar_produk);
             $produk -> update([
                 'nama_produk' => $request->nama_produk,
                 'slug' => Str::slug($request->nama_produk),
+                'harga' => $request->harga,
+                'stok' => $request->stok,
                 'deskripsi' => $request->deskripsi,
                 'category_id' => $request->category_id,
                 'is_active' => $request->is_active,

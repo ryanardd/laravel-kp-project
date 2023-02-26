@@ -1,11 +1,9 @@
 @extends('dashboard.layouts.main')
 
-
 @section('content')
-<div class="panel-header bg-primary-gradient mt-2">
+<div class="panel-header bg-primary-gradient mt-5">
 	<div class="page-inner py-5">
 		<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
-
 		</div>
 	</div>
 </div><div class="page-inner mt--5">
@@ -14,27 +12,58 @@
 			<div class="card full-height">
 				<div class="card-header">
 					<div class="card-head-row">
-						<div class="card-title">Edit Produk</div>
-                        <a href="{{ route('products.index') }}" class="btn btn-warning btn-sm ml-auto">Back</a>
+						<div class="card-title">Edit Product</div>
+                        <a href="{{ route('products.index') }}" class="btn btn-primary btn-sm ml-auto">Back to Product</a>
 					</div>
 				</div>
 				<div class="card-body">
-                    <form method="post" action="{{ route('products.update', $produk->id) }}" enctype="multipart/form-data">
+                    <form method="Post" action="{{ route('products.update', $produk->id) }}" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="form-group">
                             <label for="nama_produk">Nama Produk</label>
-                            <input type="text" name="nama_produk" class="form-control" id="text" value="{{ $produk->nama_produk }}">
+                            <input type="text" name="nama_produk" class="form-control" placeholder="Masukan Nama Produk" id="nama_produk" value="{{ $produk->nama_produk }}">
 							@error('nama_produk')
-							<div class="text-danger">
+							<div class="text-danger mt-2">
                                 Nama Produk harus di isi!
                             </div>
 							@enderror
                         </div>
 
                         <div class="form-group">
-                            <label for="deskripsi">Body</label>
-                            <textarea name="deskripsi" id="paw" class="form-control">{{ $produk->deskripsi }}</textarea>
+                            <label for="slug">Slug</label>
+                            <input type="text" name="slug" class="form-control" id="slug" disabled readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="harga">Harga Produk</label>
+                            <input type="number" name="harga" class="form-control" value="{{ $produk->harga }}">
+                            @error('harga')
+							<div class="text-danger mt-2">
+                                harga Produk harus di isi!
+                            </div>
+							@enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="stok">Stok Produk</label>
+                            <input type="number" name="stok" class="form-control" value="{{ $produk->stok }}">
+                            @error('stok')
+							<div class="text-danger mt-2">
+                                Stok Produk harus di isi! Max 5 Digit
+                            </div>
+							@enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="deskripsi">Deskripsi Produk</label>
+                            <input id="deskripsi" type="hidden" name="deskripsi">
+                            <trix-editor input="deskripsi">{{ $produk->deskripsi }}</trix-editor>
+                            @error('deskripsi')
+							<div class="text-danger mt-2">
+                                Deskripsi Produk harus di isi!
+                            </div>
+							@enderror
                         </div>
 
                         <div class="form-group">
@@ -53,16 +82,15 @@
                                 <option value="1" {{ $produk->is_active == '1' ? 'selected' : ''}}>
                                     Publish
                                 </option>
-                                <option value="0" {{ $produk->is_active == '0' ? 'selected' : ''}}>Draft</option>
+                                <option value="0" {{ $produk->is_active == '0' ? 'selected' : ''}}>
+                                    Draft
+                                </option>
                             </select>
                         </div>
 
                         {{-- <div class="form-group">
-                            <label for="gambar">Gambar Artikel</label>
-                            <input type="file" name="gambar_artikel" class="form-control">
-                            <br>
-                            <label for="gambar">Gambar Saat Ini</label><br>
-                            <img src=" {{ $produk->gambar }}" alt="Gambar" width="300">
+                            <label for="gambar">Gambar Produk</label>
+                            <input type="file" name="gambar" class="form-control">
                         </div> --}}
 
                         <div class="form-group">
@@ -74,4 +102,19 @@
 		</div>
 	</div>
 </div>
+
+<script>
+    const title = document.querySelector('#nama_produk');
+    const slug = document.querySelector('#slug');
+
+    title.addEventListener('change', function () {
+        fetch('/dashboard/products/checkSlug?title=' + title.value)
+        .then(response => response.json())
+        .then(data => slug.value = data.slug)
+    });
+
+    document.addEventListener('trix-file-accept', function(e) {
+        e.preventDefault();
+    })
+</script>
 @endsection

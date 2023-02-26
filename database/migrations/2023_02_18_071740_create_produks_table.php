@@ -19,7 +19,7 @@ return new class extends Migration
             // $table->foreignId('review_id');
             $table->string('nama_produk');
             $table->string('slug');
-            $table->integer('harga');
+            $table->string('harga');
             $table->integer('stok');
             $table->string('gambar_produk')->nullable();
             $table->text('deskripsi');

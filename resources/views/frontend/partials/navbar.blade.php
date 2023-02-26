@@ -20,7 +20,7 @@
                         </ul>
                     </li>
 
-                    <li><a href="/contact-us">Contant</a></li>
+                    <li><a href="/contact-us">Contact</a></li>
 
 
                     @auth
