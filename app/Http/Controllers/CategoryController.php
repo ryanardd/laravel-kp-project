@@ -46,7 +46,7 @@ class CategoryController extends Controller
             'nama_category' => $request->nama_category,
             'slug' => Str::slug($request->nama_category)
         ]);
-        return redirect()->route('categories.index')->with(['success' => 'Data Berhasi tersimpan']);
+        return redirect()->route('categories.index')->with(['success' => 'Data Berhasi Tersimpan!']);
     }
 
     /**
@@ -82,11 +82,15 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
+        $this->validate($request, [
+            'nama_category' => 'required',
+        ]);
+
         $category->update([
             'nama_category' => $request->nama_category,
             'slug' => Str::slug($request->nama_category)
         ]);
-        return redirect(route('categories.index'))->with(['success' => 'Data Berhasi Terupdate']);
+        return redirect(route('categories.index'))->with(['success' => 'Data Berhasil di Update!']);
     }
 
     /**
@@ -97,6 +101,8 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::find($id);
+        $category->delete();
+        return redirect(route('categories.index'))->with(['success' => 'Data Berhasi Terhapus!']);
     }
 }

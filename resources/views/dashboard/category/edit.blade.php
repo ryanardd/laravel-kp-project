@@ -13,8 +13,8 @@
 			<div class="card full-height">
 				<div class="card-header">
 					<div class="card-head-row">
-						<div class="card-title">Form edit</div>
-                        <a href="{{ route('categories.index') }}" class="btn btn-warning btn-sm ml-auto">Back to category</a>
+						<div class="card-title">Form edit category</div>
+                        <a href="{{ route('categories.index') }}" class="btn btn-primary btn-sm ml-auto">Back to category</a>
 					</div>
 				</div>
 				<div class="card-body">
@@ -22,10 +22,10 @@
                         @csrf
                         @method('PUT')
                         <div class="form-group">
-                            <label for="Kategori">Nama Kategori</label>
-                            <input type="text" name="nama_category" class="form-control" id="text" placeholder="Enter Kategori" required value="{{ $category->nama_category }}">
+                            <label for="nama_category">Nama Kategori</label>
+                            <input type="text" name="nama_category" class="form-control" id="nama_category" placeholder="Masukkan nama kategory" value="{{ $category->nama_category }}">
 							@error('nama_category')
-							<div class="text-danger">Mohon diisi</div>
+							    <div class="text-danger mt-2">Nama Kategori tidak boleh kosong!</div>
 							@enderror
                         </div>
                         <div class="form-group">

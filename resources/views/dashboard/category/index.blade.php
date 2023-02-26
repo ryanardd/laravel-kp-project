@@ -44,7 +44,7 @@
                                         <th>No</th>
                                         <th>Nama Kategori</th>
                                         <th>Slug</th>
-                                        <th>Tanggal</th>
+                                        <th>Jumlah Item</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>

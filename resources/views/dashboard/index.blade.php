@@ -64,12 +64,14 @@
 							</div>
 						</div>
 					</div>
+
+                    {{-- Draft Product --}}
 					<div class="row row-card-no-pd">
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-header">
 									<div class="card-head-row">
-										<h4 class="card-title">Draf Product</h4>
+										<h4 class="card-title">Draft Product</h4>
 										<div class="card-tools">
 											<button class="btn btn-icon btn-link btn-primary btn-xs btn-refresh-card"><span class="fa fa-sync-alt"></span></button>
 										</div>
@@ -95,6 +97,50 @@
                                                         <td>{{ $row->nama_produk }}</td>
                                                         <td>Rp. {{ number_format($row->harga, 0, ',','.') }}</td>
                                                         <td>{{ $row->category->nama_category }}</td>
+                                                        <td>{{ $row->is_active ? 'Active' : 'Draft'}}</td>
+                                                        <td>2011/04/25</td>
+                                                    </tr>
+                                                    @empty
+                                                    <tr>
+                                                        <td colspan="6" class="text-center bg-white text-dark">Data Masih Kosong</td>
+                                                    </tr>
+                                                @endforelse
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+                    {{-- Draft Slides --}}
+                    <div class="row row-card-no-pd">
+						<div class="col-md-12">
+							<div class="card">
+								<div class="card-header">
+									<div class="card-head-row">
+										<h4 class="card-title">Draft Slides</h4>
+										<div class="card-tools">
+											<button class="btn btn-icon btn-link btn-primary btn-xs btn-refresh-card"><span class="fa fa-sync-alt"></span></button>
+										</div>
+									</div>
+								</div>
+								<div class="card-body">
+									<div class="table-responsive">
+										<table id="basic-datatables" class="display table table-bordered table-hover" >
+											<thead>
+												<tr>
+													<th>No</th>
+                                                    <th>Nama Slide</th>
+                                                    <th>Status</th>
+                                                    <th>Gambar</th>
+												</tr>
+											</thead>
+											<tbody>
+                                                @forelse ($is_active as $row)
+                                                    <tr>
+                                                        <td>{{ $loop->iteration }}</td>
+                                                        <td>{{ $row->nama_produk }}</td>
                                                         <td>{{ $row->is_active ? 'Active' : 'Draft'}}</td>
                                                         <td>2011/04/25</td>
                                                     </tr>

@@ -22,9 +22,9 @@
                         @csrf
                         <div class="form-group">
                             <label for="category">Nama Category</label>
-                            <input type="text" name="nama_category" class="form-control" id="text" placeholder="Enter category" required value="{{ old('nama_category') }}">
+                            <input type="text" name="nama_category" class="form-control" id="category" placeholder="Masukkan nama kategory" value="{{ old('nama_category') }}">
 							@error('nama_category')
-							<div class="text-danger">Mohon diisi</div>
+                                <div class="text-danger mt-2">Nama Kategori tidak boleh kosong!</div>
 							@enderror
                         </div>
                         <div class="form-group">
