@@ -16,7 +16,7 @@
                     <i class="flaticon-right-arrow"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('products.index') }}">Product</a>
+                    <a href="{{ route('categories.index') }}">Category</a>
                 </li>
             </ul>
         </div>
@@ -25,7 +25,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="align-items-center">
-                            <a href="{{ route('products.create') }}" class="btn btn-primary btn-sm ml-auto">
+                            <a href="{{ route('categories.create') }}" class="btn btn-primary btn-sm ml-auto">
                                 <i class="fa fa-plus"></i>
                                 Create data
                             </a>
@@ -38,40 +38,30 @@
                             </div>
                         @endif
                         <div class="table-responsive">
-                            <table id="add-row" class="display table table-striped table-hover">
+                            <table class="table table-bordered">
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama Produk</th>
-                                        <th>Harga Produk</th>
-                                        <th>Stok</th>
                                         <th>Nama Kategori</th>
-                                        <th>Gambar</th>
-                                        <th style="width: 10%">Action</th>
+                                        <th>Slug</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($product as $produk)
+                                    @forelse ($kategori as $row)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $produk->nama_produk }}</td>
-                                        <td>Rp. {{ number_format($produk->harga, 0, ',','.') }}</td>
-                                        <td>{{ $produk->stok }}</td>
-                                        <td>{{ $produk->category->nama_category }}</td>
-                                        <td>Edinburgh</td>
+                                        <td>{{ $row ->nama_category }}</td>
+                                        <td>{{ $row ->slug }}</td>
                                         <td>
-                                            <div class="form-button-action">
-                                                <a href="{{ route('products.edit', $produk->id) }}" class="btn btn-success btn-sm mr-2">
-                                                    <i class="fas fa-edit"></i>
-                                                </a>
-                                                    <form action="{{ route('products.destroy', $produk->id) }}" method="POST" class="d-inline">
-                                                    @csrf
-                                                    @method('delete')
-                                                    <button class="btn btn-danger btn-sm">
-                                                        <i class="fa fa-trash"></i>
-                                                    </button>
+                                            <a href="{{ route('categories.edit', $row->slug) }}" class="btn btn-success btn-sm mr-2"><i class="fas fa-pen"></i></a>
+                                            <form action="{{ route('categories.destroy', $row->slug) }}" method="POST" class="d-inline">
+                                            @csrf
+                                            @method('delete')
+                                            <button class="btn btn-danger btn-sm" onclick="return confirm('yakin ingin menghapus?')">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
                                             </form>
-                                            </div>
                                         </td>
                                     </tr>
                                     @empty
@@ -79,9 +69,11 @@
                                         <td colspan="6" class="text-center bg-white text-dark">Data Masih Kosong</td>
                                     </tr>
                                     @endforelse
+
                                 </tbody>
                             </table>
                         </div>
+
                     </div>
                 </div>
             </div>

@@ -77,10 +77,10 @@
 								</div>
 								<div class="card-body">
 									<div class="table-responsive">
-										<table id="basic-datatables" class="display table table-striped table-hover" >
+										<table id="basic-datatables" class="display table table-bordered table-hover" >
 											<thead>
 												<tr>
-													<th>Tanggal</th>
+													<th>No</th>
                                                     <th>Nama Produk</th>
                                                     <th>Harga</th>
                                                     <th>Kategori</th>
@@ -89,7 +89,7 @@
 												</tr>
 											</thead>
 											<tbody>
-                                                @foreach ($is_active as $row)
+                                                @forelse ($is_active as $row)
                                                     <tr>
                                                         <td>{{ $loop->iteration }}</td>
                                                         <td>{{ $row->nama_produk }}</td>
@@ -98,7 +98,11 @@
                                                         <td>{{ $row->is_active ? 'Active' : 'Draft'}}</td>
                                                         <td>2011/04/25</td>
                                                     </tr>
-                                                @endforeach
+                                                    @empty
+                                                    <tr>
+                                                        <td colspan="6" class="text-center bg-white text-dark">Data Masih Kosong</td>
+                                                    </tr>
+                                                @endforelse
 											</tbody>
 										</table>
 									</div>

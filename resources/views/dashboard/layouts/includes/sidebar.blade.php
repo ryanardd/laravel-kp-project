@@ -24,19 +24,19 @@
                     </span>
                     <h4 class="text-section">Components</h4>
                 </li>
-                <li class="nav-item  {{ request()->is('products') ? 'active' : ''}}">
+                <li class="nav-item  {{ request()->routeIs('products.index') ? 'active' : '' }}">
                     <a href="{{ route('products.index') }}">
                         <i class="fas fa-desktop"></i>
                         <p>Product</p>
                     </a>
                 </li>
 
-                {{-- <li class="nav-item  {{ request()->routeIs('slide.index') ? 'active' : ''}}">
-                    <a href="{{ route('slide.index') }}">
+                <li class="nav-item  {{ request()->routeIs('categories.index') ? 'active' : ''}}">
+                    <a href="{{ route('categories.index') }}">
                     <i class="fas fa-newspaper"></i>
-                        <p>Slide Banner</p>
+                        <p>Category</p>
                     </a>
-                </li> --}}
+                </li>
 
                 <li class="nav-item">
                     <a href="{{ url('/logout') }}"

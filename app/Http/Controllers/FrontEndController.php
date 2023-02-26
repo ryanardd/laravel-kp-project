@@ -10,13 +10,13 @@ class FrontEndController extends Controller
 {
     public function index() {
         return view('frontend.home', [
-            "product" => Produk::all()
+            "product" => Produk::where('is_active', 1)->get()
         ]);
     }
 
     public function product() {
         return view('frontend.product', [
-            "products" => Produk::with('category')->latest()->get(),
+            "products" => Produk::where('is_active', 1)->with('category')->latest()->get(),
         ]);
     }
 

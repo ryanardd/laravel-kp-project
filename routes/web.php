@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Models\Produk;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
@@ -56,5 +57,8 @@ Route::get('/dashboard', function()
     ]);
 })->middleware('auth');
 
-
+// halaman dashboard product
 Route::resource('/dashbord/products', ProductController::class);
+
+// halaman dashboard category
+Route::resource('/dashboard/categories', CategoryController::class);
