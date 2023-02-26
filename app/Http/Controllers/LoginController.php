@@ -24,8 +24,10 @@ class LoginController extends Controller
             $request->session()->regenerate();
 
             return redirect()->intended('/dashboard');
+        }else{
+            return back()->with('loginError', 'Email or Password is Incorrect!');
         }
-        return back()->with('loginError', 'Login Failed!');
+        
     }
 
     public function logout(Request $request)

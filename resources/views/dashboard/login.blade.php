@@ -17,14 +17,14 @@
             <form action="{{ url('/login') }}" method="POST" enctype="multipart/form-data" autocomplete="off">
                 @csrf
                 {{-- cek validasi apakah ada error pada login --}}
-        @if (session()->has('loginError'))
-        <div class="alert alert-danger" role="alert">
-            {{ session('loginError') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
-        @endif
+                @if (session()->has('loginError'))
+                    <div class="error-text" role="alert">
+                        {{ session('loginError') }}
+                    </div>
+                @endif
+                
                 <div class="field input">
-                    <label for="email">email</label>
+                    <label for="email">Email</label>
                     <input type="email" name="email" placeholder="name@example.com" required
                     oninvalid="this.setCustomValidity('Email tidak boleh kosong')" oninput="setCustomValidity('')" value="{{ old('email') }}">
                 </div>

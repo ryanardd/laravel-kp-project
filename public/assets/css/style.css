@@ -43,8 +43,8 @@ body{
   border-radius: 5px;
   background: #f8d7da;
   border: 1px solid #f5c6cb;
-  margin-bottom: 10px;
-  display: none;
+  /* margin-bottom: 10px; */
+  /* display: none; */
 }
 .form form .name-details{
   display: flex;
