@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -26,7 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.category.create');
     }
 
     /**
@@ -37,7 +38,15 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nama_category' => 'required',
+        ]);
+
+        Category::create([
+            'nama_category' => $request->nama_category,
+            'slug' => Str::slug($request->nama_category)
+        ]);
+        return redirect()->route('categories.index')->with(['success' => 'Data Berhasi tersimpan']);
     }
 
     /**
@@ -59,7 +68,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('dashboard.category.edit', [
+            'category' => Category::find($id)
+        ]);
     }
 
     /**
@@ -69,9 +80,13 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
-        //
+        $category->update([
+            'nama_category' => $request->nama_category,
+            'slug' => Str::slug($request->nama_category)
+        ]);
+        return redirect(route('categories.index'))->with(['success' => 'Data Berhasi Terupdate']);
     }
 
     /**

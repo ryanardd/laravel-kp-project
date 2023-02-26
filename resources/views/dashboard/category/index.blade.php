@@ -1,4 +1,4 @@
-@extends('/dashboard/layouts/main')
+@extends('dashboard.layouts.main')
 
 @section('content')
 
@@ -44,6 +44,7 @@
                                         <th>No</th>
                                         <th>Nama Kategori</th>
                                         <th>Slug</th>
+                                        <th>Tanggal</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -51,11 +52,12 @@
                                     @forelse ($kategori as $row)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $row ->nama_category }}</td>
-                                        <td>{{ $row ->slug }}</td>
+                                        <td>{{ $row->nama_category }}</td>
+                                        <td>{{ $row->slug }}</td>
+                                        <td>{{ $row->created_at->format('j F Y') }}</td>
                                         <td>
-                                            <a href="{{ route('categories.edit', $row->slug) }}" class="btn btn-success btn-sm mr-2"><i class="fas fa-pen"></i></a>
-                                            <form action="{{ route('categories.destroy', $row->slug) }}" method="POST" class="d-inline">
+                                            <a href="{{ route('categories.edit', $row->id) }}" class="btn btn-success btn-sm mr-2"><i class="fas fa-pen"></i></a>
+                                            <form action="{{ route('categories.destroy', $row->id) }}" method="POST" class="d-inline">
                                             @csrf
                                             @method('delete')
                                             <button class="btn btn-danger btn-sm" onclick="return confirm('yakin ingin menghapus?')">

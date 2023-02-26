@@ -14,7 +14,7 @@
 				<div class="card-header">
 					<div class="card-head-row">
 						<div class="card-title">From Product</div>
-                        <a href="{{ route('products.index') }}" class="btn btn-primary btn-sm ml-auto">Back to Product</a>
+                        <a href="{{ route('products.index') }}" class="btn btn-primary btn-sm ml-auto">Back to product</a>
 					</div>
 				</div>
 				<div class="card-body">
