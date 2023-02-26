@@ -12,18 +12,17 @@
 
 <body>
     <div class="wrapper">
-        {{-- cek validasi apakah ada error pada login --}}
-        @if (session()->has('loginError'))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            {{ session('loginError') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
-        @endif
-
         <section class="form login">
             <header>Login</header>
             <form action="{{ url('/login') }}" method="POST" enctype="multipart/form-data" autocomplete="off">
                 @csrf
+                {{-- cek validasi apakah ada error pada login --}}
+        @if (session()->has('loginError'))
+        <div class="alert alert-danger" role="alert">
+            {{ session('loginError') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        @endif
                 <div class="field input">
                     <label for="email">email</label>
                     <input type="email" name="email" placeholder="name@example.com" required
