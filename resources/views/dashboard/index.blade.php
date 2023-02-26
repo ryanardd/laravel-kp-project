@@ -84,6 +84,7 @@
                                                     <th>Nama Produk</th>
                                                     <th>Harga</th>
                                                     <th>Kategori</th>
+                                                    <th>Status</th>
                                                     <th>Gambar</th>
 												</tr>
 											</thead>
@@ -94,6 +95,7 @@
                                                         <td>{{ $row->nama_produk }}</td>
                                                         <td>Rp. {{ number_format($row->harga, 0, ',','.') }}</td>
                                                         <td>{{ $row->category->nama_category }}</td>
+                                                        <td>{{ $row->is_active ? 'Active' : 'Draft'}}</td>
                                                         <td>2011/04/25</td>
                                                     </tr>
                                                 @endforeach

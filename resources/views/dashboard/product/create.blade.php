@@ -21,8 +21,8 @@
                     <form method="Post" action="{{ route('products.store') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label for="nama_produk">Nama Produk</label>
-                            <input type="text" name="nama_produk" class="form-control" placeholder="Masukan Nama Produk" id="nama_produk" value="{{ old('nama_produk') }}">
+                            <label for="nama_produk">Nama Product</label>
+                            <input type="text" name="nama_produk" class="form-control" placeholder="Masukan Nama Product" id="nama_produk" value="{{ old('nama_produk') }}">
 							@error('nama_produk')
 							<div class="text-danger mt-2">
                                 Nama Produk harus di isi!
@@ -37,28 +37,33 @@
 
                         <div class="form-group">
                             <label for="harga">Harga Produk</label>
-                            <input type="number" name="harga" class="form-control" value="{{ old('harga') }}">
+                            <input type="text" name="harga" class="form-control" id="harga" value="{{ old('harga') }}" placeholder="Masukkan Harga Product">
                             @error('harga')
 							<div class="text-danger mt-2">
-                                harga Produk harus di isi!
+                                Harga produk harus di isi Angka! panjang nilai maksimum 12
                             </div>
 							@enderror
                         </div>
 
                         <div class="form-group">
                             <label for="stok">Stok Produk</label>
-                            <input type="number" name="stok" class="form-control" value="{{ old('stok') }}">
+                            <input type="text" name="stok" class="form-control" value="{{ old('stok') }}" placeholder="Masukkan Stok Product">
                             @error('stok')
 							<div class="text-danger mt-2">
-                                Stok Produk harus di isi!
+                                Stok produk harus di isi! panjang nilai maksimum 5.
                             </div>
 							@enderror
                         </div>
 
                         <div class="form-group">
-                            <label for="deskripsi" value="{{ old('harga') }}">Deskripsi Produk</label>
-                            <input id="deskripsi" type="hidden" name="deskripsi">
+                            <label for="deskripsi" value="{{ old('deskripsi') }}">Deskripsi Produk</label>
+                            <input id="deskripsi" type="hidden" name="deskripsi" value="{{ old('deskripsi') }}">
                             <trix-editor input="deskripsi"></trix-editor>
+                            @error('deskripsi')
+							<div class="text-danger mt-2">
+                                Deskripsi Produk harus di isi!
+                            </div>
+							@enderror
                         </div>
 
                         <div class="form-group">
