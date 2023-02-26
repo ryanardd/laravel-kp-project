@@ -33,8 +33,15 @@
 
                 <li class="nav-item  {{ request()->routeIs('categories.index') ? 'active' : ''}}">
                     <a href="{{ route('categories.index') }}">
-                    <i class="fas fa-newspaper"></i>
+                        <i class="fas fa-tags"></i>
                         <p>Category</p>
+                    </a>
+                </li>
+
+                <li class="nav-item  {{ request()->routeIs('slide.index') ? 'active' : ''}}">
+                    <a href="{{ route('slide.index') }}">
+                    <i class="fas fa-newspaper"></i>
+                        <p>Slide Banner</p>
                     </a>
                 </li>
 

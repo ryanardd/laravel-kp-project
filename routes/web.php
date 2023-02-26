@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FrontEndController;
+use App\Http\Controllers\SlideController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,3 +63,6 @@ Route::resource('/dashbord/products', ProductController::class);
 
 // halaman dashboard category
 Route::resource('/dashboard/categories', CategoryController::class);
+
+// halaman dashboard slide
+Route::resource('/dashboard/slide', SlideController::class);

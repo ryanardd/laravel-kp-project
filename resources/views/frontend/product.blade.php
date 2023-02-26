@@ -19,32 +19,22 @@
                 <li data-filter=".filter-product">PC</li>
                 <li data-filter=".filter-branding">Aksesoris</li>
 
-                {{-- <li class="dropdown"><a href="#">Lainnya<i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                    <ul>
-                        <li><a href="#">Asus</a></li>
-                        <li><a href="#">HP</a></li>
-                        <li><a href="#">ROG</a></li>
-                        <li><a href="#">Lenovo</a></li>
-                        <li><a href="#">MSI</a></li>
-                    </ul>
-                </li> --}}
-
               </ul><!-- End Portfolio Filters -->
             </div>
 
             <div class="row gy-3 portfolio-container">
 
-                @foreach ($products as $product)
+                @foreach ($product as $row)
                     <div class="col-xl-3 portfolio-item filter-app">
                         <div class="portfolio-wrap">
                         <a href="assets/img/hero-img.png" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/hero-img.png" class="img-fluid" alt=""></a>
                         <div class="portfolio-info">
-                            <h4><a href="portfolio-details.html" title="More Details">{{ $product->nama_produk }}</a></h4>
+                            <h4><a href="portfolio-details.html" title="More Details">{{ $row->nama_produk }}</a></h4>
                         <div class="lead">
-                            Rp. {{ number_format($product->harga, 0, ',', '.') }}
+                            Rp. {{ number_format($row->harga, 0, ',', '.') }}
                             </div>
-                            <p class="d-flex justify-content-end">Stok Tersedia</p>
-                            <div class="btn btn-dark mt-2 d-flex justify-content-center"><a href="/product/{{ $product->slug }}">Read More</a></div>
+                            <p class="d-flex justify-content-end">$row->category->nama_category</p>
+                            <div class="btn btn-dark mt-2 d-flex justify-content-center"><a href="/product/{{ $row->slug }}">Read More</a></div>
                             </div>
                         </div>
                     </div><!-- End Portfolio Item -->
@@ -59,7 +49,8 @@
                         <div class="lead">
                             Rp. {{ number_format($product->harga, 0, ',', '.') }}
                             </div>
-                            <p class="d-flex justify-content-end">Stok Tersedia</p>
+                            <p class="d-flex justify-content-start">{{ $product->category->nama_category }}</p>
+                            <p class="d-flex justify-content-end">{{ $product->stok ? 'Stok tersedia' : ''}}</p>
                             <div class="btn btn-dark mt-2 d-flex justify-content-center"><a href="/product/{{ $product->slug }}">Read More</a></div>
                             </div>
                         </div>
