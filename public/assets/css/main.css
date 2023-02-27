@@ -1551,6 +1551,15 @@ section {
     padding: 160px 0 60px 0;
 }
 
+.detail,
+.contact {
+    width: 100%;
+    background-size: cover;
+    position: relative;
+    min-height: 60vh;
+    padding: 90px 0 60px 0;
+}
+
 .hero h2 {
     font-size: 64px;
     font-weight: 700;
@@ -2114,15 +2123,6 @@ section {
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
-
-.contact {
-    width: 100%;
-    background-size: cover;
-    position: relative;
-    min-height: 60vh;
-    padding: 100px 0 60px 0;
-}
-
 .contact .info-container {
     background-color: var(--color-secondary);
     height: 100%;
@@ -2404,3 +2404,18 @@ section {
   .footer .credits a {
     color: #fff;
   }
+
+    /* Detail Produk */
+    .row-product {
+        background-color: #fff;
+        margin: 0;
+        padding: 5px;
+        padding-top: 16px;
+    }
+    
+    .underline {
+        border-bottom: 1px solid #777;
+        margin: 10px 0;
+    }
+
+    /* end Detail Produk */
