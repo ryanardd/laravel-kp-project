@@ -3,6 +3,7 @@
 @section('container')
 
 <section class="detail">
+
     <div class="container">
         <div class="row row-product">
             <div class="col-lg-5">
@@ -27,11 +28,11 @@
                     </figcaption>
                 </figure>
             </div>
-            
+
             <div class="col-lg-7">
-                <h3>Monitor MSI G2712 27 Flat IPS 1080 FHD 170Hz 1ms Anti-glare</h3>
+                <h3>{{ $detail->nama_produk }}</h3>
                 <div class="underline"></div>
-                <h4>Rp. 5.000.000</h4>
+                <h4>Rp. {{ number_format($detail->harga, 0, ',', '.') }}</h4>
                 <h6>Note</h6>
                 <ul>
                     <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, obcaecati!</li>
@@ -52,7 +53,7 @@
                 </a>
             </div>
         </div>
-    
+
         <!-- description -->
         <div class="row row-product">
             <div class="col-12">
@@ -63,7 +64,7 @@
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam labore deleniti optio ad soluta, fuga magnam dicta nam corrupti nulla architecto odit mollitia repudiandae ipsum eaque esse ab possimus tenetur eius error doloremque. Veniam illo et esse maiores id neque iure fugiat nulla, debitis porro at consectetur quod aspernatur dolorem nihil? A aspernatur ipsam illum deleniti quibusdam aliquid consequatur eaque laboriosam porro, qui vero eum soluta modi vel? Commodi ipsum, debitis reiciendis animi fuga ex veritatis est optio omnis sequi numquam possimus, iste aut, illum unde voluptates deleniti fugiat adipisci. Debitis aut neque doloremque accusantium quod deserunt quasi quibusdam voluptatibus?</p>
+                        <p>{!! $detail->deskripsi !!}</p>
                     </div>
                 </div>
             </div>
