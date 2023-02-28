@@ -56,7 +56,7 @@ class ProductController extends Controller
         // dd($data);
         Produk::create($data);
 
-        return redirect()->route('products.index')->with(['success' => 'Data Berhasi Tersimpan!']);
+        return redirect()->route('products.index')->with(['success' => 'Data Berhasil Tersimpan!']);
     }
 
     /**
@@ -116,7 +116,7 @@ class ProductController extends Controller
                 'is_active' => $request->is_active,
             ]);
 
-            return redirect()->route('products.index')->with(['success' => 'Data Berhasi di Update!']);
+            return redirect()->route('products.index')->with(['success' => 'Data Berhasil di Update!']);
         } else {
             $produk = Produk::find($id);
             // Storage::delete($produk->gambar_produk);
@@ -125,12 +125,12 @@ class ProductController extends Controller
                 'slug' => Str::slug($request->nama_produk),
                 'harga' => $request->harga,
                 'stok' => $request->stok,
-                'deskripsi' => $request->deskripsi,
+                'deskripsi' => strip_tags('required'),
                 'category_id' => $request->category_id,
                 'is_active' => $request->is_active,
                 'gambar_artikel' => $request -> file('gambar_artikel')->store('img/artikel')
             ]);
-            return redirect()->route('products.index')->with(['success' => 'Data Berhasi di Update!']);
+            return redirect()->route('products.index')->with(['success' => 'Data Berhasil di Update!']);
         }
     }
 
@@ -144,7 +144,7 @@ class ProductController extends Controller
     {
         $produk = Produk::find($id);
         $produk->delete();
-        return redirect(route('products.index'))->with(['success' => 'Data Berhasi Terhapus!']);
+        return redirect(route('products.index'))->with(['success' => 'Data Berhasil Terhapus!']);
     }
 
     public function checkSlug(Request $request)

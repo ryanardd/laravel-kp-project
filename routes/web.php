@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
 use App\Models\Produk;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\SlideController;

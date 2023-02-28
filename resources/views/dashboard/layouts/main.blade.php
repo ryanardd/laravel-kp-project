@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
 
 	{{-- text trix editor --}}
-	<script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script> 
+	<script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
 	<style>
 		trix-toolbar [data-trix-button-group="file-tools"] {
 			display: none;
@@ -51,11 +51,5 @@
 	<!--   Core JS Files   -->
 	@include('dashboard.layouts.includes.js')
 </body>
-<script>
-	ClassicEditor
-		.create( document.querySelector( '#paw' ) )
-		.catch( error => {
-			console.error( error );
-		} );
-</script>
+
 </html>

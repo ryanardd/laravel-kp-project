@@ -53,8 +53,8 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $row->judul_slide }}</td>
-                                        <<td>
-                                            @if ($row->status == '1')
+                                        <td>
+                                            @if ($row->is_active == '1')
                                             active
                                             @else
                                             Draft

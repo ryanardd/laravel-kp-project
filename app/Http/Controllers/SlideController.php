@@ -25,7 +25,7 @@ class SlideController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.slide.create');
     }
 
     /**
@@ -36,7 +36,29 @@ class SlideController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validasi form
+        $this->validate($request, [
+            'judul_slide' => 'required',
+            // 'gambar_slide' => 'mimes:png,jpg,jpeg,gif,bmp'
+        ]);
+
+        $data = $request->all();
+        Slide::create($data);
+        return redirect()->route('slide.index')->with('success', 'Data berhasil disimpan');
+
+        // if (!empty($request->file('gambar_slide'))) {
+        //     $data = $request->all();
+        //     $data['gambar_slide'] = $request->file('gambar_slide')->store('img/slide');
+
+        //     Slide::create($data);
+
+        //     return redirect()->route('slide.index')->with('success', 'Data berhasil disimpan');
+        // } else {
+        //     $data = $request->all();
+        //     Slide::create($data);
+
+        //     return redirect()->route('slide.index')->with('success', 'Data berhasil disimpan');
+        // }
     }
 
     /**
@@ -81,6 +103,13 @@ class SlideController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $slide = Slide::find($id);
+
+        if (!$slide) {
+            return redirect()->back()->with('success', 'Data masih kosong!');
+        }
+        // Storage::delete($slide->gambar_slide);
+        $slide->delete();
+        return redirect()->route('slide.index')->with('success', 'Data berhasil dihapus!');
     }
 }
