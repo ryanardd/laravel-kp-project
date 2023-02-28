@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\SlideController;
+use App\Models\Slide;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,10 +52,12 @@ Route::get('/dashboard/products/checkSlug', [ProductController::class, 'checkSlu
 Route::get('/dashboard', function()
 {
     return view('dashboard.index', [
+        'status_produk' => Produk::all()->where('is_active', 0),
+        'status_slide' => Slide::all()->where('is_active', 0),
 
-        'is_active' => Produk::all()->where('is_active', 0),
         'products' => Produk::count(),
         'categories' => Category::count(),
+        'slides' => Slide::count(),
     ]);
 })->middleware('auth');
 

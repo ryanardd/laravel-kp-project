@@ -15,13 +15,14 @@
 			<div class="card full-height">
 				<div class="card-header">
 					<div class="card-head-row">
-						<div class="card-title">Form Create Slide</div>
+						<div class="card-title">Form Edit Slide</div>
                         <a href="{{ route('slide.index') }}" class="btn btn-primary btn-sm ml-auto">Back to slide</a>
 					</div>
 				</div>
 				<div class="card-body">
-                    <form method="post" action="{{ route('slide.store') }}" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('slide.update', $slide->id) }}" enctype="multipart/form-data">
                         @csrf
+                        @method('PUT')
                         <div class="form-group">
                             <label for="judul">Judul Slide</label>
                             <input type="text" name="judul_slide" class="form-control" id="judul" placeholder="Masukan Judul Artikel" value="{{ old('judul_slide') }}">
@@ -52,7 +53,5 @@
 		</div>
 	</div>
 </div>
-
-
 
 @endsection

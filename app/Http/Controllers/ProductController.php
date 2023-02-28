@@ -143,6 +143,12 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $produk = Produk::find($id);
+
+        // ceka apakah ada produk?
+        if (!$produk) {
+            return redirect()->back()->with('success', 'Data masih kosong!');
+        }
+
         $produk->delete();
         return redirect(route('products.index'))->with(['success' => 'Data Berhasil Terhapus!']);
     }

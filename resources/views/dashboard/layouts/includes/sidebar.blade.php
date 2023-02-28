@@ -1,16 +1,24 @@
-<div class="sidebar sidebar-style-2" data-background-color="grey2">
+<!-- Sidebar -->
+<div class="sidebar sidebar-style-2">
     <div class="sidebar-wrapper scrollbar scrollbar-inner">
         <div class="sidebar-content">
             <div class="user">
-
-                <div class="info">
-                    <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
-                        <span>
-                           {{  Auth::user()->name }}
-                        </span>
-                    </a>
+                <div class="avatar-sm float-left mr-2">
+                    <img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+                </div>
+                    <div class="info">
+                        <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+                            <span>
+                                {{ Auth::user()->name }}
+                                <span class="user-level">Administrator</span>
+                                <span class="caret"></span>
+                            </span>
+                        </a>
+                    <div class="clearfix"></div>
                 </div>
             </div>
+
+            {{-- Component  --}}
             <ul class="nav nav-primary">
                 <li class="nav-item {{ request()->is('/dasboard') ? 'active' : ''}}">
                     <a  href="{{ url('/dashboard') }}">

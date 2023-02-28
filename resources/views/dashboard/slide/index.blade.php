@@ -64,13 +64,18 @@
                                             <img src=" {{ $row->slide }}" alt="Gambar" width="100">
                                         </td>
                                         <td>
-                                            <form action="{{ route('slide.destroy', $row->id) }}" method="POST" class="d-inline">
-                                            @csrf
-                                            @method('delete')
-                                            <button class="btn btn-danger btn-sm" onclick="return confirm('yakin ingin menghapus?')">
-                                                <i class="fa fa-trash"></i>
-                                            </button>
-                                            </form>
+                                            <div class="form-button-action">
+                                                <a href="{{ route('slide.edit', $row->id) }}" class="btn btn-success btn-sm mr-2">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <form action="{{ route('slide.destroy', $row->id) }}" method="POST" class="d-inline">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button class="btn btn-danger btn-sm">
+                                                        <i class="fa fa-trash"></i>
+                                                    </button>
+                                                </form>
+                                            </div>
                                         </td>
                                     </tr>
                                     @empty

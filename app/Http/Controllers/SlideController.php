@@ -14,8 +14,9 @@ class SlideController extends Controller
      */
     public function index()
     {
-        $slide = Slide::all();
-        return view('dashboard.slide.index', compact('slide'));
+        return view('dashboard.slide.index', [
+            'slide' => Slide::all()
+        ]);
     }
 
     /**
@@ -80,7 +81,11 @@ class SlideController extends Controller
      */
     public function edit($id)
     {
-        //
+        $slides = Slide::find($id);
+
+        return view('dashboard.slide.edit', [
+            'slide' => $slides
+        ]);
     }
 
     /**
@@ -92,7 +97,18 @@ class SlideController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'judul_slide' => 'required',
+        ]);
+
+        $slide = Slide::find($id);
+        $slide->update([
+            'judul_slide' => $request->judul_slide,
+            'gambar_slide' => $request->gambar_slide,
+            'is_active' => $request->is_active,
+        ]);
+
+        return redirect()->route('slide.index')->with('success', 'Data berhasil disimpan');
     }
 
     /**
@@ -104,7 +120,6 @@ class SlideController extends Controller
     public function destroy($id)
     {
         $slide = Slide::find($id);
-
         if (!$slide) {
             return redirect()->back()->with('success', 'Data masih kosong!');
         }

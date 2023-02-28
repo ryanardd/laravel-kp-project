@@ -12,7 +12,7 @@
 									<div class="row">
 										<div class="col-5">
 											<div class="icon-big text-center">
-												<i class="flaticon-users"></i>
+												<i class="flaticon-laptop"></i>
 											</div>
 										</div>
 										<div class="col-7 col-stats">
@@ -31,7 +31,7 @@
 									<div class="row">
 										<div class="col-5">
 											<div class="icon-big text-center">
-												<i class="flaticon-users"></i>
+												<i class="flaticon-price-tag"></i>
 											</div>
 										</div>
 										<div class="col-7 col-stats">
@@ -50,13 +50,13 @@
 									<div class="row">
 										<div class="col-5">
 											<div class="icon-big text-center">
-												<i class="flaticon-users"></i>
+                                                <i class="flaticon-picture"></i>
 											</div>
 										</div>
 										<div class="col-7 col-stats">
 											<div class="numbers">
 												<p class="card-category">Slide</p>
-												<h4 class="card-title">1,294</h4>
+												<h4 class="card-title">{{ $slides }}</h4>
 											</div>
 										</div>
 									</div>
@@ -91,7 +91,7 @@
 												</tr>
 											</thead>
 											<tbody>
-                                                @forelse ($is_active as $row)
+                                                @forelse ($status_produk as $row)
                                                     <tr>
                                                         <td>{{ $loop->iteration }}</td>
                                                         <td>{{ $row->nama_produk }}</td>
@@ -131,18 +131,18 @@
 											<thead>
 												<tr>
 													<th>No</th>
-                                                    <th>Nama Slide</th>
-                                                    <th>Status</th>
+                                                    <th>Judul Slide</th>
                                                     <th>Gambar</th>
+                                                    <th>Status</th>
 												</tr>
 											</thead>
 											<tbody>
-                                                @forelse ($is_active as $row)
+                                                @forelse ($status_slide as $row)
                                                     <tr>
                                                         <td>{{ $loop->iteration }}</td>
-                                                        <td>{{ $row->nama_produk }}</td>
+                                                        <td>{{ $row->judul_slide }}</td>
+                                                        <td>{{ $row->gambar_slide }}</td>
                                                         <td>{{ $row->is_active ? 'Active' : 'Draft'}}</td>
-                                                        <td>2011/04/25</td>
                                                     </tr>
                                                     @empty
                                                     <tr>

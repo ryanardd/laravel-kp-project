@@ -64,13 +64,13 @@
                                                 <a href="{{ route('products.edit', $produk->id) }}" class="btn btn-success btn-sm mr-2">
                                                     <i class="fas fa-edit"></i>
                                                 </a>
-                                                    <form action="{{ route('products.destroy', $produk->id) }}" method="POST" class="d-inline">
+                                                <form action="{{ route('products.destroy', $produk->id) }}" method="POST" class="d-inline">
                                                     @csrf
                                                     @method('delete')
                                                     <button class="btn btn-danger btn-sm">
                                                         <i class="fa fa-trash"></i>
                                                     </button>
-                                            </form>
+                                                </form>
                                             </div>
                                         </td>
                                     </tr>
