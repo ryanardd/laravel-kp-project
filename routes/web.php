@@ -62,7 +62,7 @@ Route::get('/dashboard', function()
 })->middleware('auth');
 
 // halaman dashboard product
-Route::resource('/dashbord/products', ProductController::class);
+Route::resource('/dashboard/products', ProductController::class);
 
 // halaman dashboard category
 Route::resource('/dashboard/categories', CategoryController::class);

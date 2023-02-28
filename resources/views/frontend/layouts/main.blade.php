@@ -28,7 +28,7 @@
 
 <body>
 
-    @include('frontend.partials/navbar')
+    @include('frontend.partials.navbar')
 
     @yield('container')
 

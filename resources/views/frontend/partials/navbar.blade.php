@@ -1,7 +1,7 @@
     <!-- ======= Header Navbar ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
         <div class="container d-flex align-items-center justify-content-between">
-            <a href="/home" class="logo d-flex align-items-center me-auto me-lg-0">
+            <a href="{{ route('home') }}" class="logo d-flex align-items-center me-auto me-lg-0">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
                 <!-- <img src="assets/img/logo.png" alt=""> -->
                 <h1>Murah<span>Kom</span></h1>
