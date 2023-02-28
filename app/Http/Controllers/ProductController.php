@@ -43,19 +43,22 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+        $validateData = $this->validate($request, [
             'nama_produk' => 'required',
             'harga' => 'required|digits_between:1,12',
             'stok' => 'required|digits_between:1,5',
-            'deskripsi' => 'required'
+            'deskripsi' => 'required',
+            'is_active' => 'required',
+            'category_id' => 'required'
         ]);
-
-        $data = $request->all();
-            // $data['gambar_produk'] = $request -> file('gambar_produk')->store('img/artikel');
-            $data['views'] = 0;
+        $validateData['views'] = 0;
+        $validateData['dekskripsi'] = strip_tags($request->deskripsi);
+        // $data = $request->all();
+        //     // $data['gambar_produk'] = $request -> file('gambar_produk')->store('img/artikel');
+        //     $data['views'] = 0;
 
         // dd($data);
-        Produk::create($data);
+        Produk::create($validateData);
 
         return redirect()->route('products.index')->with(['success' => 'Data Berhasil Tersimpan!']);
     }
@@ -97,42 +100,51 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
+        $validateData = $this->validate($request, [
             'nama_produk' => 'required',
             'harga' => 'required|digits_between:1,12',
             'stok' => 'required|digits_between:1,5',
-            'deskripsi' => 'required'
+            'deskripsi' => 'required',
+            'is_active' => 'required',
+            'category_id' => 'required'
         ]);
+        $validateData['views'] = 0;
+        $validateData['dekskripsi'] = strip_tags($request->deskripsi);
 
-        if(empty($request->file('gambar_produk'))){
+        $produk = Produk::find($id);
+        $produk->update($validateData);
 
-            $produk = Produk::find($id);
-            $produk->update([
-                'nama_produk' => $request->nama_produk,
-                'slug' => Str::slug($request->nama_produk),
-                'harga' => $request->harga,
-                'stok' => $request->stok,
-                'deskripsi' => $request->deskripsi,
-                'category_id' => $request->category_id,
-                'is_active' => $request->is_active,
-            ]);
+        return redirect()->route('products.index')->with(['success' => 'Data Berhasil di Update!']);
 
-            return redirect()->route('products.index')->with(['success' => 'Data Berhasil di Update!']);
-        } else {
-            $produk = Produk::find($id);
-            // Storage::delete($produk->gambar_produk);
-            $produk -> update([
-                'nama_produk' => $request->nama_produk,
-                'slug' => Str::slug($request->nama_produk),
-                'harga' => $request->harga,
-                'stok' => $request->stok,
-                'deskripsi' => strip_tags('required'),
-                'category_id' => $request->category_id,
-                'is_active' => $request->is_active,
-                'gambar_artikel' => $request -> file('gambar_artikel')->store('img/artikel')
-            ]);
-            return redirect()->route('products.index')->with(['success' => 'Data Berhasil di Update!']);
-        }
+        // if(empty($request->file('gambar_produk'))){
+
+        //     $produk = Produk::find($id);
+        //     $produk->update([
+        //         'nama_produk' => $request->nama_produk,
+        //         'slug' => Str::slug($request->nama_produk),
+        //         'harga' => $request->harga,
+        //         'stok' => $request->stok,
+        //         'deskripsi' => $request->deskripsi,
+        //         'category_id' => $request->category_id,
+        //         'is_active' => $request->is_active,
+        //     ]);
+
+        //     return redirect()->route('products.index')->with(['success' => 'Data Berhasil di Update!']);
+        // } else {
+        //     $produk = Produk::find($id);
+        //     // Storage::delete($produk->gambar_produk);
+        //     $produk -> update([
+        //         'nama_produk' => $request->nama_produk,
+        //         'slug' => Str::slug($request->nama_produk),
+        //         'harga' => $request->harga,
+        //         'stok' => $request->stok,
+        //         'deskripsi' => strip_tags('required'),
+        //         'category_id' => $request->category_id,
+        //         'is_active' => $request->is_active,
+        //         'gambar_artikel' => $request -> file('gambar_artikel')->store('img/artikel')
+        //     ]);
+        //     return redirect()->route('products.index')->with(['success' => 'Data Berhasil di Update!']);
+        // }
     }
 
     /**
