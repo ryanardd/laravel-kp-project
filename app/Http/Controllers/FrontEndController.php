@@ -14,9 +14,10 @@ class FrontEndController extends Controller
         ]);
     }
 
-    public function product() {
+    public function product(Category $category) {
         return view('frontend.product', [
             "products" => Produk::where('is_active', 1)->with('category')->latest()->get(),
+            "product" => $category->product->load('category')
         ]);
     }
 

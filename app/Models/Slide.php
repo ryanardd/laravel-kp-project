@@ -9,8 +9,5 @@ class Slide extends Model
 {
     use HasFactory;
 
-    protected $fillabel = [
-        'judul_slide',
-        'gambar_slide'
-    ];
+    protected $guarded = ['id'];
 }

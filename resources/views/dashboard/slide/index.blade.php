@@ -16,7 +16,7 @@
                     <i class="flaticon-right-arrow"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('products.index') }}">Product</a>
+                    <a href="{{ route('slide.index') }}">Slide</a>
                 </li>
             </ul>
         </div>
@@ -25,7 +25,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="align-items-center">
-                            <a href="{{ route('products.create') }}" class="btn btn-primary btn-sm ml-auto">
+                            <a href="{{ route('slide.create') }}" class="btn btn-primary btn-sm ml-auto">
                                 <i class="fa fa-plus"></i>
                                 Create data
                             </a>
@@ -38,33 +38,37 @@
                             </div>
                         @endif
                         <div class="table-responsive">
-                            <table id="add-row" class="display table table-striped table-hover">
+                            <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>No</th>
-                                        <th>Nama Produk</th>
-                                        <th>Harga Produk</th>
-                                        <th>Stok</th>
-                                        <th>Nama Kategori</th>
+                                        <th>ID</th>
+                                        <th>Judul Slide</th>
+                                        <th>Status</th>
                                         <th>Gambar</th>
-                                        <th style="width: 10%">Action</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($product as $produk)
+                                    @forelse ($slide as $row)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $produk->nama_produk }}</td>
-                                        <td>Rp. {{ number_format($produk->harga, 0, ',','.') }}</td>
-                                        <td>{{ $produk->stok }}</td>
-                                        <td>{{ $produk->category->nama_category }}</td>
-                                        <td>Edinburgh</td>
+                                        <td>{{ $row->judul_slide }}</td>
+                                        <td>
+                                            @if ($row->is_active == '1')
+                                            active
+                                            @else
+                                            Draft
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <img src=" {{ $row->slide }}" alt="Gambar" width="100">
+                                        </td>
                                         <td>
                                             <div class="form-button-action">
-                                                <a href="{{ route('products.edit', $produk->id) }}" class="btn btn-success btn-sm mr-2">
+                                                <a href="{{ route('slide.edit', $row->id) }}" class="btn btn-success btn-sm mr-2">
                                                     <i class="fas fa-edit"></i>
                                                 </a>
-                                                <form action="{{ route('products.destroy', $produk->id) }}" method="POST" class="d-inline">
+                                                <form action="{{ route('slide.destroy', $row->id) }}" method="POST" class="d-inline">
                                                     @csrf
                                                     @method('delete')
                                                     <button class="btn btn-danger btn-sm">

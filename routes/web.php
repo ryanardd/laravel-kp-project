@@ -1,12 +1,14 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
 use App\Models\Produk;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FrontEndController;
+use App\Http\Controllers\SlideController;
+use App\Models\Slide;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,15 +52,20 @@ Route::get('/dashboard/products/checkSlug', [ProductController::class, 'checkSlu
 Route::get('/dashboard', function()
 {
     return view('dashboard.index', [
+        'status_produk' => Produk::all()->where('is_active', 0),
+        'status_slide' => Slide::all()->where('is_active', 0),
 
-        'is_active' => Produk::all()->where('is_active', 0),
         'products' => Produk::count(),
         'categories' => Category::count(),
+        'slides' => Slide::count(),
     ]);
 })->middleware('auth');
 
 // halaman dashboard product
-Route::resource('/dashbord/products', ProductController::class);
+Route::resource('/dashboard/products', ProductController::class);
 
 // halaman dashboard category
 Route::resource('/dashboard/categories', CategoryController::class);
+
+// halaman dashboard slide
+Route::resource('/dashboard/slide', SlideController::class);
