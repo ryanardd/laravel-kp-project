@@ -30,8 +30,9 @@
 
                                 <form action="/logout" method="post">
                                     @csrf
-                                    <button type="submit">
-                                        logout
+                                    <button type="submit" class="logout btn btn-transparent">
+                                        <i class="bi bi-box-arrow-left"></i>
+                                        Logout
                                     </button>
                                 </form>
                             </ul>

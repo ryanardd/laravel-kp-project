@@ -39,11 +39,13 @@ body {
     color: var(--color-default);
 }
 
+form .logout,
 a {
-    color: var(--color-primary);
     text-decoration: none;
+    font-family: var(--font-default);
 }
 
+form .logout:hover,
 a:hover {
     color: #ec2727;
     text-decoration: none;
