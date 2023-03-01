@@ -52,7 +52,7 @@ class ProductController extends Controller
             'category_id' => 'required'
         ]);
         $validateData['views'] = 0;
-        $validateData['dekskripsi'] = strip_tags($request->deskripsi);
+
         // $data = $request->all();
         //     // $data['gambar_produk'] = $request -> file('gambar_produk')->store('img/artikel');
         //     $data['views'] = 0;
@@ -109,7 +109,7 @@ class ProductController extends Controller
             'category_id' => 'required'
         ]);
         $validateData['views'] = 0;
-        $validateData['dekskripsi'] = strip_tags($request->deskripsi);
+        $validateData['slug'] = Str::slug($request->nama_produk);
 
         $produk = Produk::find($id);
         $produk->update($validateData);

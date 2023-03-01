@@ -35,11 +35,11 @@
                 <h4>Rp. {{ number_format($detail->harga, 0, ',', '.') }}</h4>
                 <h6>Note</h6>
                 <ul>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, obcaecati!</li>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa obcaecati vero temporibus soluta quisquam. Voluptatum.</li>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, obcaecati!</li>
-                    <li>Lorem ipsum dolor sit amet.</li>
-                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
+                    <li>Cek stock terlebih dahulu sebelum order (Ketersedian Terbatas)</li>
+                    <li>Packing aman dengan bubble wrap tebal berlapis-lapis (dijamin sampai dengan selamat)</li>
+                    <li>Free asuransi barang hilang/rusak selama proses pengiriman oleh jasa kirim</li>
+                    <li>Request warna, ukuran dll. Wajib cantumkan pada keterangan saat order, Jika tidak maka unit kami kirim secara random</li>
+                    <li>Simpan dus dan invoice pembelian untuk klaim garansi.</li>
                 </ul>
                 <p>Order Via :</p>
                 <a href="#" style="text-decoration: none;">

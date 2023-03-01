@@ -25,7 +25,7 @@
                         @method('PUT')
                         <div class="form-group">
                             <label for="judul">Judul Slide</label>
-                            <input type="text" name="judul_slide" class="form-control" id="judul" placeholder="Masukan Judul Artikel" value="{{ old('judul_slide') }}">
+                            <input type="text" name="judul_slide" class="form-control" id="judul" placeholder="Masukan Judul Artikel" value="{{ $slide->judul_slide }}">
 							@error('judul_slide')
 							<div class="text-danger mt-2">Mohon diisi, Judul tidak boleh kosong!</div>
 							@enderror
