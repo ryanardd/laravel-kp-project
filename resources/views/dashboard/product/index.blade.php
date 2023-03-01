@@ -40,7 +40,7 @@
                             </div>
                         @endif
                         <div class="table-responsive">
-                            <table id="haha" class="display table table-striped table-hover">
+                            <table id="myTable" class="display table table-striped table-hover">
                                 <thead>
                                     <tr>
                                         <th>No</th>

@@ -50,7 +50,7 @@
     {{-- data tables --}}
     <script>
         $(document).ready(function() {
-            $('#haha').DataTable();
+            $('#myTable').DataTable();
         });
     </script>
 
