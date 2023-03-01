@@ -4,36 +4,39 @@
     <section class="detail">
 
         <div class="container">
-            <div class="row row-product">
+            <div class="row row-product justify-content-evenly">
                 <div class="col-lg-5">
-                    <figure class="figure">
-                        <img src="/assets/img/hero-img.png" class="figure-img img-fluid rounded" alt="...">
-                        <figcaption class="figure-caption d-flex justify-content-between">
-                            <a href="">
-                                <img src="/assets/img/about-2.jpg" class="figure-img img-fluid rounded" style="width: 70px"
-                                    alt="...">
+                    <figure class="figure w-100">
+                        <div class="border-info mb-2 border" style="height: 300px;">
+                            <img src="/assets/img/hero-img.png" id="image"
+                                class="object-fit-cover w-100 h-100 figure-img img-fluid rounded" alt="...">
+                        </div>
+                        <figcaption class="figure-caption d-flex justify-content-evenly gap-2">
+                            <a>
+                                <img src="/assets/img/hero-img.png" onclick="change(this.src)"
+                                    class="figure-img img-fluid rounded" style="width: 70px;height: 54px;" alt="...">
                             </a>
-                            <a href="">
-                                <img src="/assets/img/about-2.jpg" class="figure-img img-fluid rounded" style="width: 70px"
-                                    alt="...">
+                            <a>
+                                <img src="/assets/img/about-2.jpg" onclick="change(this.src)"
+                                    class="figure-img img-fluid rounded" style="width: 70px; height: 54px;" alt="...">
                             </a>
-                            <a href="">
-                                <img src="/assets/img/about-2.jpg" class="figure-img img-fluid rounded" style="width: 70px"
-                                    alt="...">
+                            <a>
+                                <img src="/assets/img/profile.jpg" onclick="change(this.src)"
+                                    class="figure-img img-fluid rounded" style="width: 70px; height: 54px;" alt="...">
                             </a>
-                            <a href="">
-                                <img src="/assets/img/about-2.jpg" class="figure-img img-fluid rounded" style="width: 70px"
-                                    alt="...">
+                            <a>
+                                <img src="/assets/img/about.jpg" onclick="change(this.src)"
+                                    class="figure-img img-fluid rounded" style="width: 70px;height: 54px;" alt="...">
                             </a>
-                            <a href="">
-                                <img src="/assets/img/about-2.jpg" class="figure-img img-fluid rounded" style="width: 70px"
-                                    alt="...">
+                            <a>
+                                <img src="/assets/img/testimonials-1.jpg" onclick="change(this.src)"
+                                    class="figure-img img-fluid rounded" style="width: 70px;height: 54px;" alt="...">
                             </a>
                         </figcaption>
                     </figure>
                 </div>
 
-                <div class="col-lg-7">
+                <div class="col-lg-6">
                     <h3>{{ $detail->nama_produk }}</h3>
                     <div class="underline"></div>
                     <h4>Rp. {{ number_format($detail->harga, 0, ',', '.') }}</h4>
@@ -79,5 +82,11 @@
             </div>
             <!-- end description -->
         </div>
+
+        <script>
+            const change = src => {
+                document.getElementById('image').src = src
+            }
+        </script>
     </section>
 @endsection

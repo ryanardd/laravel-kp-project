@@ -2420,4 +2420,8 @@ section {
         margin: 10px 0;
     }
 
+    .figure figcaption a img {
+        cursor: pointer;
+    }
+
     /* end Detail Produk */

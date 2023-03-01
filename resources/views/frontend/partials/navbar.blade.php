@@ -1,6 +1,6 @@
     <!-- ======= Header Navbar ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
-        <div class="container d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center justify-content-between container">
             <a href="{{ route('home') }}" class="logo d-flex align-items-center me-auto me-lg-0">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
                 <!-- <img src="assets/img/logo.png" alt=""> -->
@@ -13,7 +13,8 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="/product">Product</a>
                     </li>
-                    <li class="dropdown"><a href="#"><span>Marketplace</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                    <li class="dropdown"><a href="#"><span>Marketplace</span> <i
+                                class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
                             <li><a href="https://shopee.co.id/murahkomofficial" target="blank">Shopee</a></li>
                             <li><a href="https://www.tokopedia.com/murahkomofficial" target="blank">Tokopedia</a></li>
@@ -24,7 +25,8 @@
 
 
                     @auth
-                        <li class="dropdown"><a href="#"><span>Dashboard</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                        <li class="dropdown"><a href="#"><span>Dashboard</span> <i
+                                    class="bi bi-chevron-down dropdown-indicator"></i></a>
                             <ul>
                                 <li><a href="/dashboard">My Dashboard</a></li>
 
@@ -43,9 +45,9 @@
                 </ul>
             </nav><!-- .navbar -->
 
-        {{-- <a class="btn-book-a-table" href="#book-a-table">Book a Table</a> --}}
-        <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-        <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+            {{-- <a class="btn-book-a-table" href="#book-a-table">Book a Table</a> --}}
+            <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 
         </div>
     </header><!-- End Header Navbar -->
