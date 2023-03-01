@@ -120,9 +120,7 @@ class SlideController extends Controller
     public function destroy($id)
     {
         $slide = Slide::find($id);
-        if (!$slide) {
-            return redirect()->back()->with('success', 'Data masih kosong!');
-        }
+
         // Storage::delete($slide->gambar_slide);
         $slide->delete();
         return redirect()->route('slide.index')->with('success', 'Data berhasil dihapus!');

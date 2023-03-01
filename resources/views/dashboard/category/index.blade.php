@@ -71,11 +71,9 @@
                                         <td colspan="6" class="text-center bg-white text-dark">Data Masih Kosong</td>
                                     </tr>
                                     @endforelse
-
                                 </tbody>
                             </table>
                         </div>
-
                     </div>
                 </div>
             </div>

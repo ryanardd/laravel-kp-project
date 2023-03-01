@@ -31,6 +31,8 @@
                             </a>
                         </div>
                     </div>
+
+
                     <div class="card-body">
                         @if (Session::has('success'))
                             <div class="alert alert-primary">
@@ -38,7 +40,7 @@
                             </div>
                         @endif
                         <div class="table-responsive">
-                            <table id="add-row" class="display table table-striped table-hover">
+                            <table id="myTable" class="display table table-striped table-hover">
                                 <thead>
                                     <tr>
                                         <th>No</th>
@@ -88,5 +90,7 @@
         </div>
     </div>
 </div>
+
+
 
 @endsection

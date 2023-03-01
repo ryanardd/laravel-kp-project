@@ -53,10 +53,6 @@ class ProductController extends Controller
         ]);
         $validateData['views'] = 0;
 
-        // $data = $request->all();
-        //     // $data['gambar_produk'] = $request -> file('gambar_produk')->store('img/artikel');
-        //     $data['views'] = 0;
-
         // dd($data);
         Produk::create($validateData);
 
@@ -156,11 +152,6 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $produk = Produk::find($id);
-
-        // ceka apakah ada produk?
-        if (!$produk) {
-            return redirect()->back()->with('success', 'Data masih kosong!');
-        }
 
         $produk->delete();
         return redirect(route('products.index'))->with(['success' => 'Data Berhasil Terhapus!']);
