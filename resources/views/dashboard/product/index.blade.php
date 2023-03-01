@@ -40,7 +40,7 @@
                             </div>
                         @endif
                         <div class="table-responsive">
-                            <table id="myTable" class="display table table-striped table-hover">
+                            <table id="haha" class="display table table-striped table-hover">
                                 <thead>
                                     <tr>
                                         <th>No</th>
@@ -83,6 +83,7 @@
                                     @endforelse
                                 </tbody>
                             </table>
+
                         </div>
                     </div>
                 </div>

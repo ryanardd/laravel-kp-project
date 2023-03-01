@@ -9,13 +9,15 @@
 
     {{-- text trix editor --}}
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
-
     <link href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.css">
 
 
     {{-- text trix editor dan datatables --}}
     <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.js"></script>
+
+    {{-- JQuery --}}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
 
     <style>
@@ -48,7 +50,7 @@
     {{-- data tables --}}
     <script>
         $(document).ready(function() {
-            $('#myTable').DataTable();
+            $('#haha').DataTable();
         });
     </script>
 
