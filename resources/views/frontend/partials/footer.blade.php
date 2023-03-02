@@ -81,79 +81,80 @@
         &copy; 2023 <strong><span>MurahKom</span></strong>. All Rights Reserved
       </div>
       <div class="credits"> --}}
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/ -->
-        {{-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> --}}
-      {{-- </div>
+<!-- All the links in the footer should remain intact. -->
+<!-- You can delete the links only if you purchased the pro version. -->
+<!-- Licensing information: https://bootstrapmade.com/license/ -->
+<!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/ -->
+{{-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> --}}
+{{-- </div>
     </div> --}}
-  {{-- </footer><!-- End Footer --> --}}
+{{-- </footer><!-- End Footer --> --}}
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
 
     <div class="container">
-      <div class="row gy-4">
-        <div class="col-lg-5 col-md-12 footer-info">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span>MurahKom</span>
-          </a>
-          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
-          <div class="social-links d-flex mt-4">
-            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-          </div>
+        <div class="row gy-4">
+            <div class="col-lg-5 col-md-12 footer-info">
+                {{-- <a href="" class="logo d-flex align-items-center"> --}}
+                <h3>MurahKom</h3>
+                {{-- </a> --}}
+                <p>Murahkom merupakan perusahaan dibidang IT atau Teknologi yang didirikan pada 1 Januari 2010. Murahkom
+                    senantiasa mengikuti perkembangan yang terus terupadate dalam dunia IT atau teknologi.</p>
+                <div class="social-links d-flex mt-4">
+                    <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-6 footer-links">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/product">Product</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-6 footer-links">
+                <h4>Payment</h4>
+                <ul>
+                    <li><a href="">Cash</a></li>
+                    <li><a href="">Debit</a></li>
+                    <li><a href="">Bank Transfer</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-12 footer-contact text-md-start text-center">
+                <h4>Contact Us</h4>
+                <p>
+                    A108 Adam Street <br>
+                    New York, NY 535022<br>
+                    United States <br><br>
+                    <strong>Phone:</strong> +1 5589 55488 55<br>
+                    <strong>Email:</strong> info@example.com<br>
+                    <strong>Opening Hours:</strong> Mon-Sun 11AM - 23PM<br>
+                </p>
+
+            </div>
+
         </div>
-
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="/home">Home</a></li>
-            <li><a href="/product">Product</a></li>
-            <li><a href="/contact">Contact</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Payment</h4>
-          <ul>
-            <li><a href="">Cash</a></li>
-            <li><a href="">Debit</a></li>
-            <li><a href="">Bank Transfer</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-          <h4>Contact Us</h4>
-          <p>
-            A108 Adam Street <br>
-            New York, NY 535022<br>
-            United States <br><br>
-            <strong>Phone:</strong> +1 5589 55488 55<br>
-            <strong>Email:</strong> info@example.com<br>
-            <strong>Opening Hours:</strong> Mon-Sun 11AM - 23PM<br>
-          </p>
-
-        </div>
-
-      </div>
     </div>
 
     <div class="container mt-4">
-      <div class="copyright">
-        &copy; 2023 <strong><span>MurahKom</span></strong>. All Rights Reserved
-      </div>
-      {{-- <div class="credits"> --}}
+        <div class="copyright">
+            &copy; 2023 <strong><span>MurahKom</span></strong>. All Rights Reserved
+        </div>
+        {{-- <div class="credits"> --}}
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/impact-bootstrap-business-website-template/ -->
         {{-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> --}}
-      {{-- </div> --}}
+        {{-- </div> --}}
     </div>
 
-  </footer><!-- End Footer -->
-  <!-- End Footer -->
+</footer><!-- End Footer -->
+<!-- End Footer -->

@@ -7,7 +7,7 @@
             <div class="row row-product justify-content-evenly">
                 <div class="col-lg-5">
                     <figure class="figure w-100">
-                        <div class="border-info mb-2 border" style="height: 300px;">
+                        <div class="mb-2" style="height: 300px;">
                             <img src="/assets/img/hero-img.png" id="image"
                                 class="object-fit-cover w-100 h-100 figure-img img-fluid rounded" alt="...">
                         </div>
@@ -81,7 +81,84 @@
                 </div>
             </div>
             <!-- end description -->
+
+            {{-- Produk Terkait --}}
+            <div class="row row-product">
+                <div class="tab-content">
+                    <h3 class="border-dark border-bottom border-2 pb-2">Produk Terkait</h3>
+                    <div class="tab-pane fade active show" id="all">
+                        {{-- Items --}}
+                        <div class="row gy-5 justify-content-between p-2">
+                            {{-- @foreach ($product->take(3) as $produk) --}}
+                            <div class="col-lg-3">
+                                <div class="items p-2">
+                                    <a href="" class="">
+                                        <img src="/assets/img/hero-img.png" class="menu-img img-fluid" alt="">
+                                    </a>
+                                    <a href="">
+                                        <h4>Acer</h4>
+                                    </a>
+                                    <p class="price">
+                                        Rp. 5.000.000
+                                    </p>
+                                    <div class="btn btn-dark d-flex justify-content-center mt-2"><a class="text-white"
+                                            href="">Read More</a></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="items p-2">
+                                    <a href="" class="">
+                                        <img src="/assets/img/hero-img.png" class="menu-img img-fluid" alt="">
+                                    </a>
+                                    <a href="">
+                                        <h4>Acer</h4>
+                                    </a>
+                                    <p class="price">
+                                        Rp. 5.000.000
+                                    </p>
+                                    <div class="btn btn-dark d-flex justify-content-center mt-2"><a class="text-white"
+                                            href="">Read More</a></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="items p-2">
+                                    <a href="" class="">
+                                        <img src="/assets/img/hero-img.png" class="menu-img img-fluid" alt="">
+                                    </a>
+                                    <a href="">
+                                        <h4>Acer</h4>
+                                    </a>
+                                    <p class="price">
+                                        Rp. 5.000.000
+                                    </p>
+                                    <div class="btn btn-dark d-flex justify-content-center mt-2"><a class="text-white"
+                                            href="">Read More</a></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="items p-2">
+                                    <a href="" class="">
+                                        <img src="/assets/img/hero-img.png" class="menu-img img-fluid" alt="">
+                                    </a>
+                                    <a href="">
+                                        <h4>Acer</h4>
+                                    </a>
+                                    <p class="price">
+                                        Rp. 5.000.000
+                                    </p>
+                                    <div class="btn btn-dark d-flex justify-content-center mt-2"><a class="text-white"
+                                            href="">Read More</a></div>
+                                </div>
+                            </div>
+                            {{-- @endforeach --}}
+                        </div>
+                        {{-- end Items --}}
+                    </div>
+                </div>
+            </div>
+            {{-- end Produk Terkait --}}
         </div>
+
 
         <script>
             const change = src => {
