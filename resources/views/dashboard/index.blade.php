@@ -112,50 +112,6 @@
 							</div>
 						</div>
 					</div>
-
-                    {{-- Draft Slides --}}
-                    <div class="row row-card-no-pd">
-						<div class="col-md-12">
-							<div class="card">
-								<div class="card-header">
-									<div class="card-head-row">
-										<h4 class="card-title">Draft Slides</h4>
-										<div class="card-tools">
-											<button class="btn btn-icon btn-link btn-primary btn-xs btn-refresh-card"><span class="fa fa-sync-alt"></span></button>
-										</div>
-									</div>
-								</div>
-								<div class="card-body">
-									<div class="table-responsive">
-										<table id="basic-datatables" class="display table table-bordered table-hover" >
-											<thead>
-												<tr>
-													<th>No</th>
-                                                    <th>Judul Slide</th>
-                                                    <th>Gambar</th>
-                                                    <th>Status</th>
-												</tr>
-											</thead>
-											<tbody>
-                                                @forelse ($status_slide as $row)
-                                                    <tr>
-                                                        <td>{{ $loop->iteration }}</td>
-                                                        <td>{{ $row->judul_slide }}</td>
-                                                        <td>{{ $row->gambar_slide }}</td>
-                                                        <td>{{ $row->is_active ? 'Active' : 'Draft'}}</td>
-                                                    </tr>
-                                                    @empty
-                                                    <tr>
-                                                        <td colspan="6" class="text-center bg-white text-dark">Data Masih Kosong</td>
-                                                    </tr>
-                                                @endforelse
-											</tbody>
-										</table>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 	@endsection

@@ -30,10 +30,10 @@
 							@enderror
                         </div>
 
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="slug">Slug</label>
                             <input type="text" name="slug" class="form-control" id="slug" disabled readonly>
-                        </div>
+                        </div> --}}
 
                         <div class="form-group">
                             <label for="harga">Harga Produk</label>

@@ -24,8 +24,11 @@
                 @endif
                 <div class="field input">
                     <label for="email">Email</label>
-                    <input type="email" name="email" placeholder="name@example.com" required
-                    oninvalid="this.setCustomValidity('Email tidak boleh kosong')" oninput="setCustomValidity('')" value="{{ old('email') }}">
+                    <input type="email" name="email" placeholder="name@example.com" value="{{ old('email') }}" required
+                    oninvalid="this.setCustomValidity('Email tidak boleh kosong')" oninput="setCustomValidity('')">
+                    @error('email')
+                        <div class="text-danger mt-2">Mohon diisi, Judul tidak boleh kosong!</div>
+                    @enderror
                 </div>
                 <div class="field input">
                     <label for="password">Password</label>

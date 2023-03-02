@@ -30,10 +30,10 @@
 							@enderror
                         </div>
 
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="slug">Slug</label>
                             <input type="text" name="slug" class="form-control" id="slug" disabled readonly>
-                        </div>
+                        </div> --}}
 
                         <div class="form-group">
                             <label for="harga">Harga Produk</label>
@@ -100,15 +100,6 @@
 </div>
 
 <script>
-    const title = document.querySelector('#nama_produk');
-    const slug = document.querySelector('#slug');
-
-    title.addEventListener('change', function () {
-        fetch('/dashboard/products/checkSlug?title=' + title.value)
-        .then(response => response.json())
-        .then(data => slug.value = data.slug)
-    });
-
     document.addEventListener('trix-file-accept', function(e) {
         e.preventDefault();
     })
