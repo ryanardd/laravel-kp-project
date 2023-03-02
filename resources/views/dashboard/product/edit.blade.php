@@ -30,11 +30,6 @@
 							@enderror
                         </div>
 
-                        {{-- <div class="form-group">
-                            <label for="slug">Slug</label>
-                            <input type="text" name="slug" class="form-control" id="slug" disabled readonly>
-                        </div> --}}
-
                         <div class="form-group">
                             <label for="harga">Harga Produk</label>
                             <input type="number" name="harga" class="form-control" value="{{ $produk->harga }}">
@@ -73,7 +68,6 @@
                                 @foreach ($kategori as $row)
                                 <option value="{{ $row -> id }}" {{ $row->nama_category === $produk->category->nama_category ? 'selected' : '' }}>{{ $row->nama_category }}</option>
                                 @endforeach
-
                             </select>
                         </div>
 
