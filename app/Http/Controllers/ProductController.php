@@ -52,6 +52,7 @@ class ProductController extends Controller
             'category_id' => 'required'
         ]);
         $validateData['views'] = 0;
+        $validateData['slug'] = Str::slug($request->nama_produk);
 
         // dd($data);
         Produk::create($validateData);
@@ -152,14 +153,8 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $produk = Produk::find($id);
-
         $produk->delete();
         return redirect(route('products.index'))->with(['success' => 'Data Berhasil Terhapus!']);
     }
 
-    public function checkSlug(Request $request)
-    {
-        $slug = SlugService::createSlug(Produk::class, 'slug', $request->title);
-        return response()->json(['slug' => $slug]);
-    }
 }

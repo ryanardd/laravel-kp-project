@@ -38,10 +38,10 @@
                             </div>
                         @endif
                         <div class="table-responsive">
-                            <table id="myTable" class="table table-bordered">
+                            <table id="myTable" class="display table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
+                                        <th>NO</th>
                                         <th>Judul Slide</th>
                                         <th>Status</th>
                                         <th>Gambar</th>

@@ -57,7 +57,7 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $produk->nama_produk }}</td>
-                                        <td>Rp. {{ number_format($produk->harga, 0, ',','.') }}</td>
+                                        <td>Rp{{ number_format($produk->harga, 0, ',','.') }}</td>
                                         <td>{{ $produk->stok }}</td>
                                         <td>{{ $produk->category->nama_category }}</td>
                                         <td>Edinburgh</td>
