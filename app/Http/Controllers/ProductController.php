@@ -6,7 +6,7 @@ use App\Models\Produk;
 use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use \Cviebrock\EloquentSluggable\Services\SlugService;
+
 
 class ProductController extends Controller
 {
@@ -49,11 +49,13 @@ class ProductController extends Controller
             'stok' => 'required|digits_between:1,5',
             'deskripsi' => 'required',
             'is_active' => 'required',
-            'category_id' => 'required'
+            'category_id' => 'required',
+            'gambar' => ['required','mimes:png,jpg,jpeg,gif,bmp']
         ]);
         $validateData['views'] = 0;
         $validateData['slug'] = Str::slug($request->nama_produk);
 
+        return ddd($validateData);
         // dd($data);
         Produk::create($validateData);
 
