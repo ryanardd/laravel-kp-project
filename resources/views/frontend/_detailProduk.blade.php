@@ -7,9 +7,9 @@
             <div class="row row-product justify-content-evenly">
                 <div class="col-lg-5">
                     <figure class="figure w-100">
-                        <div class="mb-2" style="height: 300px;">
-                            <img src="/assets/img/hero-img.png" id="image"
-                                class="object-fit-cover w-100 h-100 figure-img img-fluid rounded" alt="...">
+                        <div class="itemtab mb-2" style="height: 300px;">
+                            <img src="/assets/img/profile.jpg" id="image" class="w-100 h-100 figure-img img-fluid rounded"
+                                alt="...">
                         </div>
                         <figcaption class="figure-caption d-flex justify-content-evenly gap-2">
                             <a>
