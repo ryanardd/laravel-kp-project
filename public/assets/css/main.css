@@ -22,8 +22,8 @@
 /* Colors */
 :root {
     --color-default: #212529;
-    --color-primary: #ce1212;
-    --color-secondary: #37373f;
+    --color-primary: #fcf876;
+    --color-secondary: #3797a4;
 }
 
 /* Smooth scroll behavior */
@@ -60,6 +60,11 @@ h6 {
     font-family: var(--font-secondary);
 }
 
+.service,
+.menu {
+    background-color: #fff;
+}
+
 /*--------------------------------------------------------------
 # Sections & Section Header
 --------------------------------------------------------------*/
@@ -69,7 +74,7 @@ section {
 }
 
 .section-bg {
-    background-color: #eee;
+    background-color: var(--color-secondary);
 }
 
 .section-header {
@@ -83,7 +88,7 @@ section {
     font-weight: 400;
     margin: 0;
     padding: 0;
-    color: #7f7f90;
+    color: #3a3f47;
     text-transform: uppercase;
     font-family: var(--font-default);
 }
@@ -331,11 +336,11 @@ section {
 # Header
 --------------------------------------------------------------*/
 .header {
-    background: #fff;
+    background: #3797A4;
     transition: all 0.5s;
     z-index: 997;
     height: 90px;
-    border-bottom: 1px solid #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 575px) {
@@ -344,10 +349,10 @@ section {
     }
 }
 
-.header.sticked {
+/* .header.sticked {
     border-color: #fff;
     border-color: #eee;
-}
+} */
 
 .header .logo img {
     max-height: 40px;
@@ -363,24 +368,7 @@ section {
 }
 
 .header .logo h1 span {
-    color: var(--color-primary);
-}
-
-.header .btn-book-a-table,
-.header .btn-book-a-table:focus {
-    font-size: 14px;
-    color: #fff;
-    background: var(--color-primary);
-    padding: 8px 20px;
-    margin-left: 30px;
-    border-radius: 50px;
-    transition: 0.3s;
-}
-
-.header .btn-book-a-table:hover,
-.header .btn-book-a-table:focus:hover {
-    color: #fff;
-    background: rgba(206, 18, 18, 0.8);
+    color: #fcf876;
 }
 
 section {
@@ -421,7 +409,7 @@ section {
         font-family: var(--font-secondary);
         font-size: 16px;
         font-weight: 600;
-        color: #7f7f90;
+        color: white;
         white-space: nowrap;
         transition: 0.3s;
         position: relative;
@@ -471,7 +459,7 @@ section {
         z-index: 99;
         opacity: 0;
         visibility: hidden;
-        background: #fff;
+        background: #3797A4;
         box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
         transition: 0.3s;
         border-radius: 4px;
@@ -495,7 +483,7 @@ section {
     .navbar .dropdown ul a:hover,
     .navbar .dropdown ul .active:hover,
     .navbar .dropdown ul li:hover > a {
-        color: var(--color-primary);
+        color: black;
     }
 
     .navbar .dropdown:hover > ul {
@@ -611,7 +599,7 @@ section {
     }
 
     .mobile-nav-show {
-        color: var(--color-secondary);
+        color: white;
         font-size: 28px;
         cursor: pointer;
         line-height: 0;
@@ -809,25 +797,24 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Why Us Section
+# Service Section
 --------------------------------------------------------------*/
-.why-us .why-box {
+
+.service .why-box {
     padding: 10px;
-    /* background: var(--color-primary); */
-    /* color: #fff; */
 }
 
-.why-us .why-box h3 {
+.service .why-box h3 {
     font-weight: 700;
     font-size: 34px;
     margin-bottom: 30px;
 }
 
-.why-us .why-box p {
+.service .why-box p {
     margin-bottom: 30px;
 }
 /*   
-.why-us .why-box .more-btn {
+.service .why-box .more-btn {
   display: inline-block;
   background: rgba(255, 255, 255, 0.3);
   padding: 6px 30px 8px 30px;
@@ -836,16 +823,16 @@ section {
   transition: all ease-in-out 0.4s;
 } */
 
-/* .why-us .why-box .more-btn i {
+/* .service .why-box .more-btn i {
   font-size: 14px;
 } */
 
-/* .why-us .why-box .more-btn:hover {
+/* .service .why-box .more-btn:hover {
   color: var(--color-primary);
   background: #fff;
 } */
 
-.why-us .icon-box {
+.service .icon-box {
     text-align: center;
     background: #eee;
     /* padding: 10px 10px; */
@@ -856,8 +843,8 @@ section {
     transition: 0.3s;
 }
 
-.why-us .icon-box i {
-    color: var(--color-primary);
+.service .icon-box i {
+    color: #f8b501;
     margin-bottom: 30px;
     font-size: 32px;
     margin-top: 30px;
@@ -867,20 +854,20 @@ section {
     justify-content: center;
 }
 
-.why-us .icon-box h4 {
+.service .icon-box h4 {
     font-size: 20px;
     font-weight: 400;
     margin: 0 0 30px 0;
     font-family: var(--font-secondary);
 }
 
-.why-us .icon-box p {
+.service .icon-box p {
     font-size: 15px;
     color: #6c757d;
 }
 
 @media (min-width: 1200px) {
-    .why-us .icon-box:hover {
+    .service .icon-box:hover {
         transform: scale(1.1);
         background-color: rgba(55, 55, 63, 0.1);
     }
@@ -996,9 +983,18 @@ section {
 .menu .tab-content .menu-item {
     -moz-text-align-last: center;
     text-align-last: center;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    background-color: #eee;
+    /* background-color: #8ccbbe; */
+    /* box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); */
+    transition: 0.9s;
     border-radius: 10px;
     overflow: hidden;
+}
+
+.menu .tab-content .menu-item:hover {
+    background-color: #8ccbbe;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    /* background-color: var(--color-secondary); */
 }
 
 .menu .tab-content .menu-item .menu-img {
@@ -1009,7 +1005,7 @@ section {
 .menu .tab-content .menu-item h4 {
     font-size: 22px;
     font-weight: 500;
-    color: var(--color-secondary);
+    color: #3a3f47;
     font-family: var(--font-secondary);
     font-weight: 30px;
     margin-bottom: 5px;
@@ -1024,7 +1020,32 @@ section {
 .menu .tab-content .menu-item .price {
     font-size: 24px;
     font-weight: 700;
+    color: #5d646f;
+}
+
+.menu .tab-content .menu-item .read-more {
+    background-color: var(--color-primary);
+}
+
+.menu .tab-content .menu-item .read-more a{
+    color: black;
+}
+
+.menu .tab-content .menu-item .read-more:hover,
+.menu .tab-content .menu-item .read-more a:hover {
+    background-color: #3a3f47;
     color: var(--color-primary);
+}
+
+.menu .tab-content .read-other{
+    -moz-text-align-last: center;
+    text-align-last: center;
+    /* background-color: var(--color-secondary); */
+    background-color: #e4e4e4   ;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    transition: 0.9s;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 /*--------------------------------------------------------------
@@ -1627,7 +1648,7 @@ section {
     font-size: 64px;
     font-weight: 700;
     margin-bottom: 20px;
-    color: var(--color-secondary);
+    color: var(--color-primary);
     font-family: var(--font-primary);
 }
 
@@ -1636,51 +1657,25 @@ section {
 }
 
 .hero p {
-    color: #4f4f5a;
+    color: #8ccbbe;
     font-weight: 400;
     margin-bottom: 30px;
 }
 
-.hero .btn-book-a-table {
-    font-weight: 500;
+.hero .order-now {
+    overflow: hidden;
     font-size: 14px;
     letter-spacing: 1px;
-    display: inline-block;
     padding: 12px 36px;
     border-radius: 50px;
     transition: 0.5s;
-    color: #fff;
-    background: var(--color-primary);
-    box-shadow: 0 8px 28px rgba(206, 18, 18, 0.2);
+    color: var(--color-secondary);
+    background-color: var(--color-primary);
 }
 
-.hero .btn-book-a-table:hover {
-    background: rgba(206, 18, 18, 0.8);
-    box-shadow: 0 8px 28px rgba(206, 18, 18, 0.45);
-}
-
-.hero .btn-watch-video {
-    font-size: 16px;
-    transition: 0.5s;
-    margin-left: 25px;
-    color: var(--font-secondary);
-    font-weight: 600;
-}
-
-.hero .btn-watch-video i {
+.hero .order-now:hover {
     color: var(--color-primary);
-    font-size: 32px;
-    transition: 0.3s;
-    line-height: 0;
-    margin-right: 8px;
-}
-
-.hero .btn-watch-video:hover {
-    color: var(--color-primary);
-}
-
-.hero .btn-watch-video:hover i {
-    color: rgba(206, 18, 18, 0.8);
+    background-color: #8ccbbe;
 }
 
 @media (max-width: 640px) {
@@ -1688,8 +1683,7 @@ section {
         font-size: 36px;
     }
 
-    .hero .btn-get-started,
-    .hero .btn-watch-video {
+    .hero .btn-get-started {
         font-size: 14px;
     }
 }
@@ -2358,9 +2352,10 @@ section {
 --------------------------------------------------------------*/
 .footer {
     font-size: 14px;
-    background-color: var(--color-primary);
     padding: 50px 0;
-    color: white;
+    font-size: 14px;
+  background-color: #1f1f24;
+  color: rgba(255, 255, 255, 0.7);
   }
   
   .footer .footer-info .logo {
