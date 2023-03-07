@@ -16,15 +16,14 @@ return new class extends Migration
         Schema::create('produks', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id');
-            // $table->foreignId('review_id');
             $table->string('nama_produk');
             $table->string('slug');
             $table->string('harga');
             $table->integer('stok');
-            $table->string('gambar_produk')->nullable();
             $table->text('deskripsi');
             $table->boolean('is_active');
             $table->integer('views');
+            $table->string('thumbnail')->nullable();
             $table->timestamps();
         });
     }

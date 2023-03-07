@@ -48,7 +48,7 @@
                                         <th>Harga Produk</th>
                                         <th>Stok</th>
                                         <th>Nama Kategori</th>
-                                        <th>Gambar</th>
+                                        <th>Cover</th>
                                         <th style="width: 10%">Action</th>
                                     </tr>
                                 </thead>
@@ -60,7 +60,7 @@
                                         <td>Rp{{ number_format($produk->harga, 0, ',','.') }}</td>
                                         <td>{{ $produk->stok }}</td>
                                         <td>{{ $produk->category->nama_category }}</td>
-                                        <td>Edinburgh</td>
+                                        <td><img src="/cover/{{ $produk->thumbnail }}" class="img-responsive" style="max-height:100px; max-width:100px;" alt=""></td>
                                         <td>
                                             <div class="form-button-action">
                                                 <a href="{{ route('products.edit', $produk->id) }}" class="btn btn-success btn-sm mr-2">

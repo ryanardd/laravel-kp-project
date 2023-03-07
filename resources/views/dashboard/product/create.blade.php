@@ -30,10 +30,15 @@
 							@enderror
                         </div>
 
-                        {{-- <div class="form-group">
-                            <label for="slug">Slug</label>
-                            <input type="text" name="slug" class="form-control" id="slug" disabled readonly>
-                        </div> --}}
+                        <div class="form-group">
+                            <label for="formImages">Cover Image</label>
+                            <input class="form-control" type="file" id="formImages" name="thumbnail" multiple>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="formImages">Images</label>
+                            <input class="form-control" type="file" id="formImages" name="image[]" multiple>
+                        </div>
 
                         <div class="form-group">
                             <label for="harga">Harga Produk</label>

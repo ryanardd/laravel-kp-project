@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use App\Models\Produk;
 use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
@@ -43,19 +44,52 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $validateData = $this->validate($request, [
+        $this->validate($request, [
             'nama_produk' => 'required',
             'harga' => 'required|digits_between:1,12',
             'stok' => 'required|digits_between:1,5',
             'deskripsi' => 'required',
             'is_active' => 'required',
-            'category_id' => 'required'
+            'category_id' => 'required',
+            'thumbnail' => 'required|mimes:jpeg,png,jpg,svg|max:5120'
         ]);
-        $validateData['views'] = 0;
-        $validateData['slug'] = Str::slug($request->nama_produk);
+        // $validateData['views'] = 0;
+        // $validateData['slug'] = Str::slug($request->nama_produk);
 
-        // dd($data);
-        Produk::create($validateData);
+        if ($request->hasFile('thumbnail')) {
+            $file = $request->file('thumbnail');
+            $imageName = time() . '-' . $file->getClientOriginalName();
+            $file->move(\public_path("cover"), $imageName);
+
+            $produk = new Produk([
+                "nama_produk" => $request["nama_produk"],
+                "harga" => $request["harga"],
+                "stok" => $request["stok"],
+                "deskripsi" => $request["deskripsi"],
+                "is_active" => $request["is_active"],
+                "category_id" => $request["category_id"],
+                "is_active" => $request["is_active"],
+                "views" => 0,
+                "thumbnail" => $imageName,
+                "slug" => Str::slug($request->nama_produk)
+            ]);
+            $produk->save();
+        }
+
+        $images = array();
+        if ($request->hasFile('image')) {
+            $files = $request->file('image');
+            foreach ($files as $file) {
+                $imageName = time() . '-' . $file->getClientOriginalName();
+                $file->move(\public_path("images"), $imageName);
+                $images[] = $imageName;
+            }
+            // $produk->images->image = json_encode($images);
+            Image::create([
+                'image' => implode(',', $images),
+                "product_id" => $produk->id,
+            ]);
+        }
 
         return redirect()->route('products.index')->with(['success' => 'Data Berhasil Tersimpan!']);
     }
@@ -153,8 +187,20 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $produk = Produk::find($id);
+        if (File::exists("cover/" . $produk->thumbnail)) {
+            File::delete("cover/" . $produk->thumbnail);
+
+            $images = Image::where('product_id', $produk->id)->get();
+            $images = explode(',', $images->image);
+            // dd($images);
+            foreach ($images as $gambar) {
+                if (File::exists("images/" . $gambar->image)) {
+                    File::delete("images/" . $gambar->image);
+                }
+            }
+        }
+
         $produk->delete();
         return redirect(route('products.index'))->with(['success' => 'Data Berhasil Terhapus!']);
     }
-
 }
