@@ -23,6 +23,7 @@ return new class extends Migration
             $table->text('deskripsi');
             $table->boolean('is_active');
             $table->integer('views');
+            $table->string('thumbnail')->nullable();
             $table->timestamps();
         });
     }

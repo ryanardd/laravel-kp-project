@@ -31,8 +31,13 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="formImages">Gambar</label>
-                            <input class="form-control" type="file" id="formImages" name="gambar" multiple>
+                            <label for="formImages">Cover Image</label>
+                            <input class="form-control" type="file" id="formImages" name="thumbnail" multiple>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="formImages">Images</label>
+                            <input class="form-control" type="file" id="formImages" name="image[]" multiple>
                         </div>
 
                         <div class="form-group">
