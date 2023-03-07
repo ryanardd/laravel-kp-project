@@ -11,56 +11,12 @@
                         <div class="row justify-content-between gy-5">
                             <div
                                 class="col-lg-5 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-lg-start order-2 text-center">
-                                <h2 data-aos="fade-up">New Arrival<br>get Buy</h2>
-                                <p data-aos="fade-up" data-aos-delay="100">
-                                    Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae
-                                    cumque eum quaerat.</p>
-                                <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-                                    <a href="#book-a-table" class="btn-book-a-table">Book a Table</a>
-                                </div>
-                            </div>
-                            <div class="col-lg-5 order-lg-2 text-lg-start order-1 text-center">
-                                <img src="assets/img/hero-img.png" class="img-fluid" alt="" data-aos="zoom-out"
-                                    data-aos-delay="300">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="row justify-content-between gy-5">
-                            <div
-                                class="col-lg-5 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-lg-start order-2 text-center">
-                                <h2 data-aos="fade-up">Jek Anget<br>Ndang Tukuo Cok</h2>
-                                <p data-aos="fade-up" data-aos-delay="100">Sed autem laudantium dolores. Voluptatem itaque
-                                    ea consequatur
-                                    eveniet. Eum quas beatae cumque eum quaerat.</p>
-                                <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-                                    <a href="#book-a-table" class="btn-book-a-table">Book a Table</a>
-                                    <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-                                        class="glightbox btn-watch-video d-flex align-items-center"><i
-                                            class="bi bi-play-circle"></i><span>Watch Video</span></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-5 order-lg-2 text-lg-start order-1 text-center">
-                                <img src="assets/img/hero-img.png" class="img-fluid" alt="" data-aos="zoom-out"
-                                    data-aos-delay="300">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="row justify-content-between gy-5">
-                            <div
-                                class="col-lg-5 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-lg-start order-2 text-center">
                                 <h2 data-aos="fade-up">Opo Maneh<br>Ndang Gasss</h2>
                                 <p data-aos="fade-up" data-aos-delay="100">Sed autem laudantium dolores. Voluptatem itaque
                                     ea consequatur
                                     eveniet. Eum quas beatae cumque eum quaerat.</p>
                                 <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-                                    <a href="#book-a-table" class="btn-book-a-table">Book a Table</a>
-                                    <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-                                        class="glightbox btn-watch-video d-flex align-items-center"><i
-                                            class="bi bi-play-circle"></i><span>Watch Video</span></a>
+                                    <a href="" class="order-now">Order Now</a>
                                 </div>
                             </div>
                             <div class="col-lg-5 order-lg-2 text-lg-start order-1 text-center">
@@ -77,16 +33,15 @@
     <!-- End Hero Section -->
 
     {{-- service --}}
-    <section id="why-us" class="why-us">
+    <section class="service">
         <div class="container" data-aos="fade-up">
             <div class="section-header">
                 <h2>Service Us</h2>
-                <p>Learn More <span>Service Us</span></p>
+                <p>Learn More <span> Service Us</span></p>
             </div>
 
             <div class="row gap-4">
                 <div class="col-xl why-box" data-aos="fade-right" data-aos-delay="200">
-
                     <div class="icon-box d-flex flex-column justify-content-center align-items-center p-2">
                         <i class="bi bi-patch-check"></i>
                         <h4>Pelayanan Terbaik</h4>
@@ -186,7 +141,7 @@
                                     <p class="price">
                                         Rp. {{ number_format($produk->harga, 0, ',', '.') }}
                                     </p>
-                                    <div class="btn btn-dark d-flex justify-content-center mt-2"><a class="text-white"
+                                    <div class="d-flex justify-content-center mt-2"><a class="btn read-more"
                                             href="/product/{{ $produk->slug }}">Read More</a></div>
                                 </div>
                             </div>
@@ -196,7 +151,7 @@
                     </div>
                     {{-- end Items --}}
                     <div class="d-flex justify-content-center mt-5">
-                        <a href="/product" class="btn btn-info">Lihat Produk Lainnya</a>
+                        <a href="/product" class="btn read-other">Lihat Produk Lainnya</a>
                     </div>
                 </div>
             </div>
