@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Slide;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class SlideController extends Controller
 {
@@ -40,26 +41,22 @@ class SlideController extends Controller
         // validasi form
         $this->validate($request, [
             'judul_slide' => 'required',
-            // 'gambar_slide' => 'mimes:png,jpg,jpeg,gif,bmp'
+            'gambar_slide' => 'required|file|mimes:jpeg,png,jpg,svg|max:5120'
         ]);
 
-        $data = $request->all();
-        Slide::create($data);
-        return redirect()->route('slide.index')->with('success', 'Data berhasil disimpan');
+        // validasi gambar beserta insert data
+        if (!empty($request->file('gambar_slide'))) {
+            $data['gambar_slide'] = $request->file('gambar_slide');
+            $imageName = time() . '-' . $data['gambar_slide']->getClientOriginalName();
+            $data['gambar_slide']->move(\public_path("images/slide/"), $imageName);
 
-        // if (!empty($request->file('gambar_slide'))) {
-        //     $data = $request->all();
-        //     $data['gambar_slide'] = $request->file('gambar_slide')->store('img/slide');
+            Slide::create([
+                'judul_slide' => $request->judul_slide,
+                'gambar_slide' => $imageName,
+            ]);
 
-        //     Slide::create($data);
-
-        //     return redirect()->route('slide.index')->with('success', 'Data berhasil disimpan');
-        // } else {
-        //     $data = $request->all();
-        //     Slide::create($data);
-
-        //     return redirect()->route('slide.index')->with('success', 'Data berhasil disimpan');
-        // }
+            return redirect()->route('slide.index')->with('success', 'Data berhasil disimpan');
+        }
     }
 
     /**
@@ -81,11 +78,7 @@ class SlideController extends Controller
      */
     public function edit($id)
     {
-        $slides = Slide::find($id);
 
-        return view('dashboard.slide.edit', [
-            'slide' => $slides
-        ]);
     }
 
     /**
@@ -97,18 +90,7 @@ class SlideController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'judul_slide' => 'required',
-        ]);
 
-        $slide = Slide::find($id);
-        $slide->update([
-            'judul_slide' => $request->judul_slide,
-            'gambar_slide' => $request->gambar_slide,
-            'is_active' => $request->is_active,
-        ]);
-
-        return redirect()->route('slide.index')->with('success', 'Data berhasil disimpan');
     }
 
     /**
@@ -121,7 +103,10 @@ class SlideController extends Controller
     {
         $slide = Slide::find($id);
 
-        // Storage::delete($slide->gambar_slide);
+        if (File::exists("images/slide/" . $slide->gambar_slide)) {
+            File::delete("images/slide/" . $slide->gambar_slide);
+        }
+
         $slide->delete();
         return redirect()->route('slide.index')->with('success', 'Data berhasil dihapus!');
     }

@@ -51,7 +51,7 @@ class ProductController extends Controller
             'deskripsi' => 'required',
             'is_active' => 'required',
             'category_id' => 'required',
-            'thumbnail' => 'required|mimes:jpeg,png,jpg,svg|max:5120'
+            'thumbnail' => 'required|file|mimes:jpeg,png,jpg,svg|max:5120'
         ]);
         // $validateData['views'] = 0;
         // $validateData['slug'] = Str::slug($request->nama_produk);
@@ -59,7 +59,7 @@ class ProductController extends Controller
         if ($request->hasFile('thumbnail')) {
             $file = $request->file('thumbnail');
             $imageName = time() . '-' . $file->getClientOriginalName();
-            $file->move(\public_path("cover"), $imageName);
+            $file->move(\public_path("images/cover"), $imageName);
 
             $produk = new Produk([
                 "nama_produk" => $request["nama_produk"],
@@ -81,7 +81,7 @@ class ProductController extends Controller
             $files = $request->file('image');
             foreach ($files as $file) {
                 $imageName = time() . '-' . $file->getClientOriginalName();
-                $file->move(\public_path("images"), $imageName);
+                $file->move(\public_path("images/image"), $imageName);
                 $images[] = $imageName;
             }
             // $produk->images->image = json_encode($images);
@@ -187,20 +187,20 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $produk = Produk::find($id);
-        if (File::exists("cover/" . $produk->thumbnail)) {
-            File::delete("cover/" . $produk->thumbnail);
+        if (File::exists("images/cover/" . $produk->thumbnail)) {
+            File::delete("images/cover/" . $produk->thumbnail);
+        }
+        $image = Image::where('product_id', $produk->id)->get();
+        // $images = $image->image ? explode(',', $image->image) : [];
+        dd($image);
 
-            $images = Image::where('product_id', $produk->id)->get();
-            $images = explode(',', $images->image);
-            // dd($images);
-            foreach ($images as $gambar) {
-                if (File::exists("images/" . $gambar->image)) {
-                    File::delete("images/" . $gambar->image);
-                }
+        foreach ($image as $gambar) {
+            if (File::exists("images/image/" . $gambar->image )) {
+                File::delete("images/image/" . $gambar->image );
             }
         }
 
-        $produk->delete();
+        // $produk->delete();
         return redirect(route('products.index'))->with(['success' => 'Data Berhasil Terhapus!']);
     }
 }

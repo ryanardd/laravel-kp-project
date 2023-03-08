@@ -32,7 +32,7 @@
 
                         <div class="form-group">
                             <label for="formImages">Cover Image</label>
-                            <input class="form-control" type="file" id="formImages" name="thumbnail" multiple>
+                            <input class="form-control" type="file" id="formImages" name="thumbnail">
                         </div>
 
                         <div class="form-group">

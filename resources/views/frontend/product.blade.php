@@ -27,8 +27,8 @@
                     @foreach ($product as $row)
                         <div class="col-xl-3 portfolio-item filter-app">
                             <div class="portfolio-wrap">
-                                <a href="assets/img/hero-img.png" data-gallery="portfolio-gallery-app"
-                                    class="glightbox"><img src="assets/img/hero-img.png" class="img-fluid"
+                                <a href="/cover/{{ $row->thumbnail }}" data-gallery="portfolio-gallery-app"
+                                    class="glightbox"><img src="/cover/{{ $row->thumbnail }}" class="img-fluid"
                                         alt=""></a>
                                 <div class="portfolio-info">
                                     <h4><a href="portfolio-details.html" title="More Details">{{ $row->nama_produk }}</a>
@@ -47,8 +47,8 @@
                     @foreach ($products as $product)
                         <div class="col-xl-3 portfolio-item filter-app">
                             <div class="portfolio-wrap">
-                                <a href="assets/img/hero-img.png" data-gallery="portfolio-gallery-app"
-                                    class="glightbox"><img src="assets/img/hero-img.png" class="img-fluid"
+                                <a href="/cover/{{ $product->thumbnail }}" data-gallery="portfolio-gallery-app"
+                                    class="glightbox"><img src="/cover/{{ $product->thumbnail }}" class="img-fluid"
                                         alt=""></a>
                                 <div class="portfolio-info">
                                     <h4><a href="portfolio-details.html"

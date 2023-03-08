@@ -9,5 +9,6 @@ class Slide extends Model
 {
     use HasFactory;
 
+    // protected $guarded = ['id']; // gak boleh diisi, sisannya boleh
     protected $guarded = ['id'];
 }

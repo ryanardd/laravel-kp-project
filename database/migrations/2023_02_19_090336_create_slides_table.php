@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('judul_slide');
             $table->string('gambar_slide')->nullable();
-            $table->boolean('is_active');
             $table->timestamps();
         });
     }
