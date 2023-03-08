@@ -39,7 +39,7 @@
                                 </div>
                             @endif
                             <div class="table-responsive">
-                                <table id="myTable" class="display table table-striped table-hover">
+                                <table id="myTable" class="display table table-striped table-hover border">
                                     <thead>
                                         <tr>
                                             <th>No</th>
