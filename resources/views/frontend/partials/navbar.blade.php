@@ -10,27 +10,26 @@
             <nav id="navbar" class="navbar">
                 <ul>
 
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/product">Product</a>
+                    <li><a href="{{ route('home') }}">Home</a></li>
+                    <li><a href="{{ route('product') }}">Product</a>
                     </li>
                     <li class="dropdown"><a href="#"><span>Marketplace</span> <i
                                 class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
-                            <li><a href="https://shopee.co.id/murahkomofficial" target="blank">Shopee</a></li>
-                            <li><a href="https://www.tokopedia.com/murahkomofficial" target="blank">Tokopedia</a></li>
+                            <li><a href="https://shopee.co.id/murahkomofficial" target="_blank">Shopee</a></li>
+                            <li><a href="https://www.tokopedia.com/murahkomofficial" target="_blank">Tokopedia</a></li>
                         </ul>
                     </li>
 
-                    <li><a href="/contact-us">Contact</a></li>
-
+                    <li><a href="{{ route('contact-us') }}">Contact</a></li>
 
                     @auth
                         <li class="dropdown"><a href="#"><span>Dashboard</span> <i
                                     class="bi bi-chevron-down dropdown-indicator"></i></a>
                             <ul>
-                                <li><a href="/dashboard">My Dashboard</a></li>
+                                <li><a href="{{ route('dashboard') }}" target="_blank">My Dashboard</a></li>
 
-                                <form action="/logout" method="post">
+                                <form action="{{ route('logout') }}" method="post">
                                     @csrf
                                     <button type="submit" class="logout btn btn-transparent">
                                         <i class="bi bi-box-arrow-left"></i>
