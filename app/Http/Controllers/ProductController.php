@@ -76,19 +76,18 @@ class ProductController extends Controller
             $produk->save();
         }
 
-        $images = array();
+        // $images = array();
         if ($request->hasFile('image')) {
-            $files = $request->file('image');
-            foreach ($files as $file) {
+            // $files = $request->file('image');
+            foreach ($request->file('image') as $file) {
                 $imageName = time() . '-' . $file->getClientOriginalName();
                 $file->move(\public_path("images/image"), $imageName);
-                $images[] = $imageName;
+                Image::create([
+                    'image' => $imageName,
+                    // 'image' => implode(',', $images),
+                    "product_id" => $produk->id,
+                ]);
             }
-            // $produk->images->image = json_encode($images);
-            Image::create([
-                'image' => implode(',', $images),
-                "product_id" => $produk->id,
-            ]);
         }
 
         return redirect()->route('products.index')->with(['success' => 'Data Berhasil Tersimpan!']);
@@ -115,10 +114,12 @@ class ProductController extends Controller
     {
         $product = Produk::find($id);
         $kategori = Category::all();
+        $images = Image::where('product_id', $id)->get();
 
         return view('dashboard.product.edit', [
             'produk' => $product,
-            'kategori' => $kategori
+            'kategori' => $kategori,
+            'images' => $images
         ]);
     }
 
@@ -148,7 +149,6 @@ class ProductController extends Controller
         return redirect()->route('products.index')->with(['success' => 'Data Berhasil di Update!']);
 
         // if(empty($request->file('gambar_produk'))){
-
         //     $produk = Produk::find($id);
         //     $produk->update([
         //         'nama_produk' => $request->nama_produk,
@@ -189,18 +189,15 @@ class ProductController extends Controller
         $produk = Produk::find($id);
         if (File::exists("images/cover/" . $produk->thumbnail)) {
             File::delete("images/cover/" . $produk->thumbnail);
-        }
-        $image = Image::where('product_id', $produk->id)->get();
-        // $images = $image->image ? explode(',', $image->image) : [];
-        dd($image);
 
-        foreach ($image as $gambar) {
-            if (File::exists("images/image/" . $gambar->image )) {
-                File::delete("images/image/" . $gambar->image );
+            $images = Image::where('product_id', $produk->id)->get();
+            foreach ($images as $gambar) {
+                if (File::exists("images/image/" . $gambar->image)) {
+                    File::delete("images/image/" . $gambar->image);
+                }
             }
         }
-
-        // $produk->delete();
+        $produk->delete();
         return redirect(route('products.index'))->with(['success' => 'Data Berhasil Terhapus!']);
     }
 }

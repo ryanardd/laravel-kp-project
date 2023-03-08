@@ -17,7 +17,7 @@ class CategoryController extends Controller
     {
         return view('dashboard.category.index', [
             "kategori" => Category::all()
-        ]);
+        ]); 
     }
 
     /**
