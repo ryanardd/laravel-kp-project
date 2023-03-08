@@ -21,14 +21,14 @@ use App\Models\Slide;
 |
 */
 
-
+// halaman home
 Route::get('/', [FrontEndController::class, 'index'])->name('home');
-// Route::get('/contact-us', [FrontEndController::class, 'contactUs'])->name('contact-us');
 
+// halaman product
 Route::get('/product', [FrontEndController::class, 'product'])->name('product');
 
 // halaman contact
-Route::get('/contact-us', [FrontEndController::class, 'contactUs']);
+Route::get('/contact-us', [FrontEndController::class, 'contactUs'])->name('contact-us');
 
 // halaman detail product
 Route::get('/product/{produk:slug}', [FrontEndController::class, 'showProduct']);
@@ -43,7 +43,7 @@ Route::get('category/{category:slug}', [FrontEndController::class, 'showCategory
 // halaman login
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
-Route::post('/logout', [LoginController::class, 'logout']);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // route menangani slug otomatis
 Route::get('/dashboard/products/checkSlug', [ProductController::class, 'checkSlug'])->middleware('auth');
@@ -59,7 +59,7 @@ Route::get('/dashboard', function()
         'categories' => Category::count(),
         'slides' => Slide::count(),
     ]);
-})->middleware('auth');
+})->middleware('auth')->name('dashboard');
 
 // halaman dashboard product
 Route::resource('/dashboard/products', ProductController::class);
