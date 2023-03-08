@@ -1,7 +1,7 @@
 <div class="main-header">
     <!-- Logo Header -->
     <div class="logo-header" data-background-color="blue2">
-        <a href="{{ route('home') }}" class="logo">
+        <a href="{{ route('home') }}" class="logo" target="blank">
             <h2 class="navbar-brand text-white"><b>Murah<span class="text-danger">Kom</span></b></h2>
             {{-- <img src="/assets/img/logo.svg" alt="navbar brand" class="navbar-brand"> --}}
         </a>
