@@ -47,8 +47,8 @@
                     @foreach ($pc as $product)
                         <div class="col-xl-3 portfolio-item filter-product">
                             <div class="portfolio-wrap">
-                                <a href="/cover/{{ $product->thumbnail }}" data-gallery="portfolio-gallery-app"
-                                    class="glightbox"><img src="/cover/{{ $product->thumbnail }}" class="img-fluid"
+                                <a href="images/cover/{{ $product->thumbnail }}" data-gallery="portfolio-gallery-app"
+                                    class="glightbox"><img src="images/cover/{{ $product->thumbnail }}" class="img-fluid"
                                         alt=""></a>
                                 <div class="portfolio-info">
                                     <h4><a href="portfolio-details.html"
