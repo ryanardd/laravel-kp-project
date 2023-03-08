@@ -24,27 +24,27 @@
                 @endif
                 <div class="field input">
                     <label for="email">Email</label>
-                    <input type="email" name="email" placeholder="name@example.com" value="{{ old('email') }}" required
-                    oninvalid="this.setCustomValidity('Email tidak boleh kosong')" oninput="setCustomValidity('')">
+                    <input type="email" name="email" placeholder="name@example.com" value="{{ old('email') }}"
+                        required oninvalid="this.setCustomValidity('Email tidak boleh kosong')"
+                        oninput="setCustomValidity('')">
                     @error('email')
                         <div class="text-danger mt-2">Mohon diisi, Judul tidak boleh kosong!</div>
                     @enderror
                 </div>
                 <div class="field input">
                     <label for="password">Password</label>
-                    <input type="password" name="password" placeholder="Enter your password" required oninvalid="this.setCustomValidity('Password tidak boleh kosong')" oninput="setCustomValidity('')">
+                    <input type="password" name="password" placeholder="Enter your password" required
+                        oninvalid="this.setCustomValidity('Password tidak boleh kosong')"
+                        oninput="setCustomValidity('')">
                     <i class="fas fa-eye"></i>
                 </div>
                 <div class="field button">
                     <input type="submit" name="submit" value="Login">
                 </div>
             </form>
-            {{-- <div class="link">Not yet signed up? <a href="/view/signup.php">Signup now</a></div> --}}
         </section>
     </div>
-
     <script src="assets/js/script.js"></script>
-    {{-- <script src="javascript/signup.js"></script> --}}
 </body>
 
 </html>

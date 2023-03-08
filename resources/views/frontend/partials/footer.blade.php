@@ -3,16 +3,14 @@
     <div class="container">
         <div class="row gy-4">
             <div class="col-lg-5 col-md-12 footer-info">
-                {{-- <a href="" class="logo d-flex align-items-center"> --}}
                 <h3>MurahKom</h3>
-                {{-- </a> --}}
                 <p>Murahkom merupakan perusahaan dibidang IT atau Teknologi yang didirikan pada 1 Januari 2010. Murahkom
                     senantiasa mengikuti perkembangan yang terus terupadate dalam dunia IT atau teknologi.</p>
                 <div class="social-links d-flex mt-4">
-                    {{-- <a href="#" class="twitter"><i class="bi bi-twitter"></i></a> --}}
-                    <a href="https://www.facebook.com/murahkomofficial" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
-                    <a href="https://www.instagram.com/murahkomofficial/" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
-                    {{-- <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a> --}}
+                    <a href="https://www.facebook.com/murahkomofficial" class="facebook" target="_blank"><i
+                            class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/murahkomofficial/" class="instagram" target="_blank"><i
+                            class="bi bi-instagram"></i></a>
                 </div>
             </div>
 
@@ -53,14 +51,7 @@
         <div class="copyright">
             &copy; 2023 <strong><span>MurahKom</span></strong>. All Rights Reserved
         </div>
-        {{-- <div class="credits"> --}}
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/impact-bootstrap-business-website-template/ -->
-        {{-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> --}}
-        {{-- </div> --}}
     </div>
 
-</footer><!-- End Footer -->
+</footer>
 <!-- End Footer -->
