@@ -38,7 +38,7 @@
                             </div>
                         @endif
                         <div class="table-responsive">
-                            <table id="myTable" class="display table table-striped table-hover">
+                            <table id="myTable" class="display table table-striped table-hover text-center">
                                 <thead>
                                     <tr>
                                         <th>No</th>
@@ -54,7 +54,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $row->nama_category }}</td>
                                         <td>{{ $row->slug }}</td>
-                                        <td>{{ $row->created_at->format('j F Y') }}</td>
+                                        <td>{{ $row->count() }}</td>
                                         <td>
                                             <a href="{{ route('categories.edit', $row->id) }}" class="btn btn-success btn-sm mr-2"><i class="fas fa-pen"></i></a>
                                             <form action="{{ route('categories.destroy', $row->id) }}" method="POST" class="d-inline">
