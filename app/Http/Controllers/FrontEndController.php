@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Produk;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FrontEndController extends Controller
 {
@@ -16,8 +17,8 @@ class FrontEndController extends Controller
 
     public function product(Category $category) {
         return view('frontend.product', [
-            "products" => Produk::where('is_active', 1)->with('category')->latest()->get(),
-            "product" => $category->product->load('category')
+            "laptop" => Produk::where('category_id', 1)->with('category')->latest()->get(),
+            "pc" => Produk::where('category_id', 2)->with('category')->latest()->get(),
         ]);
     }
 
