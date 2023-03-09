@@ -1,3 +1,5 @@
+{{-- @dd($detail) --}}
+{{-- @dd($images) --}}
 @extends('frontend/layouts/main')
 
 @section('container')
@@ -8,19 +10,21 @@
                 <div class="col-lg-5">
                     <figure class="figure w-100">
                         <div class="itemtab mb-2" style="height: 300px;">
-                            <img src="/assets/img/profile.jpg" id="image" class="w-100 h-100 figure-img img-fluid rounded"
+                            <img src="/images/cover/{{ $detail->thumbnail }}" id="image" class="w-100 h-100 figure-img img-fluid rounded"
                                 alt="...">
                         </div>
                         <figcaption class="figure-caption d-flex justify-content-evenly gap-2">
                             <a>
-                                <img src="/assets/img/hero-img.png" onclick="change(this.src)"
+                                <img src="/images/cover/{{ $detail->thumbnail }}" onclick="change(this.src)"
                                     class="figure-img img-fluid rounded" style="width: 70px;height: 54px;" alt="...">
                             </a>
+                            @foreach ($images as $image)
                             <a>
-                                <img src="/assets/img/about-2.jpg" onclick="change(this.src)"
+                                <img src="images/image/{{ $image->image }}" onclick="change(this.src)"
                                     class="figure-img img-fluid rounded" style="width: 70px; height: 54px;" alt="...">
                             </a>
-                            <a>
+                            @endforeach
+                            {{-- <a>
                                 <img src="/assets/img/profile.jpg" onclick="change(this.src)"
                                     class="figure-img img-fluid rounded" style="width: 70px; height: 54px;" alt="...">
                             </a>
@@ -31,7 +35,7 @@
                             <a>
                                 <img src="/assets/img/testimonials-1.jpg" onclick="change(this.src)"
                                     class="figure-img img-fluid rounded" style="width: 70px;height: 54px;" alt="...">
-                            </a>
+                            </a> --}}
                         </figcaption>
                     </figure>
                 </div>

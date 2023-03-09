@@ -133,7 +133,7 @@
                             <div class="col-lg-4">
                                 <div class="menu-item p-2">
                                     <a href="" class="">
-                                        <img src="assets/img/hero-img.png" class="menu-img img-fluid" alt="">
+                                        <img src="images/cover/{{ $produk->thumbnail }}" class="menu-img img-fluid" alt="">
                                     </a>
                                     <a href="/product/{{ $produk->slug }}">
                                         <h4>{{ $produk->nama_produk }}</h4>

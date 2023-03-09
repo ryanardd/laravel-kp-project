@@ -30,7 +30,7 @@
                                     class="glightbox"><img src="images/cover/{{ $row->thumbnail }}" class="img-fluid"
                                         alt=""></a>
                                 <div class="portfolio-info">
-                                    <h4><a href="portfolio-details.html" title="More Details">{{ $row->nama_produk }}</a>
+                                    <h4><a href="{{ route('product') }}/{{ $row->slug }}" title="More Details">{{ $row->nama_produk }}</a>
                                     </h4>
                                     <div class="lead">
                                         Rp. {{ number_format($row->harga, 0, ',', '.') }}
@@ -38,7 +38,7 @@
                                     <p class="d-flex justify-content-start">{{ $row->category->nama_category }}</p>
                                     <p class="d-flex justify-content-end">{{ $row->stok ? 'Stok tersedia' : '' }}</p>
                                     <div class="btn btn-dark d-flex justify-content-center mt-2"><a
-                                            href="/product/{{ $row->slug }}">Read More</a></div>
+                                            href="{{ route('product') }}/{{ $row->slug }}">Read More</a></div>
                                 </div>
                             </div>
                         </div><!-- End Portfolio Item -->

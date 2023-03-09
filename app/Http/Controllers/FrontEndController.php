@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use App\Models\Produk;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -27,6 +28,7 @@ class FrontEndController extends Controller
         // @dd($produk);
         return view('frontend._detailProduk', [
             "detail" => $produk,
+            "images" => Image::all()
         ]);
     }
 
