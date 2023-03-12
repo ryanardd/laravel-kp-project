@@ -28,7 +28,7 @@ class FrontEndController extends Controller
         $produk->increment('views');
         return view('frontend._detailProduk', [
             "detail" => $produk,
-            "images" => Image::all()
+            "images" => Image::with('products')->get(),
         ]);
     }
 

@@ -59,19 +59,19 @@ class ProductController extends Controller
         if ($request->hasFile('thumbnail')) {
             $file = $request->file('thumbnail');
             $imageName = time() . '-' . $file->getClientOriginalName();
-            $file->move(\public_path("images/cover"), $imageName);
+            $file->move(\public_path('images/cover'), $imageName);
 
             $produk = new Produk([
-                "nama_produk" => $request["nama_produk"],
-                "harga" => $request["harga"],
-                "stok" => $request["stok"],
-                "deskripsi" => $request["deskripsi"],
-                "is_active" => $request["is_active"],
-                "category_id" => $request["category_id"],
-                "is_active" => $request["is_active"],
-                "views" => 0,
-                "thumbnail" => $imageName,
-                "slug" => Str::slug($request->nama_produk),
+                'nama_produk' => $request['nama_produk'],
+                'harga' => $request['harga'],
+                'stok' => $request['stok'],
+                'deskripsi' => $request['deskripsi'],
+                'is_active' => $request['is_active'],
+                'category_id' => $request['category_id'],
+                'is_active' => $request['is_active'],
+                'views' => 0,
+                'thumbnail' => $imageName,
+                'slug' => Str::slug($request->nama_produk),
                 'cta_tokped' => $request['cta_tokped'],
                 'cta_shopee' => $request['cta_shopee'],
             ]);
@@ -84,11 +84,10 @@ class ProductController extends Controller
             // $files = $request->file('image');
             foreach ($request->file('image') as $file) {
                 $imageName = time() . '-' . $file->getClientOriginalName();
-                $file->move(\public_path("images/image"), $imageName);
+                $file->move(\public_path('images/image'), $imageName);
                 Image::create([
                     'image' => $imageName,
-                    // 'image' => implode(',', $images),
-                    "product_id" => $produk->id,
+                    'product_id' => $produk->id,
                 ]);
             }
         }
@@ -190,13 +189,13 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $produk = Produk::find($id);
-        if (File::exists("images/cover/" . $produk->thumbnail)) {
-            File::delete("images/cover/" . $produk->thumbnail);
+        if (File::exists('images/cover/' . $produk->thumbnail)) {
+            File::delete('images/cover/' . $produk->thumbnail);
 
             $images = Image::where('product_id', $produk->id)->get();
             foreach ($images as $gambar) {
-                if (File::exists("images/image/" . $gambar->image)) {
-                    File::delete("images/image/" . $gambar->image);
+                if (File::exists('images/image/' . $gambar->image)) {
+                    File::delete('images/image/' . $gambar->image);
                 }
             }
         }
