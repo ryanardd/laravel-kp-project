@@ -54,15 +54,15 @@
                         <li>Simpan dus dan invoice pembelian untuk klaim garansi.</li>
                     </ul>
                     <p>Order Via :</p>
-                    <a href="#" style="text-decoration: none;">
-                        <img src="https://img.icons8.com/color/48/null/whatsapp--v1.png" />
-                    </a>
-                    <a href="#" style="text-decoration: none;">
-                        <img src="https://img.icons8.com/nolan/48/tokopedia.png" />
-                    </a>
-                    <a href="#" style="text-decoration: none;">
-                        <img src="https://img.icons8.com/color/48/null/shopee.png" />
-                    </a>
+                        <a href="#" style="text-decoration: none;">
+                            <img src="https://img.icons8.com/color/48/null/whatsapp--v1.png" />
+                        </a>
+                        <a href="{{ $detail->cta_tokped }}" style="text-decoration: none;" target="_blank">
+                            <img src="https://img.icons8.com/nolan/48/tokopedia.png" />
+                        </a>
+                        <a href="{{ $detail->cta_shopee }}" style="text-decoration: none;" target="_blank">
+                            <img src="https://img.icons8.com/color/48/null/shopee.png" />
+                        </a>
                 </div>
             </div>
 

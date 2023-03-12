@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('harga');
             $table->integer('stok');
             $table->text('deskripsi');
+            $table->string('cta_tokped')->nullable();
+            $table->string('cta_shopee')->nullable();
             $table->boolean('is_active');
             $table->integer('views');
             $table->string('thumbnail')->nullable();

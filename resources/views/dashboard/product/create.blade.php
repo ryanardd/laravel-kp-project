@@ -81,10 +81,25 @@
                             </select>
                         </div>
 
-                        {{-- <div class="form-group">
-                            <label for="gambar">Gambar Produk</label>
-                            <input type="file" name="gambar" class="form-control">
-                        </div> --}}
+                        <div class="form-group">
+                            <label for="cta_tokped">Link Tokopedia</label>
+                            <input type="text" name="cta_tokped" class="form-control" value="{{ old('cta_tokped') }}" placeholder="https://www.tokopedia.com">
+                            @error('cta_tokped')
+							<div class="text-danger mt-2">
+                                Link Tokopedia Harus Di isi!
+                            </div>
+							@enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cta_shopee">Link Shopee</label>
+                            <input type="text" name="cta_shopee" class="form-control" value="{{ old('cta_shopee') }}" placeholder="https://shopee.co.id">
+                            @error('cta_shopee')
+							<div class="text-danger mt-2">
+                                Link Shopee Harus Di isi!
+                            </div>
+							@enderror
+                        </div>
 
                         <div class="form-group">
                             <label for="status">Status</label>

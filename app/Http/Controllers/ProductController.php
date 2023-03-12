@@ -51,10 +51,10 @@ class ProductController extends Controller
             'deskripsi' => 'required',
             'is_active' => 'required',
             'category_id' => 'required',
-            'thumbnail' => 'required|file|mimes:jpeg,png,jpg,svg|max:5120'
+            'thumbnail' => 'required|file|mimes:jpeg,png,jpg,svg|max:5120',
+            'cta_tokped' => 'required|url',
+            'cta_shopee' => 'required|url'
         ]);
-        // $validateData['views'] = 0;
-        // $validateData['slug'] = Str::slug($request->nama_produk);
 
         if ($request->hasFile('thumbnail')) {
             $file = $request->file('thumbnail');
@@ -71,8 +71,11 @@ class ProductController extends Controller
                 "is_active" => $request["is_active"],
                 "views" => 0,
                 "thumbnail" => $imageName,
-                "slug" => Str::slug($request->nama_produk)
+                "slug" => Str::slug($request->nama_produk),
+                'cta_tokped' => $request['cta_tokped'],
+                'cta_shopee' => $request['cta_shopee'],
             ]);
+            // return dd($request);
             $produk->save();
         }
 
