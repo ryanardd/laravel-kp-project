@@ -44,7 +44,7 @@
                                 <input class="form-control" type="file" id="formImages" name="thumbnail">
                             </div>
 
-                            <div class="col-lg-5 d-flex align-items-center border">
+                            <div class="col-lg-5 d-flex align-items-center">
                                 {{-- @dd($produk->images); --}}
                                 @foreach ($images as $gambar)
                                     <img src="/images/image/{{ $gambar->image }}" class="img-responsive"
@@ -100,6 +100,26 @@
                                             {{ $row->nama_category }}</option>
                                     @endforeach
                                 </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cta_tokped">Link Tokopedia</label>
+                                <input type="text" name="cta_tokped" class="form-control" value="{{ old('cta_tokped', $produk->cta_tokped) }}">
+                                @error('cta_tokped')
+                                <div class="text-danger mt-2">
+                                    Link Tokopedia Harus Di isi!
+                                </div>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cta_shopee">Link Shopee</label>
+                                <input type="text" name="cta_shopee" class="form-control" value="{{ old('cta_shopee', $produk->cta_shopee) }}">
+                                @error('cta_shopee')
+                                <div class="text-danger mt-2">
+                                    Link Shopee Harus Di isi!
+                                </div>
+                                @enderror
                             </div>
 
                             <div class="form-group">

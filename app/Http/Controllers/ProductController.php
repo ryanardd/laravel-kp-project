@@ -134,50 +134,86 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validateData = $this->validate($request, [
+        $this->validate($request, [
             'nama_produk' => 'required',
             'harga' => 'required|digits_between:1,12',
             'stok' => 'required|digits_between:1,5',
             'deskripsi' => 'required',
             'is_active' => 'required',
-            'category_id' => 'required'
+            'category_id' => 'required',
+            'thumbnail' => 'required|file|mimes:jpeg,png,jpg,svg|max:5120',
+            'cta_tokped' => 'required|url',
+            'cta_shopee' => 'required|url'
         ]);
-        $validateData['views'] = 0;
-        $validateData['slug'] = Str::slug($request->nama_produk);
 
-        $produk = Produk::find($id);
-        $produk->update($validateData);
+        if (empty($request->hasFile('thumbnail')) && $request->hasFile('image')) {
+            $produk = Produk::find($id);
+            $file = $request->file('thumbnail');
+            $imageName = time() . '-' . $file->getClientOriginalName();
+            $file->move(\public_path('images/cover'), $imageName);
 
-        return redirect()->route('products.index')->with(['success' => 'Data Berhasil di Update!']);
+            if ($request->hasFile('image')) {
+                // $files = $request->file('image');
+                foreach ($request->file('image') as $file) {
+                    $imageName = time() . '-' . $file->getClientOriginalName();
+                    $file->move(\public_path('images/image'), $imageName);
+                    Image::created([
+                        'image' => $imageName,
+                        'product_id' => $produk->id,
+                    ]);
+                }
+            }
+            $produk->update([
+                'nama_produk' => $request['nama_produk'],
+                'harga' => $request['harga'],
+                'stok' => $request['stok'],
+                'deskripsi' => $request['deskripsi'],
+                'is_active' => $request['is_active'],
+                'category_id' => $request['category_id'],
+                'is_active' => $request['is_active'],
+                'views' => 0,
+                'thumbnail' => $imageName,
+                'slug' => Str::slug($request->nama_produk),
+                'cta_tokped' => $request['cta_tokped'],
+                'cta_shopee' => $request['cta_shopee'],
+            ]);
 
-        // if(empty($request->file('gambar_produk'))){
-        //     $produk = Produk::find($id);
-        //     $produk->update([
-        //         'nama_produk' => $request->nama_produk,
-        //         'slug' => Str::slug($request->nama_produk),
-        //         'harga' => $request->harga,
-        //         'stok' => $request->stok,
-        //         'deskripsi' => $request->deskripsi,
-        //         'category_id' => $request->category_id,
-        //         'is_active' => $request->is_active,
-        //     ]);
+            if (File::exists('images/cover/' . $produk->thumbnail)) {
+                File::delete('images/cover/' . $produk->thumbnail);
 
-        //     return redirect()->route('products.index')->with(['success' => 'Data Berhasil di Update!']);
-        // } else {
-        //     $produk = Produk::find($id);
-        //     // Storage::delete($produk->gambar_produk);
-        //     $produk -> update([
-        //         'nama_produk' => $request->nama_produk,
-        //         'slug' => Str::slug($request->nama_produk),
-        //         'harga' => $request->harga,
-        //         'stok' => $request->stok,
-        //         'deskripsi' => strip_tags('required'),
-        //         'category_id' => $request->category_id,
-        //         'is_active' => $request->is_active,
-        //         'gambar_artikel' => $request -> file('gambar_artikel')->store('img/artikel')
-        //     ]);
-        //     return redirect()->route('products.index')->with(['success' => 'Data Berhasil di Update!']);
-        // }
+                $images = Image::where('product_id', $produk->id)->get();
+                foreach ($images as $gambar) {
+                    if (File::exists('images/image/' . $gambar->image)) {
+                        File::delete('images/image/' . $gambar->image);
+                    }
+                }
+            }
+            return redirect()->route('products.index')->with(['success' => 'Data Berhasil di Update!']);
+        } else {
+            $produk = Produk::find($id);
+            $file = $request->file('thumbnail');
+            $imageName = time() . '-' . $file->getClientOriginalName();
+            $file->move(\public_path('images/cover'), $imageName);
+            File::delete('images/cover/' . $produk->thumbnail);
+
+
+            $produk->update([
+                'nama_produk' => $request['nama_produk'],
+                'harga' => $request['harga'],
+                'stok' => $request['stok'],
+                'deskripsi' => $request['deskripsi'],
+                'is_active' => $request['is_active'],
+                'category_id' => $request['category_id'],
+                'is_active' => $request['is_active'],
+                'views' => 0,
+                'thumbnail' => $imageName,
+                'slug' => Str::slug($request->nama_produk),
+                'cta_tokped' => $request['cta_tokped'],
+                'cta_shopee' => $request['cta_shopee'],
+            ]);
+
+            return redirect()->route('products.index')->with(['success' => 'Data Berhasil di Update!']);
+        }
     }
 
     /**
