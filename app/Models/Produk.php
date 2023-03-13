@@ -10,6 +10,13 @@ class Produk extends Model
 
     protected $guarded = ['id']; // gak boleh diisi, sisannya boleh
 
+    public function scopeFilter($query, array $filter) {
+
+        $query->when($filter['search'] ?? false, function($query, $search){
+            return $query-> where('nama_produk', 'like' , '%'. $search . '%');
+        });
+    }
+
 
     public function category()
     {

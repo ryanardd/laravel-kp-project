@@ -1805,6 +1805,53 @@ section {
     text-align: center;
 }
 
+.search {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.search .group {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+    max-width: 250px;
+}
+
+.input {
+    width: 100%;
+    height: 40px;
+    line-height: 28px;
+    padding: 0 1rem;
+    padding-left: 2.5rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    background-color: #f3f3f4;
+    color: #0d0c22;
+    transition: .3s ease;
+}
+
+.input::placeholder {
+    color: #9e9ea7;
+}
+
+.input:focus, input:hover {
+    outline: none;
+    border-color: rgba(87, 76, 234, 0.4);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(110, 76, 234, 0.1);
+}
+
+.icon {
+    position: absolute;
+    left: 1rem;
+    fill: #9e9ea7;
+    width: 1rem;
+    height: 1rem;
+}
+
 .portfolio .portfolio-flters li {
     cursor: pointer;
     display: inline-block;
@@ -1839,12 +1886,15 @@ section {
 .portfolio .portfolio-wrap {
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    min-height: 50vh;
+    height: 410px;
     overflow: hidden;
 }
 
 .portfolio .portfolio-wrap img {
     transition: 0.3s;
+    height: 200px;
+    object-fit: contain;
+    
     position: relative;
     z-index: 1;
 }

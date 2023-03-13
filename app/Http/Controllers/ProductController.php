@@ -18,7 +18,6 @@ class ProductController extends Controller
      */
     public function index()
     {
-        // dd(Request('search'));
         return view('dashboard.product.index', [
             'product' => Produk::with('category')->get()
         ]);
