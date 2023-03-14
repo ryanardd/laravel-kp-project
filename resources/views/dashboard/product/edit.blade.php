@@ -9,7 +9,30 @@
     </div>
     <div class="page-inner mt--5">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-2 mt-5 text-center">
+                <h2>Cover Images</h2>
+                <form action="/dashboard/products/deletecover/{{ $produk->id }}" method="POST">
+                    <button class="btn bg-white text-danger btn-sm">X</button>
+                    @csrf
+                    @method('delete')
+                </form>
+                <img src="/images/cover/{{ $produk->thumbnail }}" class="img-responsive" style="max-width: 150px; max-height: 150px;" alt="">
+                <br>
+
+                <h2>Images</h2>
+                @if (count($images) > 0)
+                @foreach ($images as $image)
+                <form action="/dashboard/products/deleteimage/{{ $image->id }}" method="POST">
+                    <button class="btn bg-white text-danger btn-sm">X</button>
+                    @csrf
+                    @method('delete')
+                </form>
+                <img src="/images/image/{{ $image->image }}" class="img-responsive" style="max-width: 150px; max-height: 150px;" alt="">
+                @endforeach
+                @endif
+            </div>
+
+            <div class="col-md-9">
                 <div class="card full-height">
                     <div class="card-header">
                         <div class="card-head-row">
@@ -34,23 +57,9 @@
                                 @enderror
                             </div>
 
-                            <div class="col-lg-3">
-                                <img src="/images/cover/{{ $produk->thumbnail }}" class="img-responsive"
-                                    style="max-height: 100px; max-width: 100px;" alt="{{ $produk->thumbnail }}">
-                            </div>
-
                             <div class="form-group">
                                 <label for="formImages">Cover Image</label>
                                 <input class="form-control" type="file" id="formImages" name="thumbnail">
-                            </div>
-
-                            <div class="col-lg-5 d-flex align-items-center">
-                                {{-- @dd($produk->images); --}}
-                                @foreach ($images as $gambar)
-                                    <img src="/images/image/{{ $gambar->image }}" class="img-responsive"
-                                        style="max-height: 100px; max-width: 100px;" alt="{{ $gambar->image }}">
-
-                                @endforeach
                             </div>
 
                             <div class="form-group">
@@ -147,6 +156,8 @@
                 </div>
             </div>
         </div>
+
+
     </div>
 
     <script>

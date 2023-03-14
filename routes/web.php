@@ -63,6 +63,8 @@ Route::get('/dashboard', function()
 
 // halaman dashboard product
 Route::resource('/dashboard/products', ProductController::class);
+Route::delete('/dashboard/products/deleteimage/{id}', [ProductController::class, 'deleteimage']);
+Route::delete('/dashboard/products/deletecover/{id}', [ProductController::class, 'deletecover']);
 
 // halaman dashboard category
 Route::resource('/dashboard/categories', CategoryController::class);

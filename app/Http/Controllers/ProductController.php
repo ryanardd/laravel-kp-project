@@ -61,18 +61,17 @@ class ProductController extends Controller
             $file->move(\public_path('images/cover'), $imageName);
 
             $produk = new Produk([
-                'nama_produk' => $request['nama_produk'],
-                'harga' => $request['harga'],
-                'stok' => $request['stok'],
-                'deskripsi' => $request['deskripsi'],
-                'is_active' => $request['is_active'],
-                'category_id' => $request['category_id'],
-                'is_active' => $request['is_active'],
+                'nama_produk' => $request->nama_produk,
+                'harga' => $request->harga,
+                'stok' => $request->stok,
+                'deskripsi' => $request->deskripsi,
+                'is_active' => $request->is_active,
+                'category_id' => $request->category_id,
                 'views' => 0,
                 'thumbnail' => $imageName,
                 'slug' => Str::slug($request->nama_produk),
-                'cta_tokped' => $request['cta_tokped'],
-                'cta_shopee' => $request['cta_shopee'],
+                'cta_tokped' => $request->cta_tokped,
+                'cta_shopee' => $request->cta_shopee,
             ]);
             // return dd($request);
             $produk->save();
@@ -145,74 +144,43 @@ class ProductController extends Controller
             'cta_shopee' => 'required|url'
         ]);
 
-        if (empty($request->hasFile('thumbnail')) && $request->hasFile('image')) {
-            $produk = Produk::find($id);
-            $file = $request->file('thumbnail');
-            $imageName = time() . '-' . $file->getClientOriginalName();
-            $file->move(\public_path('images/cover'), $imageName);
-
-            if ($request->hasFile('image')) {
-                // $files = $request->file('image');
-                foreach ($request->file('image') as $file) {
-                    $imageName = time() . '-' . $file->getClientOriginalName();
-                    $file->move(\public_path('images/image'), $imageName);
-                    Image::created([
-                        'image' => $imageName,
-                        'product_id' => $produk->id,
-                    ]);
-                }
-            }
-            $produk->update([
-                'nama_produk' => $request['nama_produk'],
-                'harga' => $request['harga'],
-                'stok' => $request['stok'],
-                'deskripsi' => $request['deskripsi'],
-                'is_active' => $request['is_active'],
-                'category_id' => $request['category_id'],
-                'is_active' => $request['is_active'],
-                'views' => 0,
-                'thumbnail' => $imageName,
-                'slug' => Str::slug($request->nama_produk),
-                'cta_tokped' => $request['cta_tokped'],
-                'cta_shopee' => $request['cta_shopee'],
-            ]);
-
+        $produk = Produk::find($id);
+        if ($request->hasFile('thumbnail')) {
             if (File::exists('images/cover/' . $produk->thumbnail)) {
                 File::delete('images/cover/' . $produk->thumbnail);
-
-                $images = Image::where('product_id', $produk->id)->get();
-                foreach ($images as $gambar) {
-                    if (File::exists('images/image/' . $gambar->image)) {
-                        File::delete('images/image/' . $gambar->image);
-                    }
-                }
             }
-            return redirect()->route('products.index')->with(['success' => 'Data Berhasil di Update!']);
-        } else {
-            $produk = Produk::find($id);
             $file = $request->file('thumbnail');
             $imageName = time() . '-' . $file->getClientOriginalName();
             $file->move(\public_path('images/cover'), $imageName);
-            File::delete('images/cover/' . $produk->thumbnail);
-
-
-            $produk->update([
-                'nama_produk' => $request['nama_produk'],
-                'harga' => $request['harga'],
-                'stok' => $request['stok'],
-                'deskripsi' => $request['deskripsi'],
-                'is_active' => $request['is_active'],
-                'category_id' => $request['category_id'],
-                'is_active' => $request['is_active'],
-                'views' => 0,
-                'thumbnail' => $imageName,
-                'slug' => Str::slug($request->nama_produk),
-                'cta_tokped' => $request['cta_tokped'],
-                'cta_shopee' => $request['cta_shopee'],
-            ]);
-
-            return redirect()->route('products.index')->with(['success' => 'Data Berhasil di Update!']);
+            $request['thumbnail'] = $imageName;
         }
+
+        $produk->update([
+            'nama_produk' => $request->nama_produk,
+            'harga' => $request->harga,
+            'stok' => $request->stok,
+            'deskripsi' => $request->deskripsi,
+            'is_active' => $request->is_active,
+            'category_id' => $request->category_id,
+            'views' => 0,
+            'thumbnail' => $imageName,
+            'slug' => Str::slug($request->nama_produk),
+            'cta_tokped' => $request->cta_tokped,
+            'cta_shopee' => $request->cta_shopee,
+        ]);
+
+        if ($request->hasFile('image')) {
+            // $files = $request->file('image');
+            foreach ($request->file('image') as $file) {
+                $imageName = time() . '-' . $file->getClientOriginalName();
+                $file->move(\public_path('images/image'), $imageName);
+                Image::create([
+                    'image' => $imageName,
+                    'product_id' => $produk->id,
+                ]);
+            }
+        }
+        return redirect(route('products.index'))->with(['success' => 'Data Berhasil Terupdate!']);
     }
 
     /**
@@ -236,5 +204,25 @@ class ProductController extends Controller
         }
         $produk->delete();
         return redirect(route('products.index'))->with(['success' => 'Data Berhasil Terhapus!']);
+    }
+
+    public function deleteimage($id)
+    {
+        $images = Image::find($id);
+        if (File::exists('images/image/' . $images->image)) {
+            File::delete('images/image/' . $images->image);
+        }
+        $images->delete();
+        return back();
+    }
+
+    public function deletecover($id)
+    {
+        $cover = Produk::find($id)->thumbnail;
+        if (File::exists('images/cover/' . $cover)) {
+            File::delete('images/cover/' . $cover);
+        }
+
+        return back();
     }
 }
