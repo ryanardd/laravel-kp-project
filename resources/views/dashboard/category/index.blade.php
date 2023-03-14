@@ -53,7 +53,7 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $row->nama_category }}</td>
                                                 <td>{{ $row->slug }}</td>
-                                                <td>{{ $row->count() }}</td>
+                                                <td>{{ $products }}</td>
                                                 <td>
                                                     <a href="{{ route('categories.edit', $row->id) }}"
                                                         class="btn btn-success btn-sm mr-2"><i class="fas fa-pen"></i></a>

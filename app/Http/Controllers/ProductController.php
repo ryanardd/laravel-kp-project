@@ -162,7 +162,6 @@ class ProductController extends Controller
             'deskripsi' => $request->deskripsi,
             'is_active' => $request->is_active,
             'category_id' => $request->category_id,
-            'views' => 0,
             'thumbnail' => $produk->thumbnail,
             'slug' => Str::slug($request->nama_produk),
             'cta_tokped' => $request->cta_tokped,
@@ -172,13 +171,17 @@ class ProductController extends Controller
         $images = Image::where('product_id', $id)->get();
         if ($request->hasFile('image')) {
             // dd($images);
-            if (File::exists('images/image/' . $images->image)) {
-                File::delete('images/image/' . $images->image);
-            }
+                foreach ($images as $gambar) {
+                    if (File::exists('images/image/' . $gambar->image)) {
+                        File::delete('images/image/' . $gambar->image);
+                        $gambar->delete();
+                    }
+                }
+
             foreach ($request->file('image') as $file) {
                 $imageName = time() . '-' . $file->getClientOriginalName();
                 $file->move(\public_path('images/image'), $imageName);
-                Image::create([
+                Image::create   ([
                     'image' => $imageName,
                     'product_id' => $produk->id,
                 ]);
