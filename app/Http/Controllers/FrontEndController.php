@@ -17,9 +17,12 @@ class FrontEndController extends Controller
     }
 
     public function product(Category $category) {
+        // dd(Request('search'));
+
         return view('frontend.product', [
-            "laptop" => Produk::where('category_id', 1)->with('category')->latest()->get(),
-            "pc" => Produk::where('category_id', 2)->with('category')->latest()->get(),
+            "all" => Produk::where('is_active', 1)->with('category')->latest()->filter(request(['search']))->paginate(5),
+            "laptop" => Produk::where('category_id', 1)->with('category')->latest()->filter(request(['search']))->simplePaginate(5),
+            "pc" => Produk::where('category_id', 2)->with('category')->latest()->filter(request(['search']))->simplePaginate(5),
         ]);
     }
 
