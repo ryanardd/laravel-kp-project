@@ -143,14 +143,8 @@
                                 </select>
                             </div>
 
-                            {{-- <div class="form-group">
-                            <label for="gambar">Gambar Produk</label>
-                            <input type="file" name="gambar" class="form-control">
-                        </div> --}}
-
                             <div class="form-group">
                                 <button class="btn btn-primary btn-sm" type="submit">Save</button>
-                                <button class="btn btn-danger btn-sm" type="reset">Reset</button>
                         </form>
                     </div>
                 </div>
