@@ -139,7 +139,7 @@ class ProductController extends Controller
             'deskripsi' => 'required',
             'is_active' => 'required',
             'category_id' => 'required',
-            'thumbnail' => 'required|file|mimes:jpeg,png,jpg,svg|max:5120',
+            'thumbnail' => 'file|mimes:jpeg,png,jpg,svg|max:5120',
             'cta_tokped' => 'required|url',
             'cta_shopee' => 'required|url'
         ]);
@@ -150,9 +150,9 @@ class ProductController extends Controller
                 File::delete('images/cover/' . $produk->thumbnail);
             }
             $file = $request->file('thumbnail');
-            $imageName = time() . '-' . $file->getClientOriginalName();
-            $file->move(\public_path('images/cover'), $imageName);
-            $request['thumbnail'] = $imageName;
+            $produk->thumbnail = time() . '-' . $file->getClientOriginalName();
+            $file->move(\public_path('images/cover'), $produk->thumbnail);
+            $request['thumbnail'] = $produk->thumbnail;
         }
 
         $produk->update([
@@ -163,14 +163,18 @@ class ProductController extends Controller
             'is_active' => $request->is_active,
             'category_id' => $request->category_id,
             'views' => 0,
-            'thumbnail' => $imageName,
+            'thumbnail' => $produk->thumbnail,
             'slug' => Str::slug($request->nama_produk),
             'cta_tokped' => $request->cta_tokped,
             'cta_shopee' => $request->cta_shopee,
         ]);
 
+        $images = Image::where('product_id', $id)->get();
         if ($request->hasFile('image')) {
-            // $files = $request->file('image');
+            // dd($images);
+            if (File::exists('images/image/' . $images->image)) {
+                File::delete('images/image/' . $images->image);
+            }
             foreach ($request->file('image') as $file) {
                 $imageName = time() . '-' . $file->getClientOriginalName();
                 $file->move(\public_path('images/image'), $imageName);
@@ -179,6 +183,7 @@ class ProductController extends Controller
                     'product_id' => $produk->id,
                 ]);
             }
+
         }
         return redirect(route('products.index'))->with(['success' => 'Data Berhasil Terupdate!']);
     }
