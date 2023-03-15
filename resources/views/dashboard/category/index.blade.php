@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.main')
-
+{{-- @dd($kategori) --}}
 @section('content')
     <div class="content">
         <div class="page-inner">
@@ -43,7 +43,7 @@
                                             <th>No</th>
                                             <th>Nama Kategori</th>
                                             <th>Slug</th>
-                                            <th>Jumlah Product</th>
+                                            <th>Total Product</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -53,7 +53,7 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $row->nama_category }}</td>
                                                 <td>{{ $row->slug }}</td>
-                                                <td>{{ $products }}</td>
+                                                <td>{{ $row->product->count() }}</td>
                                                 <td>
                                                     <a href="{{ route('categories.edit', $row->id) }}"
                                                         class="btn btn-success btn-sm mr-2"><i class="fas fa-pen"></i></a>

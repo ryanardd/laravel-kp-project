@@ -16,9 +16,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        $category = Category::with('product')->get()->all();
         return view('dashboard.category.index', [
-            "kategori" => Category::all(),
-            'products' => Produk::with('category','category_id')->count(),
+            "kategori" => $category,
         ]);
     }
 
