@@ -27,17 +27,16 @@
 
             {{-- @dd($category) --}}
             @if ($all->count() > 0)
-                <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry"
-                    data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
+                <div class="portfolio-isotope" data-aos="fade-up" data-aos-delay="100">
 
                     <div class="row gy-3 portfolio-container">
 
                         @foreach ($all as $row)
                             <div class="col-xl-3 portfolio-item">
                                 <div class="portfolio-wrap">
-                                    <a href="images/cover/{{ $row->thumbnail }}" data-gallery="portfolio-gallery-app"
-                                        class="glightbox d-flex justify-content-center"><img
-                                            src="images/cover/{{ $row->thumbnail }}" class="img-fluid" alt=""></a>
+                                    <a href="{{ route('product') }}/{{ $row->slug }}"
+                                        class="d-flex justify-content-center"><img src="images/cover/{{ $row->thumbnail }}"
+                                            class="img-fluid" alt=""></a>
                                     <div class="portfolio-info">
                                         <h5><a href="{{ route('product') }}/{{ $row->slug }}"
                                                 title="More Details">{{ $row->nama_produk }}</a>
