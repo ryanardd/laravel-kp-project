@@ -16,12 +16,14 @@ class FrontEndController extends Controller
         ]);
     }
 
-    public function product(Category $category) {
+    public function product() {
         // dd(Request('search'));
+        $produk = Produk::with('category')->get();
         return view('frontend.product', [
-            "all" => Produk::where('is_active', 1)->with('category')->latest()->filter(request(['search']))->paginate(5),
-            "laptop" => Produk::where('category_id', 1)->with('category')->latest()->filter(request(['search']))->simplePaginate(5),
-            "pc" => Produk::where('category_id', 2)->with('category')->latest()->filter(request(['search']))->simplePaginate(5),
+            'all' => $produk,
+            // "all" => Produk::where('is_active', 1)->with('category')->latest()->filter(request(['search']))->paginate(5),
+            // "laptop" => Produk::where('category_id', 1)->with('category')->latest()->filter(request(['search']))->simplePaginate(5),
+            // "pc" => Produk::where('category_id', 2)->with('category')->latest()->filter(request(['search']))->simplePaginate(5),
         ]);
     }
 
@@ -30,7 +32,7 @@ class FrontEndController extends Controller
         $produk->increment('views');
         return view('frontend._detailProduk', [
             "detail" => $produk,
-            "images" => Image::with('products')->get(),
+            "images" => Image::with('products')->get()->where('product_id', $produk->id),
         ]);
     }
 

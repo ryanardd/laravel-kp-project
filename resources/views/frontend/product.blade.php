@@ -1,5 +1,5 @@
 @extends('frontend.layouts.main')
-
+{{-- @dd($all) --}}
 @section('container')
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
@@ -32,15 +32,16 @@
                 data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
                 <div>
                     <ul class="portfolio-flters">
-                        <li data-filter="*" class="filter-active">All</li>
-                        <li data-filter=".abc">contoh</li>
-                        <li data-filter=".filter-app">Laptop</li>
-                        <li data-filter=".filter-product">PC</li>
+                        @foreach ($all as $item)
+                            {{-- <li data-filter="*" class="filter-active">All</li> --}}
+                            <li data-filter=".abc">{{ $item->category->nama_category }}</li>
+                            {{-- <li data-filter=".filter-app">Laptop</li>
+                            <li data-filter=".filter-product">PC</li> --}}
+                        @endforeach
                     </ul><!-- End Portfolio Filters -->
                 </div>
 
                 <div class="row gy-3 portfolio-container">
-
                     @foreach ($all as $row)
                         <div class="col-xl-3 portfolio-item abc">
                             <div class="portfolio-wrap">
@@ -54,8 +55,18 @@
                                     <div class="lead">
                                         Rp. {{ number_format($row->harga, 0, ',', '.') }}
                                     </div>
-                                    <p class="d-flex justify-content-start">{{ $row->category->nama_category }}</p>
-                                    <p class="d-flex justify-content-end">{{ $row->stok ? 'Stok tersedia' : '' }}</p>
+                                    <div class="mt-3">
+                                        <div class="row">
+                                            <div class="col text-start">
+                                                <div class="btn btn-primary btn-sm">{{ $row->category->nama_category }}</div>
+                                            </div>
+                                            <div class="col text-end">
+                                                <div class="btn btn-success btn-sm">
+                                                    {{ $row->stok ? 'Stok tersedia' : '' }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="btn btn-dark d-flex justify-content-center mt-2"><a
                                             href="{{ route('product') }}/{{ $row->slug }}">Read More</a></div>
                                 </div>
@@ -63,7 +74,7 @@
                         </div><!-- End Portfolio Item -->
                     @endforeach
 
-                    @foreach ($laptop as $row)
+                    {{-- @foreach ($laptop as $row)
                         <div class="col-xl-3 portfolio-item filter-app">
                             <div class="portfolio-wrap">
                                 <a href="images/cover/{{ $row->thumbnail }}" data-gallery="portfolio-gallery-app"
@@ -83,9 +94,9 @@
                                 </div>
                             </div>
                         </div><!-- End Portfolio Item -->
-                    @endforeach
+                    @endforeach --}}
 
-                    @foreach ($pc as $product)
+                    {{-- @foreach ($pc as $product)
                         <div class="col-xl-3 portfolio-item filter-product">
                             <div class="portfolio-wrap">
                                 <a href="images/cover/{{ $product->thumbnail }}" data-gallery="portfolio-gallery-app"
@@ -105,12 +116,12 @@
                                 </div>
                             </div>
                         </div><!-- End Portfolio Item -->
-                    @endforeach
+                    @endforeach --}}
                 </div><!-- End Portfolio Container -->
 
-                <div class="paginate_button justify-content-end">
+                {{-- <div class="paginate_button justify-content-end">
                     {{ $laptop->links() }}
-                </div>
+                </div> --}}
             </div>
             {{-- @else
                 <p class="fs-4 text-center">Not Found</p>

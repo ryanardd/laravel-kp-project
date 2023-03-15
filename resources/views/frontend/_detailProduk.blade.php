@@ -20,7 +20,7 @@
                             </a>
                             @foreach ($images as $image)
                             <a>
-                                <img src="images/image/{{ $image->image }}" onclick="change(this.src)"
+                                <img src="/images/image/{{ $image->image }}" onclick="change(this.src)"
                                     class="figure-img img-fluid rounded" style="width: 70px; height: 54px;" alt="...">
                             </a>
                             @endforeach
