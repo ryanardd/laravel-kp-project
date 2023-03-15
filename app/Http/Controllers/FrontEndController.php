@@ -18,7 +18,7 @@ class FrontEndController extends Controller
 
     public function product() {
         // dd(Request('search'));
-        $produk = Produk::with('category')->get();
+        $produk = Produk::where('is_active', 1)->with('category')->latest()->filter(request(['search']))->paginate(5);
         return view('frontend.product', [
             'all' => $produk,
             // "all" => Produk::where('is_active', 1)->with('category')->latest()->filter(request(['search']))->paginate(5),

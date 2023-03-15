@@ -1,7 +1,6 @@
 {{-- @dd($detail) --}}
 {{-- @dd($images) --}}
 @extends('frontend/layouts/main')
-
 @section('container')
     <section class="detail">
 
