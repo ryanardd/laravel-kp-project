@@ -2545,3 +2545,67 @@ section {
     }
 
     /* end Detail Produk */
+
+    /* Produk Kategoru\i */
+    .portfolio .container .category {
+        -moz-text-align-last: center;
+        text-align-last: center;
+        background-color: #eee;
+        /* background-color: #8ccbbe; */
+        /* box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); */
+        transition: 0.9s;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    
+    .portfolio .container .category:hover {
+        background-color: #8ccbbe;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+        /* background-color: var(--color-secondary); */
+    }
+    
+    .portfolio .container .category .menu-img {
+        padding: 0 60px;
+        margin-bottom: 15px;
+    }
+    
+    .portfolio .container .category h4 {
+        font-size: 22px;
+        font-weight: 500;
+        color: #3a3f47;
+        font-family: var(--font-secondary);
+        font-weight: 30px;
+        margin-bottom: 5px;
+    }
+    
+    .portfolio .container .category .ingredients {
+        font-family: var(--font-secondary);
+        color: #8d8d9b;
+        margin-bottom: 5px;
+    }
+    
+    .portfolio .container .category .read-more {
+        background-color: var(--color-primary);
+    }
+    
+    .portfolio .container .category .read-more a{
+        color: black;
+    }
+    
+    .portfolio .container .category .read-more:hover,
+    .portfolio .container .category .read-more a:hover {
+        background-color: #3a3f47;
+        color: var(--color-primary);
+    }
+    
+    .portfolio .container .read-other{
+        -moz-text-align-last: center;
+        text-align-last: center;
+        /* background-color: var(--color-secondary); */
+        background-color: #e4e4e4   ;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+        transition: 0.9s;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    
