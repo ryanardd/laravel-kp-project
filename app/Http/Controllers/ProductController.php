@@ -168,16 +168,7 @@ class ProductController extends Controller
             'cta_shopee' => $request->cta_shopee,
         ]);
 
-        $images = Image::where('product_id', $id)->get();
         if ($request->hasFile('image')) {
-            // dd($images);
-                foreach ($images as $gambar) {
-                    if (File::exists('images/image/' . $gambar->image)) {
-                        File::delete('images/image/' . $gambar->image);
-                        $gambar->delete();
-                    }
-                }
-
             foreach ($request->file('image') as $file) {
                 $imageName = time() . '-' . $file->getClientOriginalName();
                 $file->move(\public_path('images/image'), $imageName);
@@ -186,7 +177,6 @@ class ProductController extends Controller
                     'product_id' => $produk->id,
                 ]);
             }
-
         }
         return redirect(route('products.index'))->with(['success' => 'Data Berhasil Terupdate!']);
     }

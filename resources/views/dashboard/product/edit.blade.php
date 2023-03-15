@@ -16,7 +16,7 @@
                     @csrf
                     @method('delete')
                 </form>
-                <img src="/images/cover/{{ $produk->thumbnail }}" class="img-responsive" style="max-width: 150px; max-height: 150px;" alt="">
+                <img src="/images/cover/{{ $produk->thumbnail }}" class="img-responsive border mb-3" style="max-width: 150px; max-height: 150px;" alt="">
                 <br>
 
                 <h2>Images</h2>
@@ -27,7 +27,7 @@
                     @csrf
                     @method('delete')
                 </form>
-                <img src="/images/image/{{ $image->image }}" class="img-responsive" style="max-width: 150px; max-height: 150px;" alt="">
+                <img src="/images/image/{{ $image->image }}" class="img-responsive border" style="max-width: 150px; max-height: 150px;" alt="">
                 @endforeach
                 @endif
             </div>
