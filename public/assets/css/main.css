@@ -1886,7 +1886,7 @@ section {
 .portfolio .portfolio-wrap {
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    height: 410px;
+    min-height: min-content;
     overflow: hidden;
 }
 
@@ -1907,14 +1907,21 @@ section {
     z-index: 2;
 }
 
-.portfolio .portfolio-wrap .portfolio-info h4 {
+.portfolio .portfolio-wrap .portfolio-info h5 {
     font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-weight: 600;
-    padding-right: 50px;
+    /* padding-right: 50px; */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
-.portfolio .portfolio-wrap .portfolio-info h4 a {
-    color: var(--color-default);
+.portfolio .portfolio-wrap .portfolio-info h5 a {
+    color: #2b2e4a;
+    height: max-content;
     transition: 0.3s;
 }
 

@@ -7,7 +7,6 @@
 
             <div class="section-header">
                 <p>Produk</p>
-                <h2>Kategori</h2>
             </div>
 
             {{-- <div class="search">
@@ -34,33 +33,26 @@
                     <div class="row gy-3 portfolio-container">
 
                         @foreach ($all as $row)
-                            <div class="col-xl-3 portfolio-item abc">
+                            <div class="col-xl-3 portfolio-item">
                                 <div class="portfolio-wrap">
                                     <a href="images/cover/{{ $row->thumbnail }}" data-gallery="portfolio-gallery-app"
                                         class="glightbox d-flex justify-content-center"><img
                                             src="images/cover/{{ $row->thumbnail }}" class="img-fluid" alt=""></a>
                                     <div class="portfolio-info">
-                                        <h4><a href="{{ route('product') }}/{{ $row->slug }}"
+                                        <h5><a href="{{ route('product') }}/{{ $row->slug }}"
                                                 title="More Details">{{ $row->nama_produk }}</a>
-                                        </h4>
-                                        <div class="lead">
-                                            Rp. {{ number_format($row->harga, 0, ',', '.') }}
-                                        </div>
+                                        </h5>
+
                                         <div class="mt-3">
-                                            <div class="row">
-                                                <div class="col text-start">
-                                                    <div class="btn btn-primary btn-sm">{{ $row->category->nama_category }}
-                                                    </div>
+                                            <div class="col d-flex justify-content-between">
+                                                <div class="lead fw-bold">
+                                                    Rp. {{ number_format($row->harga, 0, ',', '.') }}
                                                 </div>
-                                                <div class="col text-end">
-                                                    <div class="btn btn-success btn-sm">
-                                                        {{ $row->stok ? 'Stok tersedia' : '' }}
-                                                    </div>
-                                                </div>
+                                                <p class="rounded-1 p-1">
+                                                    {{ $row->category->nama_category }}
+                                                </p>
                                             </div>
                                         </div>
-                                        <div class="btn btn-dark d-flex justify-content-center mt-2"><a
-                                                href="{{ route('product') }}/{{ $row->slug }}">Read More</a></div>
                                     </div>
                                 </div>
                             </div><!-- End Portfolio Item -->
