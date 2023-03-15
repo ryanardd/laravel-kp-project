@@ -1,5 +1,5 @@
 @extends('frontend.layouts.main')
-{{-- @dd($all) --}}
+@section('title', 'Product - Murahkom Toko Komputer Online Termurah di Surabaya')
 @section('container')
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
