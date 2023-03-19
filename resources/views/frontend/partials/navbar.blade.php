@@ -1,4 +1,5 @@
     <!-- ======= Header Navbar ======= -->
+    {{-- @dd($category) --}}
     <header id="header" class="header fixed-top d-flex align-items-center">
         <div class="d-flex align-items-center justify-content-between container">
             <a href="{{ route('home') }}" class="logo d-flex align-items-center me-auto me-lg-0">
@@ -9,10 +10,23 @@
                 <ul>
 
                     <li><a href="{{ route('home') }}">Home</a></li>
-                    <li><a href="{{ route('product') }}">Product</a>
+                    <li class="dropdown">
+                        <a href="#">
+                            <span>Product</span>
+                            <i class="bi bi-chevron-down dropdown-indicator"></i>
+                        </a>
+                        <ul>
+                            @foreach ($category as $item)
+                                <li><a href="#">{{ $item->nama_category }}</a></li>
+                            @endforeach
+                        </ul>
                     </li>
-                    <li class="dropdown"><a href="#"><span>Marketplace</span> <i
-                                class="bi bi-chevron-down dropdown-indicator"></i></a>
+
+                    <li class="dropdown">
+                        <a href="#">
+                            <span>Marketplace</span>
+                            <i class="bi bi-chevron-down dropdown-indicator"></i>
+                        </a>
                         <ul>
                             <li><a href="https://shopee.co.id/murahkomofficial" target="_blank">Shopee</a></li>
                             <li><a href="https://www.tokopedia.com/murahkomofficial" target="_blank">Tokopedia</a></li>
