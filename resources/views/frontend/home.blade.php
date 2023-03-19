@@ -77,8 +77,8 @@
                 <p>Learn More <span>About Us</span></p>
             </div>
             <div class="row gy-4 p-2">
-                <div class="col-lg-7 position-relative about-img" style="background-image: url(assets/img/about.jpg) ;"
-                    data-aos="fade-up" data-aos-delay="150">
+                <div class="col-lg-7 position-relative about-img"
+                    style="background-image: url(assets/img/toko-murahkom.jpg) ;" data-aos="fade-up" data-aos-delay="150">
                     <div class="call-us position-absolute">
                         <h4>Book a Table</h4>
                         <p>+1 5589 55488 55</p>
@@ -103,7 +103,7 @@
                         </ul>
 
                         <div class="position-relative mt-4">
-                            <img src="assets/img/about-2.jpg" class="img-fluid" alt="">
+                            <img src="assets/img/toko-murahkom.jpg" class="img-fluid" alt="">
                             <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
                         </div>
                     </div>
@@ -131,10 +131,10 @@
 
                         @foreach ($product->take(3) as $produk)
                             <div class="col-lg-4">
-                                <div class="menu-item p-2">
-                                    <a href="" class="">
-                                        <img src="images/cover/{{ $produk->thumbnail }}" class="menu-img img-fluid"
-                                            alt="">
+                                <div class="menu-item p-3">
+                                    <a href="/product/{{ $produk->slug }}" class="">
+                                        <img src="images/cover/{{ $produk->thumbnail }}"
+                                            class="menu-img mx-auto text-center" alt="">
                                     </a>
                                     <a href="/product/{{ $produk->slug }}">
                                         <h4>{{ $produk->nama_produk }}</h4>
