@@ -132,10 +132,12 @@
                         @foreach ($product->take(3) as $produk)
                             <div class="col-lg-4">
                                 <div class="menu-item p-3">
-                                    <a href="/product/{{ $produk->slug }}" class="">
-                                        <img src="images/cover/{{ $produk->thumbnail }}"
-                                            class="menu-img mx-auto text-center" alt="">
-                                    </a>
+                                    <div class="text-center">
+                                        <a href="/product/{{ $produk->slug }}">
+                                            <img src="images/cover/{{ $produk->thumbnail }}" class="menu-img"
+                                                alt="">
+                                        </a>
+                                    </div>
                                     <a href="/product/{{ $produk->slug }}">
                                         <h4>{{ $produk->nama_produk }}</h4>
                                     </a>
