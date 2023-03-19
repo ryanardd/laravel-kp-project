@@ -981,14 +981,15 @@ section {
 }
 
 .menu .tab-content .menu-item {
-    -moz-text-align-last: center;
-    text-align-last: center;
+    /* -moz-text-align-last: center;
+    text-align-last: center; */
     background-color: #eee;
     /* background-color: #8ccbbe; */
     /* box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); */
     transition: 0.9s;
     border-radius: 10px;
     overflow: hidden;
+    min-height: min-content;
 }
 
 .menu .tab-content .menu-item:hover {
@@ -1000,27 +1001,29 @@ section {
 .menu .tab-content .menu-item .menu-img {
     padding: 0 60px;
     margin-bottom: 15px;
+    height: 200px;
+    object-fit: contain;
 }
 
-.menu .tab-content .menu-item h4 {
-    font-size: 22px;
+.menu .tab-content .menu-item a h4 {
+    text-align: left;
+    font-size: 20px;
     font-weight: 500;
-    color: #3a3f47;
+    color: #2b2e4a;
     font-family: var(--font-secondary);
-    font-weight: 30px;
     margin-bottom: 5px;
-}
-
-.menu .tab-content .menu-item .ingredients {
-    font-family: var(--font-secondary);
-    color: #8d8d9b;
-    margin-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .menu .tab-content .menu-item .price {
     font-size: 24px;
-    font-weight: 700;
-    color: #5d646f;
+    font-weight: bold;
+    color: black;
 }
 
 .menu .tab-content .menu-item .read-more {
