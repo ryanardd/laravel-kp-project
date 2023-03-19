@@ -43,7 +43,7 @@
                                             <th>No</th>
                                             <th>Nama Kategori</th>
                                             <th>Slug</th>
-                                            <th>Total Product</th>
+                                            <th>Jumlah Item</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
