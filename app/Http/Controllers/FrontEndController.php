@@ -28,11 +28,12 @@ class FrontEndController extends Controller
         ]);
     }
 
-    public function productCategory()
+    public function productCategory($slug)
     {
-        $produk = Produk::with('category')->where('is_active', 1)->latest()->filter(request(['search']))->paginate(5);
+        // $produk = Produk::with('category')->where('is_active', 1)->latest()->filter(request(['search']))->paginate(5);
+        $produk = Category::where('slug', $slug)->first()->product()->orderBy('created_at', 'DESC')->filter(request(['search']))->paginate(5);
         $category = Category::with('product')->get();
-        return view('frontend.product', [
+        return view('frontend.product_category', [
             'all' => $produk,
             'category' => $category
         ]);

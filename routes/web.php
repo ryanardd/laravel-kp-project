@@ -26,7 +26,7 @@ Route::get('/', [FrontEndController::class, 'index'])->name('home');
 
 // halaman product
 Route::get('/product', [FrontEndController::class, 'product'])->name('product');
-Route::get('/product/{category:slug}', [FrontEndController::class, 'productCategory'])->name('product-category');
+Route::get('/product-category/{category:slug}', [FrontEndController::class, 'productCategory'])->name('product-category');
 
 // halaman contact
 Route::get('/contact-us', [FrontEndController::class, 'contactUs'])->name('contact-us');
