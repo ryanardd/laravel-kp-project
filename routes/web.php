@@ -26,12 +26,13 @@ Route::get('/', [FrontEndController::class, 'index'])->name('home');
 
 // halaman product
 Route::get('/product', [FrontEndController::class, 'product'])->name('product');
+Route::get('/product/{category:slug}', [FrontEndController::class, 'productCategory'])->name('product-category');
 
 // halaman contact
 Route::get('/contact-us', [FrontEndController::class, 'contactUs'])->name('contact-us');
 
 // halaman detail product
-Route::get('/product/{produk:slug}', [FrontEndController::class, 'showProduct']);
+Route::get('/product/{produk:slug}', [FrontEndController::class, 'showProduct'])->name('detail-product');
 
 
 // // halaman category

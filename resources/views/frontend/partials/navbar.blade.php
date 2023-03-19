@@ -17,7 +17,7 @@
                         </a>
                         <ul>
                             @foreach ($category as $item)
-                                <li><a href="#">{{ $item->nama_category }}</a></li>
+                                <li><a href="/product/{{ $item->slug }}">{{ $item->nama_category }}</a></li>
                             @endforeach
                         </ul>
                     </li>

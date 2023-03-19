@@ -28,6 +28,16 @@ class FrontEndController extends Controller
         ]);
     }
 
+    public function productCategory()
+    {
+        $produk = Produk::with('category')->where('is_active', 1)->latest()->filter(request(['search']))->paginate(5);
+        $category = Category::with('product')->get();
+        return view('frontend.product', [
+            'all' => $produk,
+            'category' => $category
+        ]);
+    }
+
     public function showProduct(Produk $produk)
     {
         $produk->increment('views');
@@ -54,4 +64,5 @@ class FrontEndController extends Controller
             'category' => $cat
         ]);
     }
+
 }
