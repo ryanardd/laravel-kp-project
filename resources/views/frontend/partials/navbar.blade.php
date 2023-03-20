@@ -19,6 +19,7 @@
                             @foreach ($category as $item)
                                 <li><a href="/product-category/{{ $item->slug }}">{{ $item->nama_category }}</a></li>
                             @endforeach
+
                         </ul>
                     </li>
 

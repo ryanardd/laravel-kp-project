@@ -1,3 +1,4 @@
+{{-- @dd($all) --}}
 @extends('frontend.layouts.main')
 @section('title', 'Product Category - Murahkom Toko Komputer Online Termurah di Surabaya')
 @section('container')
@@ -9,7 +10,7 @@
                 <p>Produk</p>
             </div>
 
-            {{-- <div class="search">
+            <div class="search">
                 <div class="group">
                     <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
                         <g>
@@ -23,7 +24,7 @@
                             value="{{ request('search') }}">
                     </form>
                 </div>
-            </div> --}}
+            </div>
 
             {{-- @dd($category) --}}
             @if ($all->count() > 0)
@@ -35,7 +36,7 @@
                             <div class="col-xl-3 portfolio-item">
                                 <div class="portfolio-wrap">
                                     <a href="{{ route('product') }}/{{ $row->slug }}"
-                                        class="d-flex justify-content-center"><img src="images/cover/{{ $row->thumbnail }}"
+                                        class="d-flex justify-content-center"><img src="/images/cover/{{ $row->thumbnail }}"
                                             class="img-fluid" alt=""></a>
                                     <div class="portfolio-info">
                                         <h5><a href="{{ route('product') }}/{{ $row->slug }}"

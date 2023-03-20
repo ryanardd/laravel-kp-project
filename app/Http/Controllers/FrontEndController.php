@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Image;
 use App\Models\Produk;
 use App\Models\Category;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class FrontEndController extends Controller
 {
@@ -31,8 +29,8 @@ class FrontEndController extends Controller
     public function productCategory($slug)
     {
         // $produk = Produk::with('category')->where('is_active', 1)->latest()->filter(request(['search']))->paginate(5);
-        $produk = Category::where('slug', $slug)->first()->product()->orderBy('created_at', 'DESC')->filter(request(['search']))->paginate(5);
-        $category = Category::with('product')->get();
+        $category = Category::all();
+        $produk = $category->where('slug', $slug)->first()->product()->orderBy('created_at', 'DESC')->filter(request(['search']))->paginate(5);
         return view('frontend.product_category', [
             'all' => $produk,
             'category' => $category
