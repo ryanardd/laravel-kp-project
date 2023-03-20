@@ -59,9 +59,9 @@
                             </div><!-- End Portfolio Item -->
                         @endforeach
                     </div>
-                    {{-- <div class="paginate_button justify-content-end">
+                    <div class="paginate_button justify-content-end">
                         {{ $all->links() }}
-                    </div> --}}
+                    </div>
                 </div>
             @else
                 <p class="fs-4 text-center">Produk Masih Kosong!</p>

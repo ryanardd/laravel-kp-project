@@ -9,7 +9,7 @@
                 <p>ALL Produk</p>
             </div>
 
-            {{-- <div class="search">
+            <div class="search">
                 <div class="group">
                     <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
                         <g>
@@ -23,7 +23,7 @@
                             value="{{ request('search') }}">
                     </form>
                 </div>
-            </div> --}}
+            </div>
 
             {{-- @dd($category) --}}
             @if ($all->count() > 0)
