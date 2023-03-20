@@ -1879,9 +1879,8 @@ section {
 
 .portfolio .portfolio-wrap img {
     transition: 0.3s;
-    height: 200px;
-    object-fit: contain;
-    
+    height: min-content;
+    width: 100%;
     position: relative;
     z-index: 1;
 }
@@ -1921,10 +1920,6 @@ section {
     font-size: 14px;
     margin-bottom: 0;
     /* padding-right: 50px; */
-}
-
-.portfolio .portfolio-wrap:hover img {
-    transform: scale(1.1);
 }
 
 @media (min-width: 1280px) {
