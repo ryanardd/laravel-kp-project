@@ -26,8 +26,8 @@ class FrontEndController extends Controller
 
     public function productCategory($slug)
     {
+        // $produk = Category::where('slug', $slug)->first()->product()->filter(request(['search']))->paginate(5);
         $produk = Category::where('slug', $slug)->first()->product()->filter(request(['search']))->paginate(5);
-        // $produk = Category::with('product')->where('slug', $slug)->get();
         return view('frontend.product_category', [
             'all' => $produk,
         ]);

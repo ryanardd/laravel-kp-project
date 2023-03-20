@@ -50,7 +50,7 @@
                                                     Rp. {{ number_format($row->harga, 0, ',', '.') }}
                                                 </div>
                                                 <p class="rounded-1 p-1">
-                                                    {{ $row->nama_category }}
+                                                    {{ $row->stok ? 'Stok Tersedia' : 'Stok Kosong' }}
                                                 </p>
                                             </div>
                                         </div>
