@@ -7,7 +7,7 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-header">
-                <p>Produk</p>
+                <p>Produk Category</p>
             </div>
 
             <div class="search">
