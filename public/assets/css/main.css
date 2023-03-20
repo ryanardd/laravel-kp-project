@@ -988,9 +988,8 @@ section {
 
 .menu-wrap img {
     transition: 0.3s;
-    height: 200px;
-    object-fit: contain;
-    
+    height: min-content;
+    width: 100%;
     position: relative;
     z-index: 1;
 }
@@ -1888,7 +1887,7 @@ section {
 }
 
 .portfolio .portfolio-wrap .portfolio-info {
-    padding: 25px 20px;
+    padding: 25px 10px;
     background-color: #fff;
     position: relative;
     border-top: 1px solid #f3f3f3;
