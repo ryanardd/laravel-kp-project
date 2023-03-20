@@ -19,10 +19,12 @@
                                     <a href="" class="order-now">Order Now</a>
                                 </div>
                             </div>
+                            @foreach ($slides as $slide )
                             <div class="col-lg-5 order-lg-2 text-lg-start order-1 text-center">
-                                <img src="assets/img/hero-img.png" class="img-fluid" alt="" data-aos="zoom-out"
+                                <img src="/images/slide/{{ $slide->gambar_slide }}" class="img-fluid" alt="" data-aos="zoom-out"
                                     data-aos-delay="300">
                             </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

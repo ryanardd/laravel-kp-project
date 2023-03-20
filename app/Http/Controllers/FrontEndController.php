@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Image;
+use App\Models\Slide;
 use App\Models\Produk;
 use App\Models\Category;
 
@@ -12,6 +13,7 @@ class FrontEndController extends Controller
         $cat = Category::all();
         return view('frontend.home', [
             "product" => Produk::where('is_active', 1)->get(),
+            "slides" => Slide::all(),
             'category' => $cat
         ]);
     }
