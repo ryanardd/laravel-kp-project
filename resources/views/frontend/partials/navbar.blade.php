@@ -16,10 +16,9 @@
                             <i class="bi bi-chevron-down dropdown-indicator"></i>
                         </a>
                         <ul>
-                            @foreach ($category as $item)
+                            @foreach (App\Models\Category::with('product')->get() as $item)
                                 <li><a href="/product-category/{{ $item->slug }}">{{ $item->nama_category }}</a></li>
                             @endforeach
-
                         </ul>
                     </li>
 

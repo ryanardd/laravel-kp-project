@@ -3,37 +3,33 @@
 namespace App\Http\Controllers;
 
 use App\Models\Image;
+use App\Models\Slide;
 use App\Models\Produk;
 use App\Models\Category;
 
 class FrontEndController extends Controller
 {
     public function index() {
-        $cat = Category::all();
         return view('frontend.home', [
             "product" => Produk::where('is_active', 1)->get(),
-            'category' => $cat
+            "slides" => Slide::all(),
         ]);
     }
 
     public function product() {
         // dd(Request('search'));
         $produk = Produk::where('is_active', 1)->with('category')->latest()->filter(request(['search']))->paginate(5);
-        $cat = Category::all();
         return view('frontend.product', [
             'all' => $produk,
-            'category' => $cat
         ]);
     }
 
     public function productCategory($slug)
     {
-        // $produk = Produk::with('category')->where('is_active', 1)->latest()->filter(request(['search']))->paginate(5);
-        $category = Category::all();
-        $produk = $category->where('slug', $slug)->first()->product()->orderBy('created_at', 'DESC')->filter(request(['search']))->paginate(5);
+        $produk = Category::where('slug', $slug)->first()->product()->filter(request(['search']))->paginate(5);
+        // $produk = Category::with('product')->where('slug', $slug)->get();
         return view('frontend.product_category', [
             'all' => $produk,
-            'category' => $category
         ]);
     }
 
