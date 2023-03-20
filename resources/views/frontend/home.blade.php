@@ -3,10 +3,10 @@
 @section('container')
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="hero d-flex align-items-center section-bg">
+        @foreach ($slides as $slide )
         <div class="container">
             <div class="slides-1 swiper" data-aos="fade-up" data-aos-delay="100">
                 <div class="swiper-wrapper">
-
                     <div class="swiper-slide">
                         <div class="row justify-content-between gy-5">
                             <div
@@ -19,18 +19,17 @@
                                     <a href="" class="order-now">Order Now</a>
                                 </div>
                             </div>
-                            @foreach ($slides as $slide )
                             <div class="col-lg-5 order-lg-2 text-lg-start order-1 text-center">
                                 <img src="/images/slide/{{ $slide->gambar_slide }}" class="img-fluid" alt="" data-aos="zoom-out"
                                     data-aos-delay="300">
                             </div>
-                            @endforeach
                         </div>
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
         </div>
+        @endforeach
     </section>
     <!-- End Hero Section -->
 

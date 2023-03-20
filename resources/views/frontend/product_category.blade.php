@@ -1,4 +1,5 @@
 {{-- @dd($all) --}}
+{{-- @dd($category) --}}
 @extends('frontend.layouts.main')
 @section('title', 'Product Category - Murahkom Toko Komputer Online Termurah di Surabaya')
 @section('container')
@@ -7,7 +8,7 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-header">
-                <p>Produk Category</p>
+                <p>Produk Category </p>
             </div>
 
             <div class="search">
@@ -49,7 +50,7 @@
                                                     Rp. {{ number_format($row->harga, 0, ',', '.') }}
                                                 </div>
                                                 <p class="rounded-1 p-1">
-                                                    {{ $row->category->nama_category }}
+                                                    {{ $row->nama_category }}
                                                 </p>
                                             </div>
                                         </div>
@@ -58,9 +59,9 @@
                             </div><!-- End Portfolio Item -->
                         @endforeach
                     </div>
-                    <div class="paginate_button justify-content-end">
+                    {{-- <div class="paginate_button justify-content-end">
                         {{ $all->links() }}
-                    </div>
+                    </div> --}}
                 </div>
             @else
                 <p class="fs-4 text-center">Produk Masih Kosong!</p>
