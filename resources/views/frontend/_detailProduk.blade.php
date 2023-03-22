@@ -15,26 +15,14 @@
                         <figcaption class="figure-caption d-flex justify-content-evenly gap-2">
                             <a>
                                 <img src="/images/cover/{{ $detail->thumbnail }}" onclick="change(this.src)"
-                                    class="figure-img img-fluid rounded" style="width: 70px;height: 54px;" alt="...">
+                                    class="figure-img img-fluid rounded" style="width: 70px;height: 54px;" alt="{{ $detail->thumbnail }}">
                             </a>
                             @foreach ($images as $image)
                             <a>
                                 <img src="/images/image/{{ $image->image }}" onclick="change(this.src)"
-                                    class="figure-img img-fluid rounded" style="width: 70px; height: 54px;" alt="...">
+                                    class="figure-img img-fluid rounded" style="width: 70px; height: 54px;" alt="{{ $image->image }}">
                             </a>
                             @endforeach
-                            {{-- <a>
-                                <img src="/assets/img/profile.jpg" onclick="change(this.src)"
-                                    class="figure-img img-fluid rounded" style="width: 70px; height: 54px;" alt="...">
-                            </a>
-                            <a>
-                                <img src="/assets/img/about.jpg" onclick="change(this.src)"
-                                    class="figure-img img-fluid rounded" style="width: 70px;height: 54px;" alt="...">
-                            </a>
-                            <a>
-                                <img src="/assets/img/testimonials-1.jpg" onclick="change(this.src)"
-                                    class="figure-img img-fluid rounded" style="width: 70px;height: 54px;" alt="...">
-                            </a> --}}
                         </figcaption>
                     </figure>
                 </div>
@@ -85,75 +73,30 @@
             </div>
             <!-- end description -->
 
-            {{-- Produk Terkait --}}
+            {{-- Produk Terpopuler --}}
             <div class="row row-product">
                 <div class="tab-content">
-                    <h3 class="border-dark border-bottom border-2 pb-2">Produk Terkait</h3>
+                    <h3 class="border-dark border-bottom border-2 pb-2">Produk Terpopuler</h3>
                     <div class="tab-pane fade active show" id="all">
                         {{-- Items --}}
                         <div class="row gy-5 justify-content-between p-2">
-                            {{-- @foreach ($product->take(3) as $produk) --}}
+                            @foreach ($populer->take(4) as $produk)
                             <div class="col-lg-3">
                                 <div class="items p-2">
                                     <a href="" class="">
-                                        <img src="/assets/img/hero-img.png" class="menu-img img-fluid" alt="">
+                                        <img src="/images/cover/{{ $produk->thumbnail }}" class="menu-img img-fluid" alt="{{ $produk->thumbnail }}">
                                     </a>
-                                    <a href="">
-                                        <h4>Acer</h4>
-                                    </a>
-                                    <p class="price">
-                                        Rp. 5.000.000
-                                    </p>
-                                    <div class="btn btn-dark d-flex justify-content-center mt-2"><a class="text-white"
-                                            href="">Read More</a></div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="items p-2">
-                                    <a href="" class="">
-                                        <img src="/assets/img/hero-img.png" class="menu-img img-fluid" alt="">
-                                    </a>
-                                    <a href="">
-                                        <h4>Acer</h4>
+                                    <a href="{{ route('product') }}/{{ $produk->slug }}">
+                                        <h4>{{ $produk->nama_produk }}</h4>
                                     </a>
                                     <p class="price">
-                                        Rp. 5.000.000
+                                        Rp{{ number_format($produk->harga, 0, ',', '.') }}
                                     </p>
                                     <div class="btn btn-dark d-flex justify-content-center mt-2"><a class="text-white"
-                                            href="">Read More</a></div>
+                                            href="{{ route('product') }}/{{ $produk->slug }}">Read More</a></div>
                                 </div>
                             </div>
-                            <div class="col-lg-3">
-                                <div class="items p-2">
-                                    <a href="" class="">
-                                        <img src="/assets/img/hero-img.png" class="menu-img img-fluid" alt="">
-                                    </a>
-                                    <a href="">
-                                        <h4>Acer</h4>
-                                    </a>
-                                    <p class="price">
-                                        Rp. 5.000.000
-                                    </p>
-                                    <div class="btn btn-dark d-flex justify-content-center mt-2"><a class="text-white"
-                                            href="">Read More</a></div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="items p-2">
-                                    <a href="" class="">
-                                        <img src="/assets/img/hero-img.png" class="menu-img img-fluid" alt="">
-                                    </a>
-                                    <a href="">
-                                        <h4>Acer</h4>
-                                    </a>
-                                    <p class="price">
-                                        Rp. 5.000.000
-                                    </p>
-                                    <div class="btn btn-dark d-flex justify-content-center mt-2"><a class="text-white"
-                                            href="">Read More</a></div>
-                                </div>
-                            </div>
-                            {{-- @endforeach --}}
+                            @endforeach
                         </div>
                         {{-- end Items --}}
                     </div>

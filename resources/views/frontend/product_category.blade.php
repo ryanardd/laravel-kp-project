@@ -47,11 +47,14 @@
                                         <div class="mt-3">
                                             <div class="col d-flex justify-content-between align-items-center">
                                                 <div class="fw-bold">
-                                                    Rp. {{ number_format($row->harga, 0, ',', '.') }}
+                                                    Rp{{ number_format($row->harga, 0, ',', '.') }}
                                                 </div>
                                                 <p class="rounded-1 p-1">
-                                                    {{ $row->stok ? 'Stok Tersedia' : 'Stok Kosong' }}
+                                                    {{ $row->category->nama_category }}
                                                 </p>
+                                                {{-- <p class="rounded-1 p-1">
+                                                    {{ $row->stok ? 'Stok Tersedia' : 'Stok Kosong' }}
+                                                </p> --}}
                                             </div>
                                         </div>
                                     </div>

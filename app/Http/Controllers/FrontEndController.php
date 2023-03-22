@@ -6,6 +6,7 @@ use App\Models\Image;
 use App\Models\Slide;
 use App\Models\Produk;
 use App\Models\Category;
+use Illuminate\Http\Request;
 
 class FrontEndController extends Controller
 {
@@ -26,8 +27,12 @@ class FrontEndController extends Controller
 
     public function productCategory($slug)
     {
-        // $produk = Category::where('slug', $slug)->first()->product()->filter(request(['search']))->paginate(5);
         $produk = Category::where('slug', $slug)->first()->product()->filter(request(['search']))->paginate(5);
+
+        // $produk = Category::with('product', function ($query) {
+        //     return $query->filter(request(['search']));
+        // })->where('slug', $slug);
+        // dd($produk);
         return view('frontend.product_category', [
             'all' => $produk,
         ]);
@@ -36,11 +41,12 @@ class FrontEndController extends Controller
     public function showProduct(Produk $produk)
     {
         $produk->increment('views');
-        $cat = Category::all();
+        $populer = Produk::with('category')->orderBy('views', 'ASC')->get();
+        // dd($populer);
         return view('frontend._detailProduk', [
             "detail" => $produk,
             "images" => Image::with('products')->get()->where('product_id', $produk->id),
-            'category' => $cat
+            'populer' => $populer
         ]);
     }
 
@@ -53,11 +59,7 @@ class FrontEndController extends Controller
     }
 
     public function contactUs() {
-        $cat = Category::all();
-
-        return view('frontend.contact',[
-            'category' => $cat
-        ]);
+        return view('frontend.contact');
     }
 
 }

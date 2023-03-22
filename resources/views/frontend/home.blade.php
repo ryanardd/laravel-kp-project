@@ -152,7 +152,7 @@
                                         <div class="mt-3">
                                             <div class="col d-flex justify-content-between">
                                                 <div class="lead fw-bold">
-                                                    Rp. {{ number_format($produk->harga, 0, ',', '.') }}
+                                                    Rp{{ number_format($produk->harga, 0, ',', '.') }}
                                                 </div>
                                                 <p class="rounded-1 p-1">
                                                     {{ $produk->category->nama_category }}

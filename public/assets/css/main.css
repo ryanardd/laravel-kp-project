@@ -249,39 +249,39 @@ section {
     align-items: center;
     gap: 6px;
    }
-   
+
    #preloader span {
     width: 4px;
     height: 50px;
     background: var(--first-color);
     animation: scale var(--speed-of-animation) ease-in-out infinite;
    }
-   
+
    #preloader span:nth-child(2) {
     background: var(--second-color);
     animation-delay: -0.8s;
    }
-   
+
    #preloader span:nth-child(3) {
     background: var(--third-color);
     animation-delay: -0.7s;
    }
-   
+
    #preloader span:nth-child(4) {
     background: var(--fourth-color);
     animation-delay: -0.6s;
    }
-   
+
    #preloader span:nth-child(5) {
     background: var(--fifth-color);
     animation-delay: -0.5s;
    }
-   
+
    @keyframes scale {
     0%, 40%, 100% {
      transform: scaleY(0.05);
     }
-   
+
     20% {
      transform: scaleY(1);
     }
@@ -813,7 +813,7 @@ section {
 .service .why-box p {
     margin-bottom: 30px;
 }
-/*   
+/*
 .service .why-box .more-btn {
   display: inline-block;
   background: rgba(255, 255, 255, 0.3);
@@ -2226,7 +2226,7 @@ section {
     border-radius: 10px 0 0 10px;
     box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
   }
-  
+
   .contact .info-item {
     width: 100%;
     background-color: #009282;
@@ -2235,11 +2235,11 @@ section {
     border-radius: 10px;
     color: #fff;
   }
-  
+
   .contact .info-item:last-child {
     margin-bottom: 0;
   }
-  
+
   .contact .info-item i {
     font-size: 20px;
     color: #fff;
@@ -2254,25 +2254,25 @@ section {
     transition: all 0.3s ease-in-out;
     margin-right: 15px;
   }
-  
+
   .contact .info-item h4 {
     padding: 0;
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 5px;
   }
-  
+
   .contact .info-item p {
     padding: 0;
     margin-bottom: 0;
     font-size: 14px;
   }
-  
+
   .contact .info-item:hover i {
     background: #fff;
     color: var(--color-primary);
   }
-  
+
   .contact .php-email-form {
     width: 100%;
     height: 100%;
@@ -2281,11 +2281,11 @@ section {
     padding: 30px;
     border-radius: 0 10px 10px 0;
   }
-  
+
   .contact .php-email-form .form-group {
     padding-bottom: 8px;
   }
-  
+
   .contact .php-email-form .error-message {
     display: none;
     color: #fff;
@@ -2294,11 +2294,11 @@ section {
     padding: 15px;
     font-weight: 600;
   }
-  
+
   .contact .php-email-form .error-message br+br {
     margin-top: 25px;
   }
-  
+
   .contact .php-email-form .sent-message {
     display: none;
     color: #fff;
@@ -2307,14 +2307,14 @@ section {
     padding: 15px;
     font-weight: 600;
   }
-  
+
   .contact .php-email-form .loading {
     display: none;
     background: #fff;
     text-align: center;
     padding: 15px;
   }
-  
+
   .contact .php-email-form .loading:before {
     content: "";
     display: inline-block;
@@ -2327,30 +2327,30 @@ section {
     -webkit-animation: animate-loading 1s linear infinite;
     animation: animate-loading 1s linear infinite;
   }
-  
+
   .contact .php-email-form input,
   .contact .php-email-form textarea {
     border-radius: 0;
     box-shadow: none;
     font-size: 14px;
   }
-  
+
   .contact .php-email-form input[type=text],
   .contact .php-email-form input[type=email],
   .contact .php-email-form textarea {
     padding: 12px 15px;
   }
-  
+
   .contact .php-email-form input[type=text]:focus,
   .contact .php-email-form input[type=email]:focus,
   .contact .php-email-form textarea:focus {
     border-color: var(--color-primary);
   }
-  
+
   .contact .php-email-form textarea {
     padding: 10px 12px;
   }
-  
+
   .contact .php-email-form button[type=submit] {
     background: var(--color-primary);
     border: 0;
@@ -2359,26 +2359,26 @@ section {
     transition: 0.4s;
     border-radius: 50px;
   }
-  
+
   .contact .php-email-form button[type=submit]:hover {
     background: rgba(0, 131, 116, 0.8);
   }
-  
+
   @-webkit-keyframes animate-loading {
     0% {
       transform: rotate(0deg);
     }
-  
+
     100% {
       transform: rotate(360deg);
     }
   }
-  
+
   @keyframes animate-loading {
     0% {
       transform: rotate(0deg);
     }
-  
+
     100% {
       transform: rotate(360deg);
     }
@@ -2396,17 +2396,17 @@ section {
   background-color: #1f1f24;
   color: rgba(255, 255, 255, 0.7);
   }
-  
+
   .footer .footer-info .logo {
     line-height: 0;
     margin-bottom: 25px;
   }
-  
+
   .footer .footer-info .logo img {
     max-height: 40px;
     margin-right: 6px;
   }
-  
+
   .footer .footer-info .logo span {
     font-size: 30px;
     font-weight: 700;
@@ -2414,12 +2414,12 @@ section {
     color: #fff;
     font-family: var(--font-primary);
   }
-  
+
   .footer .footer-info p {
     font-size: 14px;
     /* font-family: var(--font-primary); */
   }
-  
+
   .footer .social-links a {
     display: flex;
     align-items: center;
@@ -2433,71 +2433,71 @@ section {
     margin-right: 10px;
     transition: 0.3s;
   }
-  
+
   .footer .social-links a:hover {
     color: #fff;
     border-color: #fff;
   }
-  
+
   .footer h4 {
     font-size: 16px;
     font-weight: bold;
     position: relative;
     padding-bottom: 12px;
   }
-  
+
   .footer .footer-links {
     margin-bottom: 30px;
   }
-  
+
   .footer .footer-links ul {
     list-style: none;
     padding: 0;
     margin: 0;
   }
-  
+
   .footer .footer-links ul i {
     padding-right: 2px;
     color: rgba(0, 131, 116, 0.8);
     font-size: 12px;
     line-height: 0;
   }
-  
+
   .footer .footer-links ul li {
     padding: 10px 0;
     display: flex;
     align-items: center;
   }
-  
+
   .footer .footer-links ul li:first-child {
     padding-top: 0;
   }
-  
+
   .footer .footer-links ul a {
     color: rgba(255, 255, 255, 0.7);
     transition: 0.3s;
     display: inline-block;
     line-height: 1;
   }
-  
+
   .footer .footer-links ul a:hover {
     color: #fff;
   }
-  
+
   .footer .footer-contact p {
     line-height: 26px;
   }
-  
+
   .footer .copyright {
     text-align: center;
   }
-  
+
   .footer .credits {
     padding-top: 4px;
     text-align: center;
     font-size: 13px;
   }
-  
+
   .footer .credits a {
     color: #fff;
   }
@@ -2509,7 +2509,7 @@ section {
         /* padding: 5px; */
         padding-top: 16px;
     }
-    
+
     .underline {
         border-bottom: 1px solid #777;
         margin: 10px 0;
@@ -2546,18 +2546,18 @@ section {
         border-radius: 10px;
         overflow: hidden;
     }
-    
+
     .portfolio .container .category:hover {
         background-color: #8ccbbe;
         box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
         /* background-color: var(--color-secondary); */
     }
-    
+
     .portfolio .container .category .menu-img {
         padding: 0 60px;
         margin-bottom: 15px;
     }
-    
+
     .portfolio .container .category h4 {
         font-size: 22px;
         font-weight: 500;
@@ -2566,27 +2566,27 @@ section {
         font-weight: 30px;
         margin-bottom: 5px;
     }
-    
+
     .portfolio .container .category .ingredients {
         font-family: var(--font-secondary);
         color: #8d8d9b;
         margin-bottom: 5px;
     }
-    
+
     .portfolio .container .category .read-more {
         background-color: var(--color-primary);
     }
-    
+
     .portfolio .container .category .read-more a{
         color: black;
     }
-    
+
     .portfolio .container .category .read-more:hover,
     .portfolio .container .category .read-more a:hover {
         background-color: #3a3f47;
         color: var(--color-primary);
     }
-    
+
     .portfolio .container .read-other{
         -moz-text-align-last: center;
         text-align-last: center;
@@ -2597,4 +2597,3 @@ section {
         border-radius: 10px;
         overflow: hidden;
     }
-    
