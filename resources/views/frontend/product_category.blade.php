@@ -37,11 +37,12 @@
                             <div class="col-xl-3 portfolio-item">
                                 <div class="portfolio-wrap">
                                     <a href="{{ route('product') }}/{{ $row->slug }}"
-                                        class="d-flex justify-content-center"><img src="/images/cover/{{ $row->thumbnail }}"
-                                            class="img-fluid" alt=""></a>
+                                        class="d-flex justify-content-center">
+                                        <img src="/images/cover/{{ $row->thumbnail }}" class="img-fluid" alt="">
+                                    </a>
                                     <div class="portfolio-info">
                                         <h5><a href="{{ route('product') }}/{{ $row->slug }}"
-                                                title="More Details">{{ $row->nama_produk }}</a>
+                                                title="{{ $row->nama_produk }}">{{ $row->nama_produk }}</a>
                                         </h5>
 
                                         <div class="mt-3">

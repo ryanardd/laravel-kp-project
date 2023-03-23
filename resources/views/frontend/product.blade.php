@@ -39,7 +39,7 @@
                                             class="img-fluid" alt=""></a>
                                     <div class="portfolio-info">
                                         <h5><a href="{{ route('product') }}/{{ $row->slug }}"
-                                                title="More Details">{{ $row->nama_produk }}</a>
+                                                title="{{ $row->nama_produk }}">{{ $row->nama_produk }}</a>
                                         </h5>
 
                                         <div class="mt-3">

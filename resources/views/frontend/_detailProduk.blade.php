@@ -1,6 +1,6 @@
 {{-- @dd($detail) --}}
 {{-- @dd($images) --}}
-@extends('frontend/layouts/main')
+@extends('frontend.layouts.main')
 @section('container')
     <section class="detail">
 
@@ -8,20 +8,22 @@
             <div class="row row-product justify-content-evenly">
                 <div class="col-lg-5">
                     <figure class="figure w-100">
-                        <div class="itemtab mb-2" style="height: 300px;">
-                            <img src="/images/cover/{{ $detail->thumbnail }}" id="image" class="w-100 h-100 figure-img img-fluid rounded"
-                                alt="...">
+                        <div class="itemtab mb-2">
+                            <img src="/images/cover/{{ $detail->thumbnail }}" id="image"
+                                class="figure-img img-fluid rounded border" alt="...">
                         </div>
                         <figcaption class="figure-caption d-flex justify-content-evenly gap-2">
                             <a>
                                 <img src="/images/cover/{{ $detail->thumbnail }}" onclick="change(this.src)"
-                                    class="figure-img img-fluid rounded" style="width: 70px;height: 54px;" alt="{{ $detail->thumbnail }}">
+                                    class="figure-img img-fluid border-primary rounded border"
+                                    alt="{{ $detail->thumbnail }}">
                             </a>
                             @foreach ($images as $image)
-                            <a>
-                                <img src="/images/image/{{ $image->image }}" onclick="change(this.src)"
-                                    class="figure-img img-fluid rounded" style="width: 70px; height: 54px;" alt="{{ $image->image }}">
-                            </a>
+                                <a>
+                                    <img src="/images/image/{{ $image->image }}" onclick="change(this.src)"
+                                        class="figure-img img-fluid border-primary rounded border"
+                                        alt="{{ $image->image }}">
+                                </a>
                             @endforeach
                         </figcaption>
                     </figure>
@@ -41,15 +43,15 @@
                         <li>Simpan dus dan invoice pembelian untuk klaim garansi.</li>
                     </ul>
                     <p>Order Via :</p>
-                        <a href="#" style="text-decoration: none;">
-                            <img src="https://img.icons8.com/color/48/null/whatsapp--v1.png" />
-                        </a>
-                        <a href="{{ $detail->cta_tokped }}" style="text-decoration: none;" target="_blank">
-                            <img src="https://img.icons8.com/nolan/48/tokopedia.png" />
-                        </a>
-                        <a href="{{ $detail->cta_shopee }}" style="text-decoration: none;" target="_blank">
-                            <img src="https://img.icons8.com/color/48/null/shopee.png" />
-                        </a>
+                    <a href="#" style="text-decoration: none;">
+                        <img src="https://img.icons8.com/color/48/null/whatsapp--v1.png" />
+                    </a>
+                    <a href="{{ $detail->cta_tokped }}" style="text-decoration: none;" target="_blank">
+                        <img src="https://img.icons8.com/nolan/48/tokopedia.png" />
+                    </a>
+                    <a href="{{ $detail->cta_shopee }}" style="text-decoration: none;" target="_blank">
+                        <img src="https://img.icons8.com/color/48/null/shopee.png" />
+                    </a>
                 </div>
             </div>
 
@@ -77,32 +79,43 @@
             <div class="row row-product">
                 <div class="tab-content">
                     <h3 class="border-dark border-bottom border-2 pb-2">Produk Terpopuler</h3>
-                    <div class="tab-pane fade active show" id="all">
-                        {{-- Items --}}
-                        <div class="row gy-5 justify-content-between p-2">
-                            @foreach ($populer->take(4) as $produk)
-                            <div class="col-lg-3">
-                                <div class="items p-2">
-                                    <a href="" class="">
-                                        <img src="/images/cover/{{ $produk->thumbnail }}" class="menu-img img-fluid" alt="{{ $produk->thumbnail }}">
+                    {{-- Items --}}
+                    <div class="row gy-5 portfolio-container p-2">
+                        @foreach ($populer->take(4) as $produk)
+                            <div class="col-lg-3 portfolio-item">
+                                <div class="portfolio-wrap">
+                                    <a href="{{ route('product') }}/{{ $produk->slug }}"
+                                        class="d-flex justify-content-center">
+                                        <img src="/images/cover/{{ $produk->thumbnail }}" class="img-fluid"
+                                            alt="{{ $produk->thumbnail }}">
                                     </a>
-                                    <a href="{{ route('product') }}/{{ $produk->slug }}">
-                                        <h4>{{ $produk->nama_produk }}</h4>
-                                    </a>
-                                    <p class="price">
-                                        Rp{{ number_format($produk->harga, 0, ',', '.') }}
-                                    </p>
-                                    <div class="btn btn-dark d-flex justify-content-center mt-2"><a class="text-white"
-                                            href="{{ route('product') }}/{{ $produk->slug }}">Read More</a></div>
+                                    <div class="portfolio-info">
+                                        <h5><a href="{{ route('product') }}/{{ $produk->slug }}"
+                                                title="{{ $produk->nama_produk }}">{{ $produk->nama_produk }}</a>
+                                        </h5>
+                                        <div class="mt-3">
+                                            <div class="col d-flex justify-content-between align-items-center">
+                                                <div class="fw-bold">
+                                                    Rp{{ number_format($produk->harga, 0, ',', '.') }}
+                                                </div>
+                                                <p class="rounded-1 p-1">
+                                                    {{ $produk->category->nama_category }}
+                                                </p>
+                                                {{-- <p class="rounded-1 p-1">
+                                                        {{ $row->stok ? 'Stok Tersedia' : 'Stok Kosong' }}
+                                                    </p> --}}
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            @endforeach
-                        </div>
-                        {{-- end Items --}}
+                        @endforeach
                     </div>
+                    {{-- end Items --}}
                 </div>
             </div>
-            {{-- end Produk Terkait --}}
+        </div>
+        {{-- end Produk Terkait --}}
         </div>
 
 

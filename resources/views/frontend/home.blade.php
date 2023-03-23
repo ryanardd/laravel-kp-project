@@ -142,7 +142,7 @@
                                     </a>
                                     <div class="menu-info">
                                         <h5><a href="/product/{{ $produk->slug }}"
-                                                title="More Details">{{ $produk->nama_produk }}</a>
+                                                title="{{ $produk->nama_produk }}">{{ $produk->nama_produk }}</a>
                                         </h5>
 
                                         <div class="mt-3">
