@@ -2,35 +2,31 @@
 
 @section('container')
     <!-- ======= Hero Section ======= -->
-    <section id="hero" class="hero d-flex align-items-center section-bg">
-        @foreach ($slides as $slide)
-            <div class="container">
-                <div class="slides-1 swiper" data-aos="fade-up" data-aos-delay="100">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="row justify-content-between gy-5">
-                                <div
-                                    class="col-lg-5 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-lg-start order-2 text-center">
-                                    <h2 data-aos="fade-up">Opo Maneh<br>Ndang Gasss</h2>
-                                    <p data-aos="fade-up" data-aos-delay="100">Sed autem laudantium dolores. Voluptatem
-                                        itaque
-                                        ea consequatur
-                                        eveniet. Eum quas beatae cumque eum quaerat.</p>
-                                    <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-                                        <a href="" class="order-now">Order Now</a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-5 order-lg-2 text-lg-start order-1 text-center">
-                                    <img src="/images/slide/{{ $slide->gambar_slide }}" class="img-fluid" alt=""
-                                        data-aos="zoom-out" data-aos-delay="300">
-                                </div>
-                            </div>
-                        </div>
+    <section id="hero" class="hero">
+
+
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                @foreach ($slides as $slide)
+                    <div class="carousel-item active text-center">
+                        <img src="/images/slide/{{ $slide->gambar_slide }}" class="img-fluid w-100" alt="...">
                     </div>
-                    <div class="swiper-pagination"></div>
-                </div>
+                @endforeach
             </div>
-        @endforeach
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+
+
     </section>
     <!-- End Hero Section -->
 
