@@ -9,7 +9,7 @@
             <div class="carousel-inner">
                 @foreach ($slides as $slide)
                     <div class="carousel-item active text-center">
-                        <img src="/images/slide/{{ $slide->gambar_slide }}" class="img-fluid w-100" alt="...">
+                        <img src="/images/slide/{{ $slide->gambar_slide }}" class="img-fluid" alt="...">
                     </div>
                 @endforeach
             </div>

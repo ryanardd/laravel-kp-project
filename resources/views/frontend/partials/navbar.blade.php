@@ -1,6 +1,6 @@
     <!-- ======= Header Navbar ======= -->
     {{-- @dd($category) --}}
-    <header id="header" class="header fixed-top d-flex align-items-center">
+    <header class="header fixed-top d-flex align-items-center">
         <div class="d-flex align-items-center justify-content-between container">
             <a href="{{ route('home') }}" class="logo d-flex align-items-center me-auto me-lg-0">
                 <h1>Murah<span>Kom</span></h1>
@@ -17,7 +17,9 @@
                         </a>
                         <ul>
                             @foreach (App\Models\Category::all() as $item)
-                                <li><a href="{{ route('product-category', ['category' => $item->slug]) }}">{{ $item->nama_category }}</a></li>
+                                <li><a
+                                        href="{{ route('product-category', ['category' => $item->slug]) }}">{{ $item->nama_category }}</a>
+                                </li>
                             @endforeach
                         </ul>
                     </li>
