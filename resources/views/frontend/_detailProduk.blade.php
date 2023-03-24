@@ -1,6 +1,7 @@
 {{-- @dd($detail) --}}
 {{-- @dd($images) --}}
 @extends('frontend.layouts.main')
+@section('title', $detail->nama_produk)
 @section('container')
     <section class="detail">
 
@@ -32,7 +33,7 @@
                 <div class="col-lg-6">
                     <h3>{{ $detail->nama_produk }}</h3>
                     <div class="underline"></div>
-                    <h4>Rp. {{ number_format($detail->harga, 0, ',', '.') }}</h4>
+                    <h4>Rp{{ number_format($detail->harga, 0, ',', '.') }}</h4>
                     <h6>Note</h6>
                     <ul>
                         <li>Cek stock terlebih dahulu sebelum order (Ketersedian Terbatas)</li>
