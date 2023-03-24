@@ -36,10 +36,6 @@ Route::get('/product-category/{category:slug}', [FrontEndController::class, 'pro
 // halaman contact
 Route::get('/contact-us', [FrontEndController::class, 'contactUs'])->name('contact-us');
 
-
-// halaman category produk
-Route::get('category/{category:slug}', [FrontEndController::class, 'showCategory']);
-
 // halaman login
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);

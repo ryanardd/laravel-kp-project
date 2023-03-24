@@ -82,7 +82,7 @@
                     <h3 class="border-dark border-bottom border-2 pb-2">Produk Terpopuler</h3>
                     {{-- Items --}}
                     <div class="row gy-5 portfolio-container p-2">
-                        @foreach ($populer->take(4) as $produk)
+                        @foreach ($populer as $produk)
                             <div class="col-lg-3 portfolio-item">
                                 <div class="portfolio-wrap">
                                     <a href="{{ route('product') }}/{{ $produk->slug }}"
