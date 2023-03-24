@@ -64,7 +64,6 @@
                             <label for="deskripsi">Deskripsi Produk</label>
                             <input id="deskripsi" type="hidden" name="deskripsi" value="{{ old('deskripsi') }}">
                             <trix-editor input="deskripsi"></trix-editor>
-
                             @error('deskripsi')
 							<div class="text-danger mt-2">
                                 Deskripsi Produk harus di isi!
