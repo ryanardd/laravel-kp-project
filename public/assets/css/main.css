@@ -1173,6 +1173,7 @@ section {
     width: 100%;
     display: flex;
     justify-content: end;
+    margin-bottom: 20px;
 }
 
 .search .group {
@@ -1982,3 +1983,48 @@ section {
         border-radius: 10px;
         overflow: hidden;
     }
+
+
+/* detail product */
+
+.row-product figure figcaption .carousel-item .image-item-slide {
+    margin: 2px;
+}
+
+        @media (max-width: 1280px) {
+
+            .carousel-inner .carousel-item-end.active,
+            .carousel-inner .carousel-item-next {
+              transform: translateX(25%);
+            }
+            
+            .carousel-inner .carousel-item-start.active, 
+            .carousel-inner .carousel-item-prev {
+              transform: translateX(-25%);
+            }
+          }
+          
+          .carousel-inner .carousel-item.active,
+          .carousel-inner .carousel-item-next,
+          .carousel-inner .carousel-item-prev {
+            display: flex;
+          }
+          
+
+            
+            .carousel-inner .carousel-item-end.active,
+            .carousel-inner .carousel-item-next {
+              transform: translateX(20%);
+            }
+            
+            .carousel-inner .carousel-item-start.active, 
+            .carousel-inner .carousel-item-prev {
+              transform: translateX(-20%);
+            }
+          
+          
+          .carousel-inner .carousel-item-end,
+          .carousel-inner .carousel-item-start { 
+          transform: translateX(0);
+          }
+          
