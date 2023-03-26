@@ -550,7 +550,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // PRODUK DETAIL SLIDE
 
-let items = document.querySelectorAll('.carousel .carousel-item')
+let items = document.querySelectorAll('.sld .carousel .carousel-item')
 
 items.forEach((el) => {
     const minPerSlide = 5

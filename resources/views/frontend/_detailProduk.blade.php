@@ -13,7 +13,7 @@
                                 class="figure-img img-fluid rounded border" alt="...">
                         </div>
                         <figcaption class="figure-caption">
-                            <div class="row justify-content-center">
+                            <div class="row justify-content-center sld">
                                 <div id="recipeCarousel" class="carousel slide">
                                     <div class="carousel-inner" role="listbox">
                                         <div class="carousel-item active">
