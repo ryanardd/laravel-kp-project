@@ -47,8 +47,8 @@
         </div>
     </div>
 
-    <div class="container mt-4">
-        <div class="copyright">
+    <div class="box-copyright">
+        <div>
             &copy; 2023 <strong><span>MurahKom</span></strong>. All Rights Reserved
         </div>
     </div>
