@@ -13,19 +13,39 @@
                             <img src="/images/cover/{{ $detail->thumbnail }}" id="image"
                                 class="figure-img img-fluid rounded border" alt="...">
                         </div>
-                        <figcaption class="figure-caption d-flex justify-content-evenly gap-2">
-                            <a>
-                                <img src="/images/cover/{{ $detail->thumbnail }}" onclick="change(this.src)"
-                                    class="figure-img img-fluid border-primary rounded border"
-                                    alt="{{ $detail->thumbnail }}">
-                            </a>
-                            @foreach ($images as $image)
-                                <a>
-                                    <img src="/images/image/{{ $image->image }}" onclick="change(this.src)"
-                                        class="figure-img img-fluid border-primary rounded border"
-                                        alt="{{ $image->image }}">
-                                </a>
-                            @endforeach
+                        <figcaption class="figure-caption">
+                            <div class="row justify-content-center sld">
+                                <div id="recipeCarousel" class="carousel slide">
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="carousel-item active">
+                                            <a class="image-item-slide">
+                                                <img src="/images/cover/{{ $detail->thumbnail }}" onclick="change(this.src)"
+                                                    class="figure-img img-fluid border-primary rounded border"
+                                                    alt="{{ $detail->thumbnail }}">
+                                            </a>
+                                        </div>
+                                        @foreach ($images as $image)
+                                            <div class="carousel-item">
+                                                <a class="image-item-slide">
+                                                    <img src="/images/image/{{ $image->image }}" onclick="change(this.src)"
+                                                        class="figure-img img-fluid border-primary rounded border"
+                                                        alt="{{ $image->image }}">
+                                                </a>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                    <a class="carousel-control-prev justify-content-start" href="#recipeCarousel"
+                                        role="button" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon bg-primary rounded-circle"
+                                            aria-hidden="true"></span>
+                                    </a>
+                                    <a class="carousel-control-next justify-content-end" href="#recipeCarousel"
+                                        role="button" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon bg-primary rounded-circle"
+                                            aria-hidden="true"></span>
+                                    </a>
+                                </div>
+                            </div>
                         </figcaption>
                     </figure>
                 </div>

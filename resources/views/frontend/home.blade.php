@@ -35,7 +35,7 @@
         <div class="container" data-aos="fade-up">
             <div class="section-header">
                 <h2>Service Us</h2>
-                <p>Learn More <span> Service Us</span></p>
+                <p>Learn More Service Us</p>
             </div>
 
             <div class="row gap-4">
@@ -79,7 +79,7 @@
         <div class="container" data-aos="fade-up">
             <div class="section-header">
                 <h2>About Us</h2>
-                <p>Learn More <span>About Us</span></p>
+                <p>Learn More About Us</p>
             </div>
             <div class="row gy-4 p-2">
                 <div class="col-lg-7 position-relative about-img"
@@ -125,45 +125,49 @@
         <div class="container" data-aos="fade-up">
             <div class="section-header">
                 <h2>Produk</h2>
-                <p>Rekomendasi <span>Untuk Anda</span></p>
+                <p>Rekomendasi Untuk Anda</p>
             </div>
 
-            <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
-                <div class="tab-pane fade active show" id="all">
+            <div class="tab-content">
+                <div class="tab-pane fade active show">
 
                     {{-- Items --}}
-                    <div class="row gy-5 p-2">
+                    <div class="box-group p-3">
+                        <div class="row">
 
-                        @foreach ($product->take(3) as $produk)
-                            <div class="col-lg-4">
-                                <div class="menu-wrap">
-                                    <a href="/product/{{ $produk->slug }}" class="d-flex justify-content-center">
-                                        <img src="images/cover/{{ $produk->thumbnail }}" class="img-fluid" alt="">
-                                    </a>
-                                    <div class="menu-info">
-                                        <h5><a href="/product/{{ $produk->slug }}"
-                                                title="{{ $produk->nama_produk }}">{{ $produk->nama_produk }}</a>
-                                        </h5>
+                            @foreach ($product->take(3) as $produk)
+                                <div class="col-lg-4 mt-2">
+                                    <div class="menu-wrap">
+                                        <a href="/product/{{ $produk->slug }}" class="d-flex justify-content-center">
+                                            <img src="images/cover/{{ $produk->thumbnail }}" class="img-fluid"
+                                                alt="">
+                                        </a>
+                                        <div class="menu-info">
+                                            <h5><a href="/product/{{ $produk->slug }}"
+                                                    title="{{ $produk->nama_produk }}">{{ $produk->nama_produk }}</a>
+                                            </h5>
 
-                                        <div class="mt-3">
-                                            <div class="col d-flex justify-content-between">
-                                                <div class="lead fw-bold">
-                                                    Rp{{ number_format($produk->harga, 0, ',', '.') }}
+                                            <div class="mt-3">
+                                                <div class="col d-flex justify-content-between">
+                                                    <div class="lead fw-bold">
+                                                        Rp{{ number_format($produk->harga, 0, ',', '.') }}
+                                                    </div>
+                                                    <p class="rounded-1 p-1">
+                                                        {{ $produk->category->nama_category }}
+                                                    </p>
                                                 </div>
-                                                <p class="rounded-1 p-1">
-                                                    {{ $produk->category->nama_category }}
-                                                </p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
 
-                    </div>
-                    {{-- end Items --}}
-                    <div class="d-flex justify-content-center mt-5">
-                        <a href="/product" class="btn btn-outline-info">Lihat Produk Lainnya</a>
+                        </div>
+                        {{-- end Items --}}
+                        <div class="d-flex justify-content-end mt-3">
+                            <a href="/product" class="text-white"> Lihat Produk Lainnya<i
+                                    class="bi bi-chevron-right"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -178,7 +182,7 @@
 
             <div class="section-header">
                 <h2>Testimonials</h2>
-                <p>Apa Kata Mereka <span>Tentang Kami</span></p>
+                <p>Apa Kata Mereka Tentang Kami</p>
             </div>
 
             <div class="slides-1 swiper p-2" data-aos="fade-up" data-aos-delay="100">
