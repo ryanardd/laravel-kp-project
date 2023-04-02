@@ -92,14 +92,14 @@ section {
     padding: 0;
     color: #3a3f47;
     text-transform: uppercase;
-    font-family: var(--font-default);
+    font-family: 'Montserrat';
 }
 
 .section-header p {
     margin: 0;
-    font-size: 48px;
+    font-size: 35px;
     font-weight: 400;
-    font-family: var(--font-primary);
+    font-family: 'Montserrat';
 }
 
 .section-header p span {
@@ -766,9 +766,9 @@ section {
 
 .service .icon-box h4 {
     font-size: 20px;
-    font-weight: 400;
+    font-weight: bold;
     margin: 0 0 30px 0;
-    font-family: var(--font-secondary);
+    font-family: 'Montserrat';
 }
 
 .service .icon-box p {
@@ -1301,15 +1301,16 @@ section {
     -webkit-box-orient: vertical;
 }
 
+.row-product .portfolio-wrap .portfolio-info h5 a,
 .portfolio .portfolio-wrap .portfolio-info h5 a {
     color: #2b2e4a;
     height: max-content;
     transition: 0.3s;
 }
 
-.portfolio .portfolio-wrap .portfolio-info h5 a:hover {
+/* .portfolio .portfolio-wrap .portfolio-info h5 a:hover {
     color: var(--color-primary);
-}
+} */
 .row-product .portfolio-container .portfolio-wrap .portfolio-info p,
 .portfolio .portfolio-wrap .portfolio-info p {
     color: #6c757d;
@@ -1616,7 +1617,7 @@ section {
 # Contact Section
 --------------------------------------------------------------*/
 .contact .info-container {
-    background-color: var(--color-secondary);
+    background-color: #0095D9;
     height: 100%;
     padding: 20px;
     border-radius: 10px 0 0 10px;
@@ -1625,7 +1626,7 @@ section {
 
   .contact .info-item {
     width: 100%;
-    background-color: #009282;
+    background-color:#0177E4;
     margin-bottom: 20px;
     padding: 20px;
     border-radius: 10px;
@@ -1990,6 +1991,10 @@ section {
 
 /* detail product */
 
+h3 {
+    font-family: 'Montserrat';
+}
+
 .row-product figure figcaption .carousel-item .image-item-slide {
     margin: 2px;
 }
@@ -2030,4 +2035,44 @@ section {
           .row-product .carousel-inner .carousel-item-start { 
           transform: translateX(0);
           }
-          
+
+/* coba overlay image */
+
+.img-overlay {
+    position: fixed;
+    top: 90px;
+    max-height: 80%;
+    left: 50%;
+    transform: translate(-50%, 0) scale(0, 0);
+    z-index: 10;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    transition: all .8s ease;
+}
+
+.overlay-dark {
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: #000;
+    opacity: .9;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    display: none;
+}
+
+@media (max-width: 1280px) {
+    .img-overlay {
+        position: fixed;
+        top: 90px;
+        max-height: 80%;
+        max-width: 95%;
+        left: 50%;
+        transform: translate(-50%, 0) scale(0, 0);
+        z-index: 10;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        transition: all .8s ease;
+    }
+}
+
+

@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'Murahkom - Toko Komputer Online Termurah di Surabaya')</title>
 
+    {{-- favicon --}}
+    <link rel="shortcut icon" href="/assets/img/logo-toko.png" type="image/x-icon">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

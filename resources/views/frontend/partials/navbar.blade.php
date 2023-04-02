@@ -9,7 +9,7 @@
             <nav id="navbar" class="navbar">
                 <ul>
 
-                    <li class="active"><a href="{{ route('home') }}" class="active">Home</a></li>
+                    <li><a href="{{ route('home') }}">Home</a></li>
                     <li class="dropdown">
                         <a href="#">
                             <span>Product</span>

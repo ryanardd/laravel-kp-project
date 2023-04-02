@@ -124,8 +124,8 @@
     <section id="menu" class="menu">
         <div class="container" data-aos="fade-up">
             <div class="section-header">
-                <h2>Produk</h2>
-                <p>Rekomendasi Untuk Anda</p>
+                <h2>Product</h2>
+                <p>Recommendation For You</p>
             </div>
 
             <div class="tab-content">
@@ -182,7 +182,7 @@
 
             <div class="section-header">
                 <h2>Testimonials</h2>
-                <p>Apa Kata Mereka Tentang Kami</p>
+                <p>What They Say About Us</p>
             </div>
 
             <div class="slides-1 swiper p-2" data-aos="fade-up" data-aos-delay="100">
