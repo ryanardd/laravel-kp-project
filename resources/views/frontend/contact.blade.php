@@ -1,5 +1,6 @@
 @extends('frontend.layouts.main')
 @section('title', 'Hubungi Kami - Murahkom Toko Komputer Online Termurah di Surabaya')
+@section('contact', 'active')
 @section('container')
 
     <!-- ======= Contact Section ======= -->

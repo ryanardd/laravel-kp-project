@@ -1,4 +1,5 @@
 @extends('frontend.layouts.main')
+@section('product', 'active')
 @section('title', 'Product - Murahkom Toko Komputer Online Termurah di Surabaya')
 @section('container')
     <!-- ======= Portfolio Section ======= -->

@@ -66,7 +66,7 @@
                         <li>Simpan dus dan invoice pembelian untuk klaim garansi.</li>
                     </ul>
                     <p>Order Via :</p>
-                    <a href="https://api.whatsapp.com/send?phone=6285755817664&text=Halo Admin, Apakah produk {{ route('product') }}/{{ $detail->slug }} masih ada ?"
+                    <a href="https://api.whatsapp.com/send?phone=6282335593809&text=Halo Admin, Apakah produk {{ route('product') }}/{{ $detail->slug }} masih ada ?"
                         style="text-decoration: none;" target="_blank">
                         <img src="https://img.icons8.com/color/48/null/whatsapp--v1.png" />
                     </a>

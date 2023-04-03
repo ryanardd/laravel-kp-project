@@ -1,5 +1,5 @@
 @extends('frontend.layouts.main')
-
+@section('home', 'active')
 @section('container')
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="hero">

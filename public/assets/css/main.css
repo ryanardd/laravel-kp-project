@@ -1023,9 +1023,9 @@ section {
 
 .hero img {
     width: 100%;
-    max-height: 550px;
+    max-height: 650px;
 }
-/* 
+/*
 .hero h2 {
     font-size: 64px;
     font-weight: 700;
@@ -1626,7 +1626,7 @@ section {
     border-radius: 10px;
     color: #fff;
   }
-  
+
   .contact .info-item .icon {
     position: relative;
     display: flex;
@@ -1642,13 +1642,13 @@ section {
     margin-right: 30px;
     box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.3);
   }
-  
+
   .contact .info-item h3 {
     font-size: 20px;
     font-weight: 700;
     margin: 0 0 5px 0;
   }
-  
+
   .contact .info-item p {
     padding: 0;
     margin: 0;
@@ -1901,34 +1901,34 @@ h3 {
             .row-product .carousel-inner .carousel-item-next {
               transform: translateX(25%);
             }
-            
-            .row-product .carousel-inner .carousel-item-start.active, 
+
+            .row-product .carousel-inner .carousel-item-start.active,
             .row-product .carousel-inner .carousel-item-prev {
               transform: translateX(-25%);
             }
           }
-          
+
           .row-product .carousel-inner .carousel-item.active,
           .row-product .carousel-inner .carousel-item-next,
           .row-product .carousel-inner .carousel-item-prev {
             display: flex;
           }
-          
 
-            
+
+
             .row-product .carousel-inner .carousel-item-end.active,
             .row-product .carousel-inner .carousel-item-next {
               transform: translateX(20%);
             }
-            
-            .row-product .carousel-inner .carousel-item-start.active, 
+
+            .row-product .carousel-inner .carousel-item-start.active,
             .row-product .carousel-inner .carousel-item-prev {
               transform: translateX(-20%);
             }
-          
-          
+
+
           .row-product .carousel-inner .carousel-item-end,
-          .row-product .carousel-inner .carousel-item-start { 
+          .row-product .carousel-inner .carousel-item-start {
           transform: translateX(0);
           }
 
