@@ -9,9 +9,9 @@
             <nav id="navbar" class="navbar">
                 <ul>
 
-                    <li class="active"><a href="{{ route('home') }}" class="active">Home</a></li>
+                    <li><a href="{{ route('home') }}" class="@yield('home')">Home</a></li>
                     <li class="dropdown">
-                        <a href="#">
+                        <a href="#" class="@yield('product')">
                             <span>Product</span>
                             <i class="bi bi-chevron-down dropdown-indicator"></i>
                         </a>
@@ -25,7 +25,7 @@
                     </li>
 
                     <li class="dropdown">
-                        <a href="#">
+                        <a href="#" class="@yield('market')">
                             <span>Marketplace</span>
                             <i class="bi bi-chevron-down dropdown-indicator"></i>
                         </a>
@@ -35,7 +35,7 @@
                         </ul>
                     </li>
 
-                    <li><a href="{{ route('contact-us') }}">Contact</a></li>
+                    <li><a href="{{ route('contact-us') }}" class="@yield('contact')">Contact</a></li>
                     <li>
                         <div class="search">
                             <div class="group">

@@ -20,12 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
   /**
    * Sticky header on scroll
    */
-  const selectHeader = document.querySelector('#header');
-  if (selectHeader) {
-    document.addEventListener('scroll', () => {
-      window.scrollY > 100 ? selectHeader.classList.add('sticked') : selectHeader.classList.remove('sticked');
-    });
-  }
+  // const selectHeader = document.querySelector('#header');
+  // if (selectHeader) {
+  //   document.addEventListener('scroll', () => {
+  //     window.scrollY > 100 ? selectHeader.classList.add('sticked') : selectHeader.classList.remove('sticked');
+  //   });
+  // }
 
   /**
    * Navbar links active state on scroll
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let section = document.querySelector(navbarlink.hash);
       if (!section) return;
 
-      let position = window.scrollY + 200;
+      let position = window.scrollY + 0;
 
       if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
         navbarlink.classList.add('active');
@@ -49,8 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
   }
-  window.addEventListener('load', navbarlinksActive);
-  document.addEventListener('scroll', navbarlinksActive);
+  // window.addEventListener('load', navbarlinksActive);
+  // document.addEventListener('scroll', navbarlinksActive);
 
   /**
    * Mobile nav toggle
@@ -565,3 +565,25 @@ items.forEach((el) => {
         next = next.nextElementSibling
     }
 })
+
+
+// COBA
+
+$(".img-popup").on('click', function() {
+  $src = $(this).attr('src');
+  $(".overlay-dark").css('display', 'block');
+  $('.img-overlay').css('opacity', 1);
+  $('.img-overlay').attr('src', $src);
+  $('.img-overlay').css('transform', 'translate(-50%, 0) scale(1, 1)');
+});
+
+$(".overlay-dark").on('click', function() {
+  $(".overlay-dark").css('display', 'none');
+  $('.img-overlay').css('opacity', 0);
+  setTimeout(function() {
+      $('.img-overlay').css('transform', 'translate(-50%, 0) scale(0, 0)');
+  }, 600);
+});
+
+
+
