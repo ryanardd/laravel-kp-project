@@ -9,9 +9,9 @@
             <div class="row row-product justify-content-evenly">
                 <div class="col-lg-5">
                     <figure class="figure w-100">
-                        <div class="itemtab mb-2">
+                        <div class="itemtab zoom-image mb-2">
                             <img src="/images/cover/{{ $detail->thumbnail }}" id="image"
-                                class="figure-img img-fluid rounded border" alt="...">
+                                class="figure-img img-fluid img-popup rounded border" alt="...">
                         </div>
                         <figcaption class="figure-caption">
                             <div class="row justify-content-center sld">
@@ -21,7 +21,7 @@
                                             <a class="image-item-slide">
                                                 <img src="/images/cover/{{ $detail->thumbnail }}" onclick="change(this.src)"
                                                     class="figure-img img-fluid border-primary rounded border"
-                                                    alt="{{ $detail->thumbnail }}">
+                                                    alt="{{ $detail->thumbnail }}" style="width: 90px">
                                             </a>
                                         </div>
                                         @foreach ($images as $image)
@@ -29,11 +29,13 @@
                                                 <a class="image-item-slide">
                                                     <img src="/images/image/{{ $image->image }}" onclick="change(this.src)"
                                                         class="figure-img img-fluid border-primary rounded border"
-                                                        alt="{{ $image->image }}">
+                                                        alt="{{ $image->image }}" style="width: 90px">
                                                 </a>
                                             </div>
                                         @endforeach
                                     </div>
+                                    <div class="overlay-dark"></div>
+                                    <img class="img-overlay">
                                     <a class="carousel-control-prev justify-content-start" href="#recipeCarousel"
                                         role="button" data-bs-slide="prev">
                                         <span class="carousel-control-prev-icon bg-primary rounded-circle"
@@ -64,7 +66,8 @@
                         <li>Simpan dus dan invoice pembelian untuk klaim garansi.</li>
                     </ul>
                     <p>Order Via :</p>
-                    <a href="#" style="text-decoration: none;">
+                    <a href="https://api.whatsapp.com/send?phone=6285755817664&text=Halo Admin, Apakah produk {{ route('product') }}/{{ $detail->slug }} masih ada ?"
+                        style="text-decoration: none;" target="_blank">
                         <img src="https://img.icons8.com/color/48/null/whatsapp--v1.png" />
                     </a>
                     <a href="{{ $detail->cta_tokped }}" style="text-decoration: none;" target="_blank">
@@ -139,11 +142,34 @@
         {{-- end Produk Terkait --}}
         </div>
 
-
+        {{-- zoom image --}}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        {{-- view image --}}
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script>
             const change = src => {
                 document.getElementById('image').src = src
+
+                // zoom image
+                $('.zoom-image').each(function() {
+                    var originalImagePath = $(this).find('img').data('original-image');
+                    $(this).zoom({
+                        url: originalImagePath,
+                        magnify: 1
+                    });
+                });
             }
+            // $(function() {
+            //     $('.zoom-image').each(function() {
+            //         var originalImagePath = $(this).find('img').data('original-image');
+            //         $(this).zoom({
+            //             url: originalImagePath,
+            //             magnify: 1
+            //         });
+            //     });
+            // });
         </script>
     </section>
 @endsection
