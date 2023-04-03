@@ -58,7 +58,7 @@
                             </div><!-- End Portfolio Item -->
                         @endforeach
                     </div>
-                    <div class="paginate_button d-flex justify-content-end mt-5">
+                    <div class="paginate-group">
                         {{ $all->links() }}
                     </div>
                 </div>

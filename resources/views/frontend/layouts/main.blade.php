@@ -8,7 +8,7 @@
     <title>@yield('title', 'Murahkom - Toko Komputer Online Termurah di Surabaya')</title>
 
     {{-- favicon --}}
-    <link rel="shortcut icon" href="/assets/img/logo-toko.png" type="image/x-icon">
+    <link rel="icon" href="/assets/img/logo-murahkom1.png" type="image/x-icon">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
