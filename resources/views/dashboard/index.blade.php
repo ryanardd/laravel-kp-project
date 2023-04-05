@@ -98,7 +98,8 @@
                                                         <td>Rp. {{ number_format($row->harga, 0, ',','.') }}</td>
                                                         <td>{{ $row->category->nama_category }}</td>
                                                         <td>{{ $row->is_active ? 'Active' : 'Draft'}}</td>
-                                                        <td>2011/04/25</td>
+                                                        <td><img src="/images/cover/{{ $row->thumbnail }}" class="img-responsive"
+                                                            style="max-height:100px; max-width:100px;" alt=""></td>
                                                     </tr>
                                                     @empty
                                                     <tr>
