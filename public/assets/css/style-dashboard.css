@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+.main-header .header .logo h2 {
+    font-weight: 700;
+    font-size: 22px;
+    color: #064AB8;
+    margin: 0;
+    font-family: 'Montserrat';
+}
+.main-header .header .logo h2 span {
+  color: #F60025;
+  
+}
+
+/* sidebar */
+
+.sidebar .user .info a .name {
+  font-family: 'Poppins';
+  font-size: 18px;
+}
+
+.sidebar .sidebar-content .nav .nav-item a p {
+  font-family: 'Poppins';
+}
+
+.edit .card-title,
+.create .card-title,
+.content h4,
+.sidebar .sidebar-content .nav .nav-section h4 {
+  font-family: 'Montserrat';
+}
+
+/* index content */
+
+.content .page-inner h2 {
+  font-family: 'Poppins';
+  font-size: 30px;
+}
+
+.content .page-inner .group-list .card .card-body {
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.content .page-inner .group-list .card .card-body .row .icon-big {
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+  /* border-radius: 50%; */
+  /* width: 50%; */
+  text-align: center;
+  /* margin: auto; */
+  /* padding: 10px; */
+  /* width: 50%; */
+  /* height: max-content; */
+  /* font-size: 30px; */
+}
+
+/* .content .page-inner .group-list .card .card-body .row i {
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+  width: 50%;
+  font-size: 30px;
+} */
+
+.content .page-inner .group-list .card .card-body .numbers p {
+  font-family: 'Montserrat';
+  font-size: 20px;
+}
+.content .page-inner .page-header ul .nav-item a,
+.content .page-inner .row .card-header h4 {
+  font-family: 'Poppins';
+}
+
+* .edit,
+* .create,
+.create .card .card-header a,
+.edit .card .card-header a,
+.content .page-inner .row .card .card-header a,
+.content .page-inner .row .card .card-body table,
+.content .page-inner .row .card .card-body table tbody tr td {
+  font-family: 'Poppins';
+}

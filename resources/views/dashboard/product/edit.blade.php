@@ -7,28 +7,30 @@
             </div>
         </div>
     </div>
-    <div class="page-inner mt--5">
+    <div class="edit page-inner mt--5">
         <div class="row">
             <div class="col-md-2 mt-5 text-center">
                 <h2>Cover Images</h2>
                 <form action="/dashboard/products/deletecover/{{ $produk->id }}" method="POST">
-                    <button class="btn bg-white text-danger btn-sm">X</button>
+                    <button class="btn text-danger btn-sm m-2 bg-white"><i class="fa fa-trash"></i></button>
                     @csrf
                     @method('delete')
                 </form>
-                <img src="/images/cover/{{ $produk->thumbnail }}" class="img-responsive border mb-3" style="max-width: 150px; max-height: 150px;" alt="">
+                <img src="/images/cover/{{ $produk->thumbnail }}" class="img-responsive mb-3 border"
+                    style="max-width: 150px; max-height: 150px;" alt="">
                 <br>
 
                 <h2>Images</h2>
                 @if (count($images) > 0)
-                @foreach ($images as $image)
-                <form action="/dashboard/products/deleteimage/{{ $image->id }}" method="POST">
-                    <button class="btn bg-white text-danger btn-sm">X</button>
-                    @csrf
-                    @method('delete')
-                </form>
-                <img src="/images/image/{{ $image->image }}" class="img-responsive border" style="max-width: 150px; max-height: 150px;" alt="">
-                @endforeach
+                    @foreach ($images as $image)
+                        <form action="/dashboard/products/deleteimage/{{ $image->id }}" method="POST">
+                            <button class="btn text-danger btn-sm m-2 bg-white"><i class="fa fa-trash"></i></button>
+                            @csrf
+                            @method('delete')
+                        </form>
+                        <img src="/images/image/{{ $image->image }}" class="img-responsive border"
+                            style="max-width: 150px; max-height: 150px;" alt="">
+                    @endforeach
                 @endif
             </div>
 
@@ -113,21 +115,23 @@
 
                             <div class="form-group">
                                 <label for="cta_tokped">Link Tokopedia</label>
-                                <input type="text" name="cta_tokped" class="form-control" value="{{ old('cta_tokped', $produk->cta_tokped) }}">
+                                <input type="text" name="cta_tokped" class="form-control"
+                                    value="{{ old('cta_tokped', $produk->cta_tokped) }}">
                                 @error('cta_tokped')
-                                <div class="text-danger mt-2">
-                                    Link Tokopedia Harus Di isi!
-                                </div>
+                                    <div class="text-danger mt-2">
+                                        Link Tokopedia Harus Di isi!
+                                    </div>
                                 @enderror
                             </div>
 
                             <div class="form-group">
                                 <label for="cta_shopee">Link Shopee</label>
-                                <input type="text" name="cta_shopee" class="form-control" value="{{ old('cta_shopee', $produk->cta_shopee) }}">
+                                <input type="text" name="cta_shopee" class="form-control"
+                                    value="{{ old('cta_shopee', $produk->cta_shopee) }}">
                                 @error('cta_shopee')
-                                <div class="text-danger mt-2">
-                                    Link Shopee Harus Di isi!
-                                </div>
+                                    <div class="text-danger mt-2">
+                                        Link Shopee Harus Di isi!
+                                    </div>
                                 @enderror
                             </div>
 

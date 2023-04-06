@@ -39,7 +39,7 @@
                                 </div>
                             @endif
                             <div class="table-responsive">
-                                <table id="myTable" class="display table table-striped table-hover border">
+                                <table id="myTable" class="display table-striped table-hover table border">
                                     <thead>
                                         <tr>
                                             <th>No</th>
@@ -71,7 +71,8 @@
                                                             method="POST" class="d-inline">
                                                             @csrf
                                                             @method('delete')
-                                                            <button class="btn btn-danger btn-sm" onclick="return confirm('yakin ingin menghapus?')">
+                                                            <button class="btn btn-danger btn-sm"
+                                                                onclick="return confirm('yakin ingin menghapus?')">
                                                                 <i class="fa fa-trash"></i>
                                                             </button>
                                                         </form>
@@ -80,7 +81,7 @@
                                             </tr>
                                         @empty
                                             <tr>
-                                                <td colspan="6" class="text-center bg-white text-dark">Data Masih Kosong
+                                                <td colspan="6" class="text-dark bg-white text-center">Data Masih Kosong
                                                 </td>
                                             </tr>
                                         @endforelse
