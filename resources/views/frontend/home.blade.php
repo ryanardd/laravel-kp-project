@@ -60,7 +60,7 @@
                     </div>
                 </div><!-- End Icon Box -->
 
-                <div class="col-xl why-box" data-aos="fade-up" data-aos-delay="400">
+                <div class="col-xl why-box" data-aos="fade-left" data-aos-delay="400">
                     <div class="icon-box d-flex flex-column justify-content-center align-items-center p-2">
                         <i>
                             <img src="assets/img/badge-percent.png" alt="">
