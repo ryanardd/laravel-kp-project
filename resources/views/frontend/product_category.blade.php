@@ -60,7 +60,7 @@
                             </div><!-- End Portfolio Item -->
                         @endforeach
                     </div>
-                    <div class="paginate_button justify-content-end">
+                    <div class="paginate-group">
                         {{ $all->links() }}
                     </div>
                 </div>
