@@ -358,7 +358,7 @@ section {
     .navbar > ul > .dropdown > ul > li > a:hover{
         margin: 0 5px;
         border-radius: 5px;
-        background-color: #064AB8;
+        background-color: #65AAFC;
         /* padding: 15px; */
         color: white;
         transition: all 0.3s ease-in-out 0s;
@@ -388,7 +388,7 @@ section {
         z-index: 99;
         opacity: 0;
         visibility: hidden;
-        background: #0095D9;
+        background: #3F9AEE;
         box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
         transition: 0.3s;
         border-radius: 4px;
@@ -754,9 +754,7 @@ section {
 }
 
 .service .icon-box i {
-    color: #f8b501;
     margin-bottom: 30px;
-    font-size: 32px;
     margin-top: 30px;
     margin-bottom: 30px;
     display: flex;
@@ -1624,7 +1622,7 @@ section {
     height: 100%;
 
     width: 100%;
-    background-color:#0095D9;
+    background-color:#0F5596;
     margin-bottom: 20px;
     border-radius: 10px;
     color: #fff;
@@ -1639,7 +1637,7 @@ section {
     height: 56px;
     font-size: 24px;
     line-height: 0;
-    color: black;
+    color: white;
     background: #0177E4;
     border-radius: 50%;
     margin-right: 30px;
@@ -1979,7 +1977,8 @@ h3 {
 
 .portfolio .container .paginate-group {
     display: flex;
-    justify-content: end;
-    border: none;
-    background-color: #000;
+    /* color: black; */
+    margin: 20px;
+    justify-content: center;
+    /* border: none; */
 }

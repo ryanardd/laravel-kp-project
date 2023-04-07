@@ -43,7 +43,7 @@
                     <div class="icon-box d-flex flex-column justify-content-center align-items-center p-2">
                         {{-- <i class="bi bi-patch-check"></i> --}}
                         <i>
-                            <img src="assets/img/badge-check.png" alt="">
+                            <img src="assets/img/verify.png" alt="">
                         </i>
                         <h4>Pelayanan Terbaik</h4>
                         <p>Kami wajib memberi anda support pelayanan terbaik dari awal datang sampai anda pulang.</p>
@@ -53,7 +53,7 @@
                 <div class="col-xl why-box" data-aos="fade-up" data-aos-delay="300">
                     <div class="icon-box d-flex flex-column justify-content-center align-items-center p-2">
                         <i>
-                            <img src="assets/img/gem.png" alt="">
+                            <img src="assets/img/award.png" alt="">
                         </i>
                         <h4>Produk 100% Original</h4>
                         <p>Kami menyediakan produk asli 100% sehingga Anda dapat merasa tenang saat berbelanja.</p>
@@ -63,7 +63,7 @@
                 <div class="col-xl why-box" data-aos="fade-up" data-aos-delay="400">
                     <div class="icon-box d-flex flex-column justify-content-center align-items-center p-2">
                         <i>
-                            <img src="assets/img/badge-percent.png" alt="">
+                            <img src="assets/img/discount.png" alt="">
                         </i>
                         <h4>Harga Bersaing</h4>
                         <p>Kami menyediakan banyak variasi produk spesial dengan harga yang sangat rendah</p>
@@ -92,10 +92,16 @@
                 <div class="col-lg-5 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300">
                     <div class="content ps-0 ps-lg-5">
                         <p class="fst-italic">
-                            Murahkom adalah toko komputer / laptop dan elektronik terlengkap di Surabaya. Kami menyediakan berbagai macam komputer dan laptop serta barang elektronik lainnya, Murahkom didirikan pada 24 Desember 2009.
+                            Murahkom adalah toko komputer / laptop dan elektronik terlengkap di Surabaya. Kami menyediakan
+                            berbagai macam komputer dan laptop serta barang elektronik lainnya, Murahkom didirikan pada 24
+                            Desember 2009.
                         </p>
                         <p class="fst-italic">
-                            Untuk mempercepat proses pesanan Anda, silakan bisa langsung menghubungi kantor kami melalui nomor telepon 031-8470589. Jika Anda tidak menemukan barang yang Anda cari, coba menghubungi atau datang ke kantor kami di Plaza Marina Lt.2 Blok G-05, Surabaya, Jawa Timur untuk menanyakan mengenai barang tersebut. Kami siap melayani Anda mulai dari Senin - Minggu pukul 10.00 - 21.00 WIB.
+                            Untuk mempercepat proses pesanan Anda, silakan bisa langsung menghubungi kantor kami melalui
+                            nomor telepon 031-8470589. Jika Anda tidak menemukan barang yang Anda cari, coba menghubungi
+                            atau datang ke kantor kami di Plaza Marina Lt.2 Blok G-05, Surabaya, Jawa Timur untuk menanyakan
+                            mengenai barang tersebut. Kami siap melayani Anda mulai dari Senin - Minggu pukul 10.00 - 21.00
+                            WIB.
                         </p>
                         <p class="fst-italic">
                             Terima kasih atas kepercayaan Anda untuk kebutuhan komputer dan laptop di Murahkom.
