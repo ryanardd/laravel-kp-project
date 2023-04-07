@@ -4,8 +4,7 @@
         <div class="row gy-4">
             <div class="col-lg-5 col-md-12 footer-info">
                 <h3>MurahKom</h3>
-                <p>Murahkom merupakan perusahaan dibidang IT atau Teknologi yang didirikan pada 1 Januari 2010. Murahkom
-                    senantiasa mengikuti perkembangan yang terus terupadate dalam dunia IT atau teknologi.</p>
+                <p>Murahkom adalah toko komputer / laptop dan elektronik terlengkap di Surabaya. Kami menyediakan berbagai macam komputer dan laptop serta barang elektronik lainnya, Murahkom didirikan pada 24 Desember 2009.</p>
                 <div class="social-links d-flex mt-4">
                     <a href="https://www.facebook.com/murahkomofficial" class="facebook" target="_blank"><i
                             class="bi bi-facebook"></i></a>

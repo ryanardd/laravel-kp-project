@@ -55,8 +55,9 @@
                 <div class="col-lg-6">
                     <h3>{{ $detail->nama_produk }}</h3>
                     <div class="underline"></div>
-                    <h4>Rp{{ number_format($detail->harga, 0, ',', '.') }}</h4>
-                    <h6>Note</h6>
+                    <h4 class="mb" style="color: #777">Rp{{ number_format($detail->harga, 0, ',', '.') }}</h4>
+                    <div class="underline"></div>
+                    <h6><b>Note :</b></h6>
                     <ul>
                         <li>Cek stock terlebih dahulu sebelum order (Ketersedian Terbatas)</li>
                         <li>Packing aman dengan bubble wrap tebal berlapis-lapis (dijamin sampai dengan selamat)</li>

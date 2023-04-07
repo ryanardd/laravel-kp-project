@@ -1807,10 +1807,10 @@ section {
         height: 60px; */
     }
 
-    /* .underline {
-        border-bottom: 1px solid #777;
-        margin: 10px 0;
-    } */
+    .underline {
+        /* border-bottom: 1px solid #777; */
+        margin: 15px 0;
+    }
 
     /* .items {
         box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.1);

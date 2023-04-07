@@ -46,7 +46,7 @@
                             <img src="assets/img/badge-check.png" alt="">
                         </i>
                         <h4>Pelayanan Terbaik</h4>
-                        <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                        <p>Kami wajib memberi anda support pelayanan terbaik dari awal datang sampai anda pulang.</p>
                     </div>
                 </div><!-- End Icon Box -->
 
@@ -55,8 +55,8 @@
                         <i>
                             <img src="assets/img/gem.png" alt="">
                         </i>
-                        <h4>Produk Berkualitas</h4>
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                        <h4>Produk 100% Original</h4>
+                        <p>Kami menyediakan produk asli 100% sehingga Anda dapat merasa tenang saat berbelanja.</p>
                     </div>
                 </div><!-- End Icon Box -->
 
@@ -65,8 +65,8 @@
                         <i>
                             <img src="assets/img/badge-percent.png" alt="">
                         </i>
-                        <h4>Harga Kompetitif</h4>
-                        <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                        <h4>Harga Bersaing</h4>
+                        <p>Kami menyediakan banyak variasi produk spesial dengan harga yang sangat rendah</p>
                     </div>
                 </div><!-- End Icon Box -->
             </div>
@@ -92,20 +92,22 @@
                 <div class="col-lg-5 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300">
                     <div class="content ps-0 ps-lg-5">
                         <p class="fst-italic">
-                            Murahkom merupakan perusahaan dibidang IT atau Teknologi yang didirikan pada 1 Januari 2010.
-                            Dengan berkembangnya teknologi yang semakin pesat di dunia digital, Murahkom menyediakan
-                            berbagai keperluan perusahaan, personal, sekolah dan masyarakat yang membutuhkan keperluan
-                            teknologi. Murahkom senantiasa mengikuti perkembangan yang terus terupadate dalam dunia IT atau
-                            teknologi.
+                            Murahkom adalah toko komputer / laptop dan elektronik terlengkap di Surabaya. Kami menyediakan berbagai macam komputer dan laptop serta barang elektronik lainnya, Murahkom didirikan pada 24 Desember 2009.
                         </p>
-                        <p>Murahkom menyediakan berbagai layanan seperti :</p>
+                        <p class="fst-italic">
+                            Untuk mempercepat proses pesanan Anda, silakan bisa langsung menghubungi kantor kami melalui nomor telepon 031-8470589. Jika Anda tidak menemukan barang yang Anda cari, coba menghubungi atau datang ke kantor kami di Plaza Marina Lt.2 Blok G-05, Surabaya, Jawa Timur untuk menanyakan mengenai barang tersebut. Kami siap melayani Anda mulai dari Senin - Minggu pukul 10.00 - 21.00 WIB.
+                        </p>
+                        <p class="fst-italic">
+                            Terima kasih atas kepercayaan Anda untuk kebutuhan komputer dan laptop di Murahkom.
+                        </p>
+                        {{-- <p>Murahkom menyediakan berbagai layanan seperti :</p>
                         <ul>
                             <li><i class="bi bi-check2-all"></i> Hardware
                             </li>
                             <li><i class="bi bi-check2-all"></i> Service
                             </li>
                             <li><i class="bi bi-check2-all"></i> Install Software</li>
-                        </ul>
+                        </ul> --}}
 
                         <div class="position-relative mt-4">
                             <img src="assets/img/toko-murahkom.jpg" class="img-fluid" alt="">
@@ -135,7 +137,7 @@
                     <div class="box-group p-3">
                         <div class="row">
 
-                            @foreach ($product->take(3) as $produk)
+                            @foreach ($product as $produk)
                                 <div class="col-lg-4 mt-2">
                                     <div class="menu-wrap">
                                         <a href="/product/{{ $produk->slug }}" class="d-flex justify-content-center">

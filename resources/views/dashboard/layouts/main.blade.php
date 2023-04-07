@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Dashboard Murahkom</title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-    <link rel="icon" href="{{ asset('/assets/img/logo-murahkom.png') }}" type="image/x-icon" />
+
+    {{-- favicon --}}
+    <link rel="icon" href="/assets/img/logo-murahkom1.png" type="image/x-icon">
 
     {{-- text trix editor --}}
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">

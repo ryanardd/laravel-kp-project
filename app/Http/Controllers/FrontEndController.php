@@ -12,7 +12,7 @@ class FrontEndController extends Controller
 {
     public function index() {
         return view('frontend.home', [
-            "product" => Produk::with('category')->where('is_active', 1)->get(),
+            "product" => Produk::with('category')->where('is_active', 1)->limit(3)->get(),
             "slides" => Slide::all(),
         ]);
     }
