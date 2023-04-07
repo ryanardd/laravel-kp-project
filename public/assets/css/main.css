@@ -388,7 +388,7 @@ section {
         z-index: 99;
         opacity: 0;
         visibility: hidden;
-        background: #3F9AEE;
+        background: white;
         box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
         transition: 0.3s;
         border-radius: 4px;
@@ -835,9 +835,9 @@ section {
 }
 
 .menu .tab-content .tab-pane .box-group{
-    background-color: #0095DA;
+    background-color: #FAFAFA;
     border-radius: 10px;
-    box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.5);
+    /* box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.3); */
 }
 
 .menu .tab-content .tab-header {
@@ -861,12 +861,12 @@ section {
     border-radius: 10px;
     min-height: min-content;
     overflow: hidden;
+    transition: .8s ease;
 }
 
 .menu-wrap:hover {
     box-shadow: 0px 25px 30px rgba(0, 0, 0, 0.5);
-    transition: all .8s ease;
-    translate: 5px -5px ;
+    transform: translate(5px, -5px);
 }
 
 .menu-wrap img {
@@ -1757,7 +1757,7 @@ section {
     line-height: 1;
   }
 
-  .footer .footer-links ul a:hover {
+  .footer .footer-links ul .link-footer:hover {
     color: #fff;
   }
 
@@ -1978,7 +1978,7 @@ h3 {
 .portfolio .container .paginate-group {
     display: flex;
     /* color: black; */
-    margin: 20px;
+    margin: 45px;
     justify-content: center;
     /* border: none; */
 }

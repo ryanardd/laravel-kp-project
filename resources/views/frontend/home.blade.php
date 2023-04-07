@@ -173,7 +173,7 @@
                         </div>
                         {{-- end Items --}}
                         <div class="d-flex justify-content-end mt-3">
-                            <a href="/product" class="text-white"> Lihat Produk Lainnya<i
+                            <a href="/product" class="text-dark"> Lihat Produk Lainnya<i
                                     class="bi bi-chevron-right"></i></a>
                         </div>
                     </div>

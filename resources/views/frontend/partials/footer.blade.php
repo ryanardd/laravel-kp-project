@@ -4,7 +4,9 @@
         <div class="row gy-4">
             <div class="col-lg-5 col-md-12 footer-info">
                 <h3>MurahKom</h3>
-                <p>Murahkom adalah toko komputer / laptop dan elektronik terlengkap di Surabaya. Kami menyediakan berbagai macam komputer dan laptop serta barang elektronik lainnya, Murahkom didirikan pada 24 Desember 2009.</p>
+                <p>Murahkom adalah toko komputer / laptop dan elektronik terlengkap di Surabaya. Kami menyediakan
+                    berbagai macam komputer dan laptop serta barang elektronik lainnya, Murahkom didirikan pada 24
+                    Desember 2009.</p>
                 <div class="social-links d-flex mt-4">
                     <a href="https://www.facebook.com/murahkomofficial" class="facebook" target="_blank"><i
                             class="bi bi-facebook"></i></a>
@@ -16,18 +18,18 @@
             <div class="col-lg-2 col-6 footer-links">
                 <h4>Useful Links</h4>
                 <ul>
-                    <li><a href="{{ route('home') }}">Home</a></li>
-                    <li><a href="{{ route('product') }}">Product</a></li>
-                    <li><a href="{{ route('contact-us') }}">Contact</a></li>
+                    <li><a href="{{ route('home') }}" class="link-footer">Home</a></li>
+                    <li><a href="{{ route('product') }}" class="link-footer">Product</a></li>
+                    <li><a href="{{ route('contact-us') }}" class="link-footer">Contact</a></li>
                 </ul>
             </div>
 
             <div class="col-lg-2 col-6 footer-links">
                 <h4>Payment</h4>
                 <ul>
-                    <li>Cash</li>
-                    <li>Debit</li>
-                    <li>Bank Transfer</li>
+                    <li><a>Cash</a></li>
+                    <li><a>Debit</a></li>
+                    <li><a>Bank Transfer</a></li>
                 </ul>
             </div>
 
