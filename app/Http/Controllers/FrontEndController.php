@@ -19,7 +19,7 @@ class FrontEndController extends Controller
 
     public function product() {
         // dd(Request('search'));
-        $produk = Produk::where('is_active', 1)->with('category')->latest()->filter(request(['search']))->paginate(20);
+        $produk = Produk::where('is_active', 1)->with('category')->latest()->filter(request(['search']))->paginate(16);
         return view('frontend.product', [
             'all' => $produk,
         ]);
@@ -27,7 +27,7 @@ class FrontEndController extends Controller
 
     public function productCategory($slug)
     {
-        $produk = Category::where('slug', $slug)->first()->product()->where('is_active', 1)->filter(request(['search']))->paginate(10);
+        $produk = Category::where('slug', $slug)->first()->product()->where('is_active', 1)->filter(request(['search']))->paginate(12);
 
         // dd($produk);
         return view('frontend.product_category', [
