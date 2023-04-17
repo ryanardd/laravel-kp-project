@@ -6,11 +6,7 @@
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
         <div class="container" data-aos="fade-up">
-
-            <div class="section-header">
-                <p>Produk Category </p>
-            </div>
-
+            <div class="section-header"></div>
             {{-- <div class="search">
                 <div class="group">
                     <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">

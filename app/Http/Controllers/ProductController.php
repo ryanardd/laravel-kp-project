@@ -19,7 +19,7 @@ class ProductController extends Controller
     public function index()
     {
         return view('dashboard.product.index', [
-            'product' => Produk::with('category')->get()
+            'product' => Produk::with('category')->latest()->get()
         ]);
     }
 
