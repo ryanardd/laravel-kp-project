@@ -82,8 +82,8 @@
                 <p>Learn More About Us</p>
             </div>
             <div class="row gy-4 p-2">
-                <div class="col-lg-7 position-relative about-img"
-                    style="background-image: url(assets/img/toko-murahkom.jpg) ;" data-aos="fade-up" data-aos-delay="150">
+                <div class="col-lg-7 position-relative about-img" style="background-image: url(assets/img/murahkom3.jpg) ;"
+                    data-aos="fade-up" data-aos-delay="150">
                     {{-- <div class="call-us position-absolute">
                         <h4>Book a Table</h4>
                         <p>+1 5589 55488 55</p>

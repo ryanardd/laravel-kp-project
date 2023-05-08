@@ -571,6 +571,7 @@ section {
 --------------------------------------------------------------*/
 .about .about-img {
     min-height: 500px;
+    background-size: cover;
 }
 
 .about h3 {
