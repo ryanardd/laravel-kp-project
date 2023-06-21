@@ -47,7 +47,7 @@
                                     </g>
                                 </svg>
                                 <form action="{{ route('product') }}">
-                                    <input placeholder="Search All Product" type="search" class="input" name="search"
+                                    <input placeholder="Pencarian" type="search" class="input" name="search"
                                         value="{{ request('search') }}">
                                 </form>
                             </div>
