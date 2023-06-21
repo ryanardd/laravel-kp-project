@@ -16,31 +16,31 @@
             </div>
 
             <div class="col-lg-2 col-6 footer-links">
-                <h4>Useful Links</h4>
+                <h4>Tautan</h4>
                 <ul>
-                    <li><a href="{{ route('home') }}" class="link-footer">Home</a></li>
-                    <li><a href="{{ route('product') }}" class="link-footer">Product</a></li>
-                    <li><a href="{{ route('contact-us') }}" class="link-footer">Contact</a></li>
+                    <li><a href="{{ route('home') }}" class="link-footer">Beranda</a></li>
+                    <li><a href="{{ route('product') }}" class="link-footer">Produk</a></li>
+                    <li><a href="{{ route('contact-us') }}" class="link-footer">Kontak</a></li>
                 </ul>
             </div>
 
             <div class="col-lg-2 col-6 footer-links">
-                <h4>Payment</h4>
+                <h4>Pembayaran</h4>
                 <ul>
-                    <li><a>Cash</a></li>
+                    <li><a>Tunai</a></li>
                     <li><a>Debit</a></li>
-                    <li><a>Bank Transfer</a></li>
+                    <li><a>Transfer Bank</a></li>
                 </ul>
             </div>
 
             <div class="col-lg-3 col-md-12 footer-contact text-md-start text-center">
-                <h4>Contact Us</h4>
+                <h4>Kontak Kami</h4>
                 <p>
                     Plaza Marina Lantai Blok G-05 <br>
                     Jl. Margorejo Indah No.97-99, Sidosermo, Kec. Wonocolo, Kota SBY, Jawa Timur 60238<br><br>
-                    <strong>Phone:</strong> (031) 8470589<br>
+                    <strong>Telepon:</strong> (031) 8470589<br>
                     <strong>Email:</strong> murahkomofficial@gmail.com<br>
-                    <strong>Opening Hours:</strong> Senin-Minggu 10.00 - 21.00<br>
+                    <strong>Jam Buka:</strong> Senin-Minggu 10.00 - 21.00<br>
                 </p>
 
             </div>

@@ -87,7 +87,7 @@
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="description-tab" data-bs-toggle="tab"
                                 data-bs-target="#description" type="button" role="tab" aria-controls="description"
-                                aria-selected="true">Description</button>
+                                aria-selected="true">Deskripsi</button>
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">

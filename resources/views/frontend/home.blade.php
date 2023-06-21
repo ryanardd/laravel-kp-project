@@ -34,8 +34,8 @@
     <section class="service">
         <div class="container" data-aos="fade-up">
             <div class="section-header">
-                <h2>Service Us</h2>
-                <p>Learn More Service Us</p>
+                <h2>Layanan Kami</h2>
+                <p>Pelajari Lebih Lanjut Layanan Kami</p>
             </div>
 
             <div class="row gap-4">
@@ -78,8 +78,8 @@
     <section id="about" class="about section-bg">
         <div class="container" data-aos="fade-up">
             <div class="section-header">
-                <h2>About Us</h2>
-                <p>Learn More About Us</p>
+                <h2>Tentang Kami</h2>
+                <p>Pelajari Lebih Lanjut Tentang Kami</p>
             </div>
             <div class="row gy-4 p-2">
                 <div class="col-lg-7 position-relative about-img" style="background-image: url(assets/img/murahkom3.jpg) ;"
@@ -132,8 +132,8 @@
     <section id="menu" class="menu">
         <div class="container" data-aos="fade-up">
             <div class="section-header">
-                <h2>Product</h2>
-                <p>Recommendation For You</p>
+                <h2>Produk</h2>
+                <p>Rekomendasi Untuk Anda</p>
             </div>
 
             <div class="tab-content">
@@ -189,8 +189,8 @@
         <div class="container p-2" data-aos="fade-up">
 
             <div class="section-header">
-                <h2>Testimonials</h2>
-                <p>What They Say About Us</p>
+                <h2>Testimoni</h2>
+                <p>Apa Kata Mereka Tentang Kami</p>
             </div>
 
             <div class="slides-1 swiper p-2" data-aos="fade-up" data-aos-delay="100">

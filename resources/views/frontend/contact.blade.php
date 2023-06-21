@@ -8,8 +8,8 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-header">
-                <p>Contact</p>
-                <h2>Need Help? Contact Us</h2>
+                <p>Kontak</p>
+                <h2>Butuh Bantuan? Hubungi Kami</h2>
             </div>
 
             <div class="mb-3">
@@ -26,7 +26,7 @@
                     <div class="info-item d-flex align-items-center">
                         <i class="icon bi bi-map flex-shrink-0"></i>
                         <div>
-                            <h3>Our Address</h3>
+                            <h3>Alamat</h3>
                             <p>Plaza Marina Lantai Blok G-05
                                 Jl. Margorejo Indah No.97-99, Sidosermo, Kec. Wonocolo, Kota SBY, Jawa Timur 60238</p>
                         </div>
@@ -37,7 +37,7 @@
                     <div class="info-item d-flex align-items-center">
                         <i class="icon bi bi-envelope flex-shrink-0"></i>
                         <div>
-                            <h3>Email Us</h3>
+                            <h3>Email</h3>
                             <p>murahkomofficial@gmail.com</p>
                         </div>
                     </div>
@@ -47,7 +47,7 @@
                     <div class="info-item d-flex align-items-center">
                         <i class="icon bi bi-telephone flex-shrink-0"></i>
                         <div>
-                            <h3>Call Us</h3>
+                            <h3>Hubungi</h3>
                             <p>(031) 8470589</p>
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                     <div class="info-item d-flex align-items-center">
                         <i class="icon bi bi-share flex-shrink-0"></i>
                         <div>
-                            <h3>Opening Hours</h3>
+                            <h3>Jam Buka</h3>
 
                             <div><strong>Senin-Minggu:</strong> 10.00 - 21.00
                             </div>
