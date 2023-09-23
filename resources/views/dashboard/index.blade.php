@@ -3,7 +3,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="mt-2 mb-4">
-                <h2 class="text-dark pb-2">Welcome back, {{ auth()->user()->name }}</h2>
+                <h2 class="text-dark pb-2">Welcossssme bacssssk, {{ auth()->user()->name }}</h2>
             </div>
             <div class="row group-list">
                 <div class="col-sm-6 col-md-4">
